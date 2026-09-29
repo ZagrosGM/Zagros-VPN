@@ -3,7 +3,7 @@
 
 #include <flutter_plugin_registrar.h>
 
-#ifdef TUNNEL_INTERFACE_PLUGIN_IMPL
+#ifdef FLUTTER_PLUGIN_IMPL
 #define TUNNEL_INTERFACE_PLUGIN_EXPORT __declspec(dllexport)
 #else
 #define TUNNEL_INTERFACE_PLUGIN_EXPORT __declspec(dllimport)

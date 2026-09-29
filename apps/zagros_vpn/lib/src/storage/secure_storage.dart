@@ -24,7 +24,6 @@ class FlutterSecureStorageBackend implements SecureStorageBackend {
             const FlutterSecureStorage(
               aOptions: AndroidOptions(
                 resetOnError: false,
-                migrateWithBackup: true,
               ),
               iOptions: IOSOptions(
                 accountName: 'ai.zagros.vpn',

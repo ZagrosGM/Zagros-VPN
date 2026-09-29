@@ -171,7 +171,7 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     steps:
-      - uses: actions/download-artifact@9586c81ee796e18db11d4b26d9b4ce8ac6eeaa37 # v4
+      - uses: actions/download-artifact@cc203385981b70ca67e1cc392babf9cc229d5806 # v4.1.9
         with:
           path: artifacts
 

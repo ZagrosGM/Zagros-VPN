@@ -9,6 +9,7 @@
 #include <raserror.h>
 #include <strsafe.h>
 #include <winrt/Windows.Data.Json.h>
+#include <winrt/Windows.Foundation.Collections.h>
 #include <winrt/base.h>
 
 #include <algorithm>

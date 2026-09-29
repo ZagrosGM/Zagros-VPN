@@ -29,6 +29,10 @@ jobs:
         with:
           repository: ZagrosGM/Zagros-VPN-SDK
           path: Zagros-VPN-SDK
+          # the SDK is a separate PRIVATE repo — the default GITHUB_TOKEN
+          # cannot read it cross-repo; SDK_SIBLING_TOKEN is a contents:read
+          # fine-grained PAT scoped to Zagros-VPN + Zagros-VPN-SDK
+          token: ${{ secrets.SDK_SIBLING_TOKEN || github.token }}
           persist-credentials: false
 
       - name: Install Flutter
@@ -120,6 +124,10 @@ jobs:
         with:
           repository: ZagrosGM/Zagros-VPN-SDK
           path: Zagros-VPN-SDK
+          # the SDK is a separate PRIVATE repo — the default GITHUB_TOKEN
+          # cannot read it cross-repo; SDK_SIBLING_TOKEN is a contents:read
+          # fine-grained PAT scoped to Zagros-VPN + Zagros-VPN-SDK
+          token: ${{ secrets.SDK_SIBLING_TOKEN || github.token }}
           persist-credentials: false
 
       - name: Install Java 17

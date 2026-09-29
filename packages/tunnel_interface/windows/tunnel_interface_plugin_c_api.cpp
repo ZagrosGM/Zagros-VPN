@@ -1,4 +1,4 @@
-#include "include/tunnel_interface/tunnel_interface_plugin_c_api.h"
+#include "include/tunnel_interface/zagros_tunnel_plugin_c_api.h"
 
 #include <flutter/plugin_registrar_windows.h>
 

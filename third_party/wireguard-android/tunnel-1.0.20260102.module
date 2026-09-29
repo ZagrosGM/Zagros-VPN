@@ -1,0 +1,114 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.wireguard.android",
+    "module": "tunnel",
+    "version": "1.0.20260102",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.1.0"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "tunnel-1.0.20260102.aar",
+          "url": "tunnel-1.0.20260102.aar",
+          "size": 5830762,
+          "sha512": "81e3e94e732ebab63cb621d58c1ba6c8dc54b49c2d40627552d268037acbb0ff32b1a721a24e334daa93f476c091bf2b3e2a7aceaa8635b10f7419703366f726",
+          "sha256": "2b9c16db026496123e4db695d26d03d1958a201096c7c4c89b21077dc70f3119",
+          "sha1": "decdc1c35d64033aeff6565446483c26388307a5",
+          "md5": "6e786884c616a483664cfb066f877f24"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.9.1"
+          }
+        },
+        {
+          "group": "androidx.collection",
+          "module": "collection",
+          "version": {
+            "requires": "1.5.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "tunnel-1.0.20260102.aar",
+          "url": "tunnel-1.0.20260102.aar",
+          "size": 5830762,
+          "sha512": "81e3e94e732ebab63cb621d58c1ba6c8dc54b49c2d40627552d268037acbb0ff32b1a721a24e334daa93f476c091bf2b3e2a7aceaa8635b10f7419703366f726",
+          "sha256": "2b9c16db026496123e4db695d26d03d1958a201096c7c4c89b21077dc70f3119",
+          "sha1": "decdc1c35d64033aeff6565446483c26388307a5",
+          "md5": "6e786884c616a483664cfb066f877f24"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "tunnel-1.0.20260102-sources.jar",
+          "url": "tunnel-1.0.20260102-sources.jar",
+          "size": 43027,
+          "sha512": "174e8edb1310944d07736ca30c646ac9279170021315c56999fdad41673a221f0091a712946e13a58d959354c776e738445a724d61ac0e975808a9a677ebd423",
+          "sha256": "914dfe55d9bcb2a251048086555a31d7707ff78b6a2093304b2439f63c0dc012",
+          "sha1": "e423bf67aac96d44830735a4dde169e4f2b99d99",
+          "md5": "5f2648ea5a5b433ea8c8936a4f296a9d"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseJavaDocPublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "javadoc",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "tunnel-1.0.20260102-javadoc.jar",
+          "url": "tunnel-1.0.20260102-javadoc.jar",
+          "size": 445290,
+          "sha512": "b48e5a231be0def91357d0ae707a420a9db74070fc53405b60f828bab75cc44c718f8e3ba6d5ce5775bc76d06e5083ade11e8cb11863540abbba2725ea5d0c4b",
+          "sha256": "029ec933d6dffe97860b029ce36c09204196a711715c48409352a544c99bb30a",
+          "sha1": "055daf6f981ab132bfc71cf7ede9913e3c225ca4",
+          "md5": "cb17ce3706bd4c60185daf4130de673e"
+        }
+      ]
+    }
+  ]
+}

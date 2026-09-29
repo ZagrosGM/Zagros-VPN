@@ -1,0 +1,19 @@
+                        -H/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android
+-DCMAKE_SYSTEM_NAME=Android
+-DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+-DCMAKE_SYSTEM_VERSION=24
+-DANDROID_PLATFORM=android-24
+-DANDROID_ABI=arm64-v8a
+-DCMAKE_ANDROID_ARCH_ABI=arm64-v8a
+-DANDROID_NDK=/var/tmp/android-sdk/ndk/28.2.13676358
+-DCMAKE_ANDROID_NDK=/var/tmp/android-sdk/ndk/28.2.13676358
+-DCMAKE_TOOLCHAIN_FILE=/var/tmp/android-sdk/ndk/28.2.13676358/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=/var/tmp/android-sdk/cmake/3.22.1/bin/ninja
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/home/user/zagros-work/Zagros-VPN/apps/zagros_vpn/build/tunnel_interface/intermediates/cxx/RelWithDebInfo/22x5r1e3/obj/arm64-v8a
+-DCMAKE_RUNTIME_OUTPUT_DIRECTORY=/home/user/zagros-work/Zagros-VPN/apps/zagros_vpn/build/tunnel_interface/intermediates/cxx/RelWithDebInfo/22x5r1e3/obj/arm64-v8a
+-DCMAKE_BUILD_TYPE=RelWithDebInfo
+-B/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/.cxx/RelWithDebInfo/22x5r1e3/arm64-v8a
+-GNinja
+-DENABLE_LIBRARY=ON
+                        Build command args: []
+                        Version: 2

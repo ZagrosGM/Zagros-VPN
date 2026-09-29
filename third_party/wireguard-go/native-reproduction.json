@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "source_archive_sha256": "0d12c37fabf73fe88983e779c077aaad55ff62ea5749bad89ec1a27c60d7ade3",
+  "go_toolchain_sha256": "3333f6ea53afa971e9078895eaa4ac7204a8c6b5c68c10e6bc9a33e8e391bdd8",
+  "android_ndk": {
+    "version": "27.0.12077973",
+    "archive_size": 663957918,
+    "archive_sha256": "2f17eb8bcbfdc40201c0b36e9a70826fcd2524ab7a2a235e2c71186c302da1dc"
+  },
+  "host_build_tools": {
+    "cmake_linux_x86_64_wheel": {
+      "version": "4.4.3",
+      "size": 30231983,
+      "sha256": "bae3c4954623ec4d62e62c70443f0da7988b733111c2871fcc6a31ead5137e20"
+    },
+    "ninja_linux_x86_64_wheel": {
+      "version": "1.13.2",
+      "size": 183365,
+      "sha256": "65a24341b5ac09fcadcc37082660be40a94174e51a937fabf6e2cae26225fa2c"
+    }
+  },
+  "template": "tool/wireguard_go_only_CMakeLists.txt",
+  "template_sha256": "4f7e1b512e47cff2b913874b9ba587a438ef89c1c2427054133f97ba93c235d9",
+  "strip": "NDK llvm-strip --strip-unneeded",
+  "outputs": [
+    {
+      "abi": "arm64-v8a",
+      "size": 3365264,
+      "sha256": "68730e8c81b613113249574e22838fd6ce9b1c4da2be2f5fe7c71d651e32b005",
+      "byte_identical_to_packaged_aar": true,
+      "generated_target_identity": [
+        "ANDROID_ARCH_NAME=arm64",
+        "TARGET=aarch64-none-linux-android24"
+      ]
+    },
+    {
+      "abi": "armeabi-v7a",
+      "size": 3174788,
+      "sha256": "2a6570004148c338337d945342326d4c42e71684d36bb2ee999a5d7863408680",
+      "byte_identical_to_packaged_aar": true,
+      "generated_target_identity": [
+        "ANDROID_ARCH_NAME=arm",
+        "TARGET=armv7-none-linux-androideabi24"
+      ]
+    },
+    {
+      "abi": "x86",
+      "size": 3197504,
+      "sha256": "3d9a36280ba19c5f710935c06f563afe377d4e7e19d0d5c931d47d861d2d48df",
+      "byte_identical_to_packaged_aar": true,
+      "generated_target_identity": [
+        "ANDROID_ARCH_NAME=x86",
+        "TARGET=i686-none-linux-android24"
+      ]
+    },
+    {
+      "abi": "x86_64",
+      "size": 3606928,
+      "sha256": "2793e254ac34ec4df86450866fd924a26b9b9e96cc7ba5f6379badd432da1e76",
+      "byte_identical_to_packaged_aar": true,
+      "generated_target_identity": [
+        "ANDROID_ARCH_NAME=x86_64",
+        "TARGET=x86_64-none-linux-android24"
+      ]
+    }
+  ],
+  "patched_go_for_reachability": "cmake-arm64-v8a/generated-src/go-1.24.3/bin/go",
+  "reproduction_status": "PASS: all four rebuilt and stripped libwg-go ELFs are byte-for-byte identical to the packaged upstream-derived AAR members.",
+  "distribution_status": "BLOCKED: native reproduction does not replace final APK/AAB, signing, device tunnel, routed traffic, accounting, or teardown evidence."
+}

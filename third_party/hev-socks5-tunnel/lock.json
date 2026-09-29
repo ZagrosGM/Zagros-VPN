@@ -1,0 +1,25 @@
+{
+  "version": "2.17.1",
+  "upstream_repo": "https://github.com/heiher/hev-socks5-tunnel",
+  "tag": "2.17.1",
+  "commit": "9a06bc6e7989da54e3d32ff701ef7a7ce4995d3a",
+  "license": "MIT",
+  "artifacts": {
+    "arm64-v8a": {
+      "url": "https://github.com/heiher/hev-socks5-tunnel/releases/download/2.17.1/hev-socks5-tunnel-android-arm64-v8a",
+      "sha256": "b481e0c78c45587b6a4c0a68c5b3b923f33a4864700242ab77b04436b00409f0"
+    },
+    "armeabi-v7a": {
+      "url": "https://github.com/heiher/hev-socks5-tunnel/releases/download/2.17.1/hev-socks5-tunnel-android-armeabi-v7a",
+      "sha256": "b02663886f071dce11c44cb6eb991cc69b9045eb727801ba55fd2df06334192f"
+    },
+    "x86_64": {
+      "url": "https://github.com/heiher/hev-socks5-tunnel/releases/download/2.17.1/hev-socks5-tunnel-android-x86_64",
+      "sha256": "2d080c3fa5045b26176f6778c308c7c773da5056a60c31e225a34f29e308d070"
+    },
+    "x86": {
+      "url": "https://github.com/heiher/hev-socks5-tunnel/releases/download/2.17.1/hev-socks5-tunnel-android-x86",
+      "sha256": "4f91bec14ab59711c71787659b82ab749f94f054961384cf327976eac5dfce43"
+    }
+  }
+}

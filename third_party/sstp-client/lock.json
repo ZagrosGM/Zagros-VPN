@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "component": "sstp-client (Open SSTP Client engine)",
+  "upstream": "https://github.com/kittoku/Open-SSTP-Client",
+  "upstream_branch": "main",
+  "upstream_commit": "5f97511c3afff7dcf76b763882e0e29207ad1a36",
+  "upstream_commit_date": "2026-08-14T15:44:56Z",
+  "upstream_tarball_sha256": "5fc26380fa5c396327d2dc2a1c126e3ae3b1d8d0e90bb8d76ddabd7fc4b04a88",
+  "license": "MIT",
+  "license_path": "third_party/sstp-client/LICENSE",
+  "integration": "in-process Kotlin engine (MIT, no copyleft isolation required), driver: ai/zagros/tunnel/ZagrosSstpEngine.kt",
+  "adaptations": [
+    "SharedBridge: upstream service replaced by OsscHost hooks (scope/prefs/builder/protect/close)",
+    "Controller: reconnection + NetworkObserver not vendored; notifyEstablished hook added",
+    "SSLTerminal: SAF trust store / proxy / cert-notification UI removed; SHA-256 server-cert pin added",
+    "IPTerminal: TUN byte counters added",
+    "preference accessors unchanged; MapSharedPreferences (volatile, per-connection) supplied by host",
+    "bridge.service.scope replaced by bridge.scope (8 files)"
+  ],
+  "files": {
+    "kittoku/osc/SharedBridge.kt": {
+      "upstream_sha256": "1bff062f1835f136512e3c830fa405aa1da4308f864e39619d20105974bb15dd",
+      "vendored_sha256": "2ed1d1e81dcf16a72753a5fcf93ac6d060d4ae6a727d2f7df4a7e5d88ba2a448"
+    },
+    "kittoku/osc/configuration.kt": {
+      "upstream_sha256": "19a9c74e17fb694efd40f97e2c6c45a1dd425bca1bd9c038743027aebaafdb34",
+      "vendored_sha256": "19a9c74e17fb694efd40f97e2c6c45a1dd425bca1bd9c038743027aebaafdb34"
+    },
+    "kittoku/osc/cipher/hash.kt": {
+      "upstream_sha256": "43a0f27fec16c2809b0f709de2785bcce51fffad759c3e33726cb95d264dfb3e",
+      "vendored_sha256": "43a0f27fec16c2809b0f709de2785bcce51fffad759c3e33726cb95d264dfb3e"
+    },
+    "kittoku/osc/client/SstpClietnt.kt": {
+      "upstream_sha256": "769902621fa2abc197ea9907067ffb8af9d5ad3e3e0a92a9509e6154a91d9bda",
+      "vendored_sha256": "885b36d29c6571b1e5632fb34f538649cf4e59e1b9007371a80494f5e4497701"
+    },
+    "kittoku/osc/client/ppp/ConfigClient.kt": {
+      "upstream_sha256": "d2b382808992681b28bb48a986f0aa0bee613b340c4c768c4019d2174828811c",
+      "vendored_sha256": "82b4f1089f0f124ce95f4582fa3ced06d9836d30366b5ef038bcc225b48fec50"
+    },
+    "kittoku/osc/client/ppp/IpcpClient.kt": {
+      "upstream_sha256": "df10c8ea8abe802c5949703a37856b6aeb2fced3a57e6c94a647a7dad6ebdaf1",
+      "vendored_sha256": "df10c8ea8abe802c5949703a37856b6aeb2fced3a57e6c94a647a7dad6ebdaf1"
+    },
+    "kittoku/osc/client/ppp/Ipv6cpClient.kt": {
+      "upstream_sha256": "8bf6a4c9eff783b84c99c124fb48402999816c50a98767c6f23abed977a0ff99",
+      "vendored_sha256": "8bf6a4c9eff783b84c99c124fb48402999816c50a98767c6f23abed977a0ff99"
+    },
+    "kittoku/osc/client/ppp/LCPClient.kt": {
+      "upstream_sha256": "29ca14e058287c4527242a07b67c7a59718105d8059e1c1269a82aed3c454bbd",
+      "vendored_sha256": "29ca14e058287c4527242a07b67c7a59718105d8059e1c1269a82aed3c454bbd"
+    },
+    "kittoku/osc/client/ppp/PPPClient.kt": {
+      "upstream_sha256": "8b5a3d84066353fe7d3cfab5fc0914999b1880416e2941ca8b2c846308f02d87",
+      "vendored_sha256": "df7c3d3633c79235d3e5f0075fe2f001f741afa103d684f0a4a2f7c8cae0767c"
+    },
+    "kittoku/osc/client/ppp/auth/ChapClient.kt": {
+      "upstream_sha256": "b7b78ba324b688b978af3edc28b18cad7f99065e7da6a64b32094c663e68aa4b",
+      "vendored_sha256": "54b0073e68106b4b077ed33104e69e1643d84f54f0e5ddfeb7b319170fe6b809"
+    },
+    "kittoku/osc/client/ppp/auth/ChapMSCHAPV2Client.kt": {
+      "upstream_sha256": "736d30be8bf8823c1a750a03d0232fc57cb3094142f8363fc3251e569eb83fae",
+      "vendored_sha256": "736d30be8bf8823c1a750a03d0232fc57cb3094142f8363fc3251e569eb83fae"
+    },
+    "kittoku/osc/client/ppp/auth/EAPClient.kt": {
+      "upstream_sha256": "4c961d90b4c13f431b765ae5297f3706cbefc2886e54c9bd64a315b98c3612ca",
+      "vendored_sha256": "aab95409b0efa97a95f70da910036ac8ee47803e3afc580da3c6236bd1777139"
+    },
+    "kittoku/osc/client/ppp/auth/EAPMSAuthClient.kt": {
+      "upstream_sha256": "b6ceb0ce2f5596dc661682eb43549f36bb4ea44d88fe5316953fea4a5b1977b6",
+      "vendored_sha256": "b6ceb0ce2f5596dc661682eb43549f36bb4ea44d88fe5316953fea4a5b1977b6"
+    },
+    "kittoku/osc/client/ppp/auth/MSCHAPV2Client.kt": {
+      "upstream_sha256": "df655dc8eba4e83c7827fde42170a9d2f1f706eb4df02a1340db3d0239810cc8",
+      "vendored_sha256": "df655dc8eba4e83c7827fde42170a9d2f1f706eb4df02a1340db3d0239810cc8"
+    },
+    "kittoku/osc/client/ppp/auth/PAPClient.kt": {
+      "upstream_sha256": "7a9badd25bb467c2c3e1d51e6f3e740c022fdcc421abbc7962b073afc2d6dc09",
+      "vendored_sha256": "a29eac33d24b8852027e6f1f4dc57ce4962f1667e9b8a1a9e2d351de93902df6"
+    },
+    "kittoku/osc/control/Controller.kt": {
+      "upstream_sha256": "a22c74b7328690e2765d1c95aa7795858c053b3abf8ba77cf4a7e8fa8ee59dd5",
+      "vendored_sha256": "ee6ca9ffe71f440fb9fe48fdfd6b697946a893865f95ad8fa400b157712fccf3"
+    },
+    "kittoku/osc/control/LogWriter.kt": {
+      "upstream_sha256": "f8c36edb45491b119703616bb7f7f3d266e4d9548a9ecceeee0f656a359c5c01",
+      "vendored_sha256": "f8c36edb45491b119703616bb7f7f3d266e4d9548a9ecceeee0f656a359c5c01"
+    },
+    "kittoku/osc/debug/exception.kt": {
+      "upstream_sha256": "bd8678f7117f8a353371243bfce63a4473a5a9aff3ba005f1d5767fe304b22b5",
+      "vendored_sha256": "bd8678f7117f8a353371243bfce63a4473a5a9aff3ba005f1d5767fe304b22b5"
+    },
+    "kittoku/osc/extension/Byte.kt": {
+      "upstream_sha256": "2d1ac93d0c388b2f100f465b69b94b6703281e85c78ae6aac505a1ea2d12a6c7",
+      "vendored_sha256": "2d1ac93d0c388b2f100f465b69b94b6703281e85c78ae6aac505a1ea2d12a6c7"
+    },
+    "kittoku/osc/extension/ByteArray.kt": {
+      "upstream_sha256": "a2e1888f44600baa52259f7fe7d7fce5d391db996a47322ce235736f4977e3fe",
+      "vendored_sha256": "a2e1888f44600baa52259f7fe7d7fce5d391db996a47322ce235736f4977e3fe"
+    },
+    "kittoku/osc/extension/Short.kt": {
+      "upstream_sha256": "10a8caec3ab3e6eabbf89fe248d4051c8cd973279a09e1cc9f30215b06c74cec",
+      "vendored_sha256": "10a8caec3ab3e6eabbf89fe248d4051c8cd973279a09e1cc9f30215b06c74cec"
+    },
+    "kittoku/osc/extension/ByteBuffer.kt": {
+      "upstream_sha256": "2990ef94fbc0dd2e87b67c51a815f09fc46cbf04d390ff716472e6ec41f4289a",
+      "vendored_sha256": "2990ef94fbc0dd2e87b67c51a815f09fc46cbf04d390ff716472e6ec41f4289a"
+    },
+    "kittoku/osc/io/OutgoingManager.kt": {
+      "upstream_sha256": "a8563e30facc6b220ee597fc00f3ec9bbdf24d44ae3368d0372dec2479365773",
+      "vendored_sha256": "fc133783429d007fe68572e2707995fd8ca3332858c2e0a2aad85473dc67fb2a"
+    },
+    "kittoku/osc/io/incoming/EchoTimer.kt": {
+      "upstream_sha256": "86f0784be6c1ae3d614d5c5899bcc64b4cf6e8b42cf27186fd02621fdd4df7df",
+      "vendored_sha256": "86f0784be6c1ae3d614d5c5899bcc64b4cf6e8b42cf27186fd02621fdd4df7df"
+    },
+    "kittoku/osc/io/incoming/IncomingManager.kt": {
+      "upstream_sha256": "9766e0396b8d81ac217006811a92d16595be8dd3165fccd4bd6d9dddba75b2cf",
+      "vendored_sha256": "3131c7968d2007a7107b8408697fb2edd15aa1b9ce978c10dade8bd7aeb30ecd"
+    },
+    "kittoku/osc/io/incoming/process.kt": {
+      "upstream_sha256": "cd1840226389ad73b61a8e6041e95af166ac474bf522d9b2841d7d542d4d8979",
+      "vendored_sha256": "cd1840226389ad73b61a8e6041e95af166ac474bf522d9b2841d7d542d4d8979"
+    },
+    "kittoku/osc/preference/constant.kt": {
+      "upstream_sha256": "08ee3261ab410cb9b5a25b406bdb1d8a70b5b1986fe309ee583eb97272724888",
+      "vendored_sha256": "08ee3261ab410cb9b5a25b406bdb1d8a70b5b1986fe309ee583eb97272724888"
+    },
+    "kittoku/osc/preference/accessor/boolean.kt": {
+      "upstream_sha256": "9aac0ce820284f54116c1a0c1b9d341d9354a345e62798ee35773a0cdf8fb3b5",
+      "vendored_sha256": "9aac0ce820284f54116c1a0c1b9d341d9354a345e62798ee35773a0cdf8fb3b5"
+    },
+    "kittoku/osc/preference/accessor/int.kt": {
+      "upstream_sha256": "4bb32328271a724962b7a3f77e5996d50e698164c7e9643f325d0d899f9218cd",
+      "vendored_sha256": "4bb32328271a724962b7a3f77e5996d50e698164c7e9643f325d0d899f9218cd"
+    },
+    "kittoku/osc/preference/accessor/set.kt": {
+      "upstream_sha256": "0f9ded34cc88cfae2f8641b49b08bb6096b7ff77386cebfa640b1bc98e2f0a18",
+      "vendored_sha256": "0f9ded34cc88cfae2f8641b49b08bb6096b7ff77386cebfa640b1bc98e2f0a18"
+    },
+    "kittoku/osc/preference/accessor/string.kt": {
+      "upstream_sha256": "00ec9a8b2fe32b5531493e499de93a57343ceca23a8ec50278328cc7acd439b9",
+      "vendored_sha256": "00ec9a8b2fe32b5531493e499de93a57343ceca23a8ec50278328cc7acd439b9"
+    },
+    "kittoku/osc/terminal/IPTerminal.kt": {
+      "upstream_sha256": "1d06e978a0d648f169ec6bc5622b7182a367338625618fde977bb25c5d61df3e",
+      "vendored_sha256": "4812c815703f4052e951913e3ac5a1ed1e56893a0d2e009e583ce128717b74bd"
+    },
+    "kittoku/osc/terminal/SSLTerminal.kt": {
+      "upstream_sha256": "7eb54841d9ebce2fcd6a00ce48bfdda006995933f752ad75bb8f311ee782d078",
+      "vendored_sha256": "6a0e7af718c59067747c665d91ce6898bd140f1f56750f8585bf1f034466d30e",
+      "note": "adapted: host hooks, cert pin, protect-failure is fatal"
+    },
+    "kittoku/osc/unit/DataUnit.kt": {
+      "upstream_sha256": "769f514eab219aa6a2f94a69d02a88ec0d5418a37af45d9f0f048a36e31d3362",
+      "vendored_sha256": "769f514eab219aa6a2f94a69d02a88ec0d5418a37af45d9f0f048a36e31d3362"
+    },
+    "kittoku/osc/unit/sstp/ControlPacket.kt": {
+      "upstream_sha256": "d3c4b2f1b748f6134947627dbab624a2a566297b838992e4c94a2a00cfe131f2",
+      "vendored_sha256": "d3c4b2f1b748f6134947627dbab624a2a566297b838992e4c94a2a00cfe131f2"
+    },
+    "kittoku/osc/unit/sstp/Attribute.kt": {
+      "upstream_sha256": "3d8d32f63f6a032ebfcd7e927d57e5261060cf2e13e37ca1c87cac00f01ea395",
+      "vendored_sha256": "3d8d32f63f6a032ebfcd7e927d57e5261060cf2e13e37ca1c87cac00f01ea395"
+    },
+    "kittoku/osc/unit/ppp/LCPFrame.kt": {
+      "upstream_sha256": "67b60494e53c609d77c9a3ee41eb3b9050e775e9d2b189191ec61aab1e119cb2",
+      "vendored_sha256": "67b60494e53c609d77c9a3ee41eb3b9050e775e9d2b189191ec61aab1e119cb2"
+    },
+    "kittoku/osc/unit/ppp/Ipv6cpFrame.kt": {
+      "upstream_sha256": "02ab592df1491dfd90f1a2d7ddf2328a7e71c78cbdbeaf904d73be584e49123d",
+      "vendored_sha256": "02ab592df1491dfd90f1a2d7ddf2328a7e71c78cbdbeaf904d73be584e49123d"
+    },
+    "kittoku/osc/unit/ppp/IpcpFrame.kt": {
+      "upstream_sha256": "42a543e02b1afa96d0dd4f33c361cae8b29ab6ac6e81f5c84730559535f1f636",
+      "vendored_sha256": "42a543e02b1afa96d0dd4f33c361cae8b29ab6ac6e81f5c84730559535f1f636"
+    },
+    "kittoku/osc/unit/ppp/Frame.kt": {
+      "upstream_sha256": "56a1aae9ef1d5be099432ce2aacfaa013d0db2489f14177d17d70ffd6598f758",
+      "vendored_sha256": "56a1aae9ef1d5be099432ce2aacfaa013d0db2489f14177d17d70ffd6598f758"
+    },
+    "kittoku/osc/unit/ppp/option/lcp.kt": {
+      "upstream_sha256": "1b8df90aa066e03010cd2c1fc6f490a0e19363fb0ac3061c801b9433f111d834",
+      "vendored_sha256": "1b8df90aa066e03010cd2c1fc6f490a0e19363fb0ac3061c801b9433f111d834"
+    },
+    "kittoku/osc/unit/ppp/option/ipv6cp.kt": {
+      "upstream_sha256": "f0d9b28df175869fad4d567f393b86b7aa07f432c6b377dda27e6bbebe70b19f",
+      "vendored_sha256": "f0d9b28df175869fad4d567f393b86b7aa07f432c6b377dda27e6bbebe70b19f"
+    },
+    "kittoku/osc/unit/ppp/option/ipcp.kt": {
+      "upstream_sha256": "5403c37d39f1f2a223f4fdde6d46a29349954f2eb523dae5b3646e9325512884",
+      "vendored_sha256": "5403c37d39f1f2a223f4fdde6d46a29349954f2eb523dae5b3646e9325512884"
+    },
+    "kittoku/osc/unit/ppp/option/Option.kt": {
+      "upstream_sha256": "a6c7adcf7ac44b14ce6c3aec4d2b0dc35a437b83aeccc6ef5bf49aaa025b0146",
+      "vendored_sha256": "a6c7adcf7ac44b14ce6c3aec4d2b0dc35a437b83aeccc6ef5bf49aaa025b0146"
+    },
+    "kittoku/osc/unit/ppp/auth/PAPFrame.kt": {
+      "upstream_sha256": "b104f91dc2f1441eccf321eb798844e99bad22a94a1ebe3042f66a17a5451a8d",
+      "vendored_sha256": "b104f91dc2f1441eccf321eb798844e99bad22a94a1ebe3042f66a17a5451a8d"
+    },
+    "kittoku/osc/unit/ppp/auth/EAPFrame.kt": {
+      "upstream_sha256": "86f3f11c80f70272bc25055ec83a0f311de08ea8d37f1874d841ca6dfbb9f8f0",
+      "vendored_sha256": "86f3f11c80f70272bc25055ec83a0f311de08ea8d37f1874d841ca6dfbb9f8f0"
+    },
+    "kittoku/osc/unit/ppp/auth/ChapFrame.kt": {
+      "upstream_sha256": "18ace305eb7dbd2a336abfff8bbc7b998e217ded5655d4d19bcba87500ad5ed1",
+      "vendored_sha256": "18ace305eb7dbd2a336abfff8bbc7b998e217ded5655d4d19bcba87500ad5ed1"
+    },
+    "kittoku/osc/unit/ppp/auth/ChapField.kt": {
+      "upstream_sha256": "88b4cb66e37ca93110e26b46082e632023bc876e11d75912d193fc042fa6f3b9",
+      "vendored_sha256": "88b4cb66e37ca93110e26b46082e632023bc876e11d75912d193fc042fa6f3b9"
+    },
+    "kittoku/osc/extension/String.kt": {
+      "upstream_sha256": "bbf6d43170730730ecf8365e387df7a6e6d3a40a9f2eab70fd7dc6d22f5f64b8",
+      "vendored_sha256": "d23c4015ebe4a30b38209b99ae40276f7752733bcbcda2411e32a2f084752b87",
+      "note": "trimmed: Uri helper dropped (excluded UI dependency); sum() kept"
+    }
+  },
+  "compiled_copy": "kittoku/osc",
+  "note": "upstream/ holds pristine upstream copies (diff base); the compiled adaptation lives at compiled_copy; gradle enforces vendored_sha256",
+  "adaptations_note": "SharedBridge carries DataTerminal abstraction + datagram protect hook (L2TP engine reuse)"
+}

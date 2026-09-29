@@ -1,0 +1,517 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:7b9374dd-74a1-5db6-a920-b8a8c73b701b",
+  "version": 1,
+  "metadata": {
+    "component": {
+      "type": "library",
+      "bom-ref": "pkg:generic/ai.zagros/tunnel-interface@0.2.0?type=android-library",
+      "group": "ai.zagros",
+      "name": "tunnel-interface",
+      "version": "0.2.0"
+    },
+    "properties": [
+      {
+        "name": "zagros:scope",
+        "value": "standalone-adapter-not-final-app"
+      },
+      {
+        "name": "zagros:acceptance",
+        "value": "BLOCKED"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/ai.zagros.thirdparty/wireguard-tunnel-go-only@1.0.20260102",
+      "group": "ai.zagros.thirdparty",
+      "name": "wireguard-tunnel-go-only",
+      "version": "1.0.20260102",
+      "purl": "pkg:maven/ai.zagros.thirdparty/wireguard-tunnel-go-only@1.0.20260102",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "b8a8c73b701b4f6bd6baf99ae4251f8c90973ccf5b1c6201725f59b39c603931"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "b62d9e384476e7a80b59c6582da9806e9bd20c79f8f5df7af8d4e0dd671cd4bc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "name": "Composite; see locked native notices"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "wireguard-tunnel-go-only-1.0.20260102.aar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "wireguard-tunnel-go-only-1.0.20260102.pom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/androidx.annotation/annotation-jvm@1.9.1",
+      "group": "androidx.annotation",
+      "name": "annotation-jvm",
+      "version": "1.9.1",
+      "purl": "pkg:maven/androidx.annotation/annotation-jvm@1.9.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1e343917ebf27ba96fe4dc52b1cad7fd32b738fbc6355bb6cd5b3b305d7212d0"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "03fb659177c8618e47425925c11bc91f384703ea26c265be9b25cd79292b511c"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "annotation-jvm-1.9.1.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "annotation-jvm-1.9.1.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/androidx.annotation/annotation@1.9.1",
+      "group": "androidx.annotation",
+      "name": "annotation",
+      "version": "1.9.1",
+      "purl": "pkg:maven/androidx.annotation/annotation@1.9.1",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "f204b05b728a97561718bc716242e47c629c0085a80ee74fca53d4d638bcbe3f"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "annotation-1.9.1.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/androidx.collection/collection-jvm@1.5.0",
+      "group": "androidx.collection",
+      "name": "collection-jvm",
+      "version": "1.5.0",
+      "purl": "pkg:maven/androidx.collection/collection-jvm@1.5.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "70b35924e4babcdffa37d0e575ee039c56a2d97123342624c48b603233704341"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "dde85e292509231b5471bb091b575099d4f43161eb281e87385038a0161072e6"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "collection-jvm-1.5.0.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "collection-jvm-1.5.0.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/androidx.collection/collection@1.5.0",
+      "group": "androidx.collection",
+      "name": "collection",
+      "version": "1.5.0",
+      "purl": "pkg:maven/androidx.collection/collection@1.5.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bfeb7bd84f3f7dda7bd73b6709d4a1f61f5a37f843728bae08a067e3df9a0aef"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "collection-1.5.0.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.android.tools/desugar_jdk_libs@2.1.5",
+      "group": "com.android.tools",
+      "name": "desugar_jdk_libs",
+      "version": "2.1.5",
+      "purl": "pkg:maven/com.android.tools/desugar_jdk_libs@2.1.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "d8044befae095781b9a80bf1faa92edc30382d75d437476784c1bf991598a976"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "2e195880f15d4545c8d60b2d2cac52201ccf98db7a29db2577ad5826a930fcca"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "GPL-2.0-only WITH Classpath-exception-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "desugar_jdk_libs-2.1.5.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "desugar_jdk_libs-2.1.5.pom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/com.android.tools/desugar_jdk_libs_configuration@2.1.5",
+      "group": "com.android.tools",
+      "name": "desugar_jdk_libs_configuration",
+      "version": "2.1.5",
+      "purl": "pkg:maven/com.android.tools/desugar_jdk_libs_configuration@2.1.5",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7bc9051b3a1ec19806311dcb6aa9b9ba7ef9c22caa6f4810da55bde285fb7770"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "b2099735b93905d6f01b52e136d1364280cd6a72c6e7ea3be274a6c67703f2b4"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "BSD-3-Clause"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "desugar_jdk_libs_configuration-2.1.5.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "desugar_jdk_libs_configuration-2.1.5.pom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10",
+      "group": "org.jetbrains.kotlin",
+      "name": "kotlin-stdlib",
+      "version": "2.2.10",
+      "purl": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "9c67cc79efd6b9215b49d2a4308f5f3433537376c7c88e89bdd6729bd096e61a"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "db78df08283591cb67c8b9d2796109eb52b6088d4dfe102b545f20118249713f"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "kotlin-stdlib-2.2.10.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "kotlin-stdlib-2.2.10.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.10.2",
+      "group": "org.jetbrains.kotlinx",
+      "name": "kotlinx-coroutines-android",
+      "version": "1.10.2",
+      "purl": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.10.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "e713f1f874244115a07571065cffa0f24f5e78300e9720fea16de3af1d75fd41"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "092fe38103eec62e94540ca0cd61039ef8f7d8e46694ec033be1f63f0ea2013d"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "kotlinx-coroutines-android-1.10.2.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "kotlinx-coroutines-android-1.10.2.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.10.2",
+      "group": "org.jetbrains.kotlinx",
+      "name": "kotlinx-coroutines-bom",
+      "version": "1.10.2",
+      "purl": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.10.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "faf0c6538e53ddc0499a63664d8e763c216580b2e18e722ccbdf1b431a6afe26"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "kotlinx-coroutines-bom-1.10.2.pom"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.10.2",
+      "group": "org.jetbrains.kotlinx",
+      "name": "kotlinx-coroutines-core-jvm",
+      "version": "1.10.2",
+      "purl": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.10.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "5ca175b38df331fd64155b35cd8cae1251fa9ee369709b36d42e0a288ccce3fd"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "e9e4a74b4dbfe0f5ebeed88d49f3546c3ec3089419b20e5250403135c2c64c53"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "kotlinx-coroutines-core-jvm-1.10.2.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "kotlinx-coroutines-core-jvm-1.10.2.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.10.2",
+      "group": "org.jetbrains.kotlinx",
+      "name": "kotlinx-coroutines-core",
+      "version": "1.10.2",
+      "purl": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.10.2",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8fe254177e711a7cd18a3c06d8242fce945f41c2cca13dc19b33ae42a5435016"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "kotlinx-coroutines-core-1.10.2.module"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:maven/org.jetbrains/annotations@23.0.0",
+      "group": "org.jetbrains",
+      "name": "annotations",
+      "version": "23.0.0",
+      "purl": "pkg:maven/org.jetbrains/annotations@23.0.0",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "7b0f19724082cbfcbc66e5abea2b9bc92cf08a1ea11e191933ed43801eb3cd05"
+        },
+        {
+          "alg": "SHA-256",
+          "content": "c9490f655132328df2cfbcfdf743f53fc3916d6c1d10437175a6ca6e3a67771c"
+        }
+      ],
+      "licenses": [
+        {
+          "expression": "Apache-2.0"
+        }
+      ],
+      "properties": [
+        {
+          "name": "zagros:artifact",
+          "value": "annotations-23.0.0.jar"
+        },
+        {
+          "name": "zagros:artifact",
+          "value": "annotations-23.0.0.pom"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "pkg:generic/ai.zagros/tunnel-interface@0.2.0?type=android-library",
+      "dependsOn": [
+        "pkg:maven/ai.zagros.thirdparty/wireguard-tunnel-go-only@1.0.20260102",
+        "pkg:maven/androidx.annotation/annotation@1.9.1",
+        "pkg:maven/androidx.collection/collection@1.5.0",
+        "pkg:maven/com.android.tools/desugar_jdk_libs@2.1.5",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10",
+        "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.10.2"
+      ]
+    },
+    {
+      "ref": "pkg:maven/ai.zagros.thirdparty/wireguard-tunnel-go-only@1.0.20260102",
+      "dependsOn": [
+        "pkg:maven/androidx.annotation/annotation@1.9.1",
+        "pkg:maven/androidx.collection/collection@1.5.0"
+      ]
+    },
+    {
+      "ref": "pkg:maven/androidx.annotation/annotation-jvm@1.9.1",
+      "dependsOn": [
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10"
+      ]
+    },
+    {
+      "ref": "pkg:maven/androidx.annotation/annotation@1.9.1",
+      "dependsOn": [
+        "pkg:maven/androidx.annotation/annotation-jvm@1.9.1"
+      ]
+    },
+    {
+      "ref": "pkg:maven/androidx.collection/collection-jvm@1.5.0",
+      "dependsOn": [
+        "pkg:maven/androidx.annotation/annotation@1.9.1",
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10"
+      ]
+    },
+    {
+      "ref": "pkg:maven/androidx.collection/collection@1.5.0",
+      "dependsOn": [
+        "pkg:maven/androidx.collection/collection-jvm@1.5.0"
+      ]
+    },
+    {
+      "ref": "pkg:maven/com.android.tools/desugar_jdk_libs@2.1.5",
+      "dependsOn": [
+        "pkg:maven/com.android.tools/desugar_jdk_libs_configuration@2.1.5"
+      ]
+    },
+    {
+      "ref": "pkg:maven/com.android.tools/desugar_jdk_libs_configuration@2.1.5",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10",
+      "dependsOn": [
+        "pkg:maven/org.jetbrains/annotations@23.0.0"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-android@1.10.2",
+      "dependsOn": [
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10",
+        "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.10.2",
+        "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.10.2"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.10.2",
+      "dependsOn": []
+    },
+    {
+      "ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.10.2",
+      "dependsOn": [
+        "pkg:maven/org.jetbrains.kotlin/kotlin-stdlib@2.2.10",
+        "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-bom@1.10.2",
+        "pkg:maven/org.jetbrains/annotations@23.0.0"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core@1.10.2",
+      "dependsOn": [
+        "pkg:maven/org.jetbrains.kotlinx/kotlinx-coroutines-core-jvm@1.10.2"
+      ]
+    },
+    {
+      "ref": "pkg:maven/org.jetbrains/annotations@23.0.0",
+      "dependsOn": []
+    }
+  ]
+}

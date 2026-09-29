@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "upstream": "wireguard-android 1.0.20260102 tunnel/tools/libwg-go",
+  "go_mod_blob": "f6de8e1fbca34ef43d55ff02f359b172dd085d36",
+  "go_sum_blob": "416d266c4816b2cccd3b9bf5823c3f189fa938c7",
+  "modules": [
+    {
+      "module": "github.com/google/btree",
+      "version": "v1.1.2",
+      "go_sum": "h1:xf4v41cLI2Z6FxbKm+8Bu+m8ifhj15JuZ9sa0jZCMUU=",
+      "go_mod_sum": "h1:qOPhT0dTNdNzV6Z/lhRX0YXUafgPLFUh+gZMl761Gm4="
+    },
+    {
+      "module": "golang.org/x/crypto",
+      "version": "v0.38.0",
+      "go_sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+      "go_mod_sum": "h1:MvrbAqul58NNYPKnOra203SB9vpuZW0e+RRZV+Ggqjw="
+    },
+    {
+      "module": "golang.org/x/net",
+      "version": "v0.40.0",
+      "go_sum": "h1:79Xs7wF06Gbdcg4kdCCIQArK11Z1hr5POQ6+fIYHNuY=",
+      "go_mod_sum": "h1:y0hY0exeL2Pku80/zKK7tpntoX23cqL3Oa6njdgRtds="
+    },
+    {
+      "module": "golang.org/x/sys",
+      "version": "v0.33.0",
+      "go_sum": "h1:q3i8TbbEz+JRD9ywIRlyRAQbM0qF7hu24q3teo2hbuw=",
+      "go_mod_sum": "h1:BJP2sWEmIv4KK5OTEluFJCKSidICx8ciO85XgH3Ak8k="
+    },
+    {
+      "module": "golang.org/x/time",
+      "version": "v0.7.0",
+      "go_sum": "h1:ntUhktv3OPE6TgYxXWv9vKvUSJyIFJlyohwbkEwPrKQ=",
+      "go_mod_sum": "h1:3BpzKBy/shNhVucY/MWOyx10tF3SFh9QdLuxbVysPQM="
+    },
+    {
+      "module": "golang.zx2c4.com/wintun",
+      "version": "v0.0.0-20230126152724-0fa3db229ce2",
+      "go_sum": "h1:B82qJJgjvYKsXS9jeunTOisW56dUokqW/FOteYJJ/yg=",
+      "go_mod_sum": "h1:deeaetjYA+DHMHg+sMSMI58GrEteJUUzzw7en6TJQcI="
+    },
+    {
+      "module": "golang.zx2c4.com/wireguard",
+      "version": "v0.0.0-20250521234502-f333402bd9cb",
+      "go_sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+      "go_mod_sum": "h1:rpwXGsirqLqN2L0JDJQlwOboGHmptD5ZD6T2VmcqhTw="
+    },
+    {
+      "module": "gvisor.dev/gvisor",
+      "version": "v0.0.0-20250503011706-39ed1f5ac29c",
+      "go_sum": "h1:m/r7OM+Y2Ty1sgBQ7Qb27VgIMBW8ZZhT4gLnUyDIhzI=",
+      "go_mod_sum": "h1:3r5CMtNQMKIvBlrmM9xWUNamjKBYPOWyXOjmg5Kts3g="
+    }
+  ],
+  "license_review_status": "PARTIAL: all eight module zips match their Go h1 sums; the exact Android source/build/toolchain evidence and notices are captured. Four-ABI Android-tagged reachability found only four external modules, all locked with notice evidence, and all four rebuilt/stripped libwg-go ELFs were byte-identical to the packaged members. Final APK/AAB scope, desugar corresponding source, trademark, and distribution legal approval remain open.",
+  "source_license_lock": "third_party/wireguard-go/source-license-lock.json",
+  "android_build_source_lock": "third_party/wireguard-go/android-build-source/lock.json",
+  "go_toolchain_notice_lock": "third_party/wireguard-go/go-toolchain-licenses/lock.json",
+  "android_ndk_notice_lock": "third_party/wireguard-go/android-ndk-r27-notices/lock.json",
+  "android_reachable_package_report": "third_party/wireguard-go/android-reachable-packages.json",
+  "native_reproduction_report": "third_party/wireguard-go/native-reproduction.json"
+}

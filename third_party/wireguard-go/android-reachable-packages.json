@@ -1,0 +1,1653 @@
+{
+  "schema_version": 1,
+  "command": "go list -deps -tags linux -json .",
+  "go_version": "go1.24.3 with locked Android runtime patch",
+  "target": "android API 24",
+  "abis": [
+    "arm64-v8a",
+    "armeabi-v7a",
+    "x86",
+    "x86_64"
+  ],
+  "packages": [
+    {
+      "import_path": "bufio",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "bytes",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "cmp",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "container/list",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "context",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/cipher",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/ecdh",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/hmac",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/boring",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/boring/sig",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/entropy",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/aes",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/aes/gcm",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/alias",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/check",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/drbg",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/ecdh",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/edwards25519/field",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/hmac",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/nistec",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/nistec/fiat",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/sha256",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/sha3",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/sha512",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140/subtle",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140deps/byteorder",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140deps/cpu",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140deps/godebug",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140hash",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/fips140only",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/impl",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/randutil",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/internal/sysrand",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/rand",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/sha3",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "crypto/subtle",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "encoding/binary",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "encoding/hex",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "errors",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "fmt",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/crypto/blake2s",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/crypto",
+        "version": "v0.38.0",
+        "sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/crypto/chacha20",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/crypto",
+        "version": "v0.38.0",
+        "sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/crypto/chacha20poly1305",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/crypto",
+        "version": "v0.38.0",
+        "sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/crypto/curve25519",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/crypto",
+        "version": "v0.38.0",
+        "sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/crypto/internal/alias",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/crypto",
+        "version": "v0.38.0",
+        "sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/crypto/internal/poly1305",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/crypto",
+        "version": "v0.38.0",
+        "sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/crypto/poly1305",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/crypto",
+        "version": "v0.38.0",
+        "sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/net/bpf",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/net",
+        "version": "v0.40.0",
+        "sum": "h1:79Xs7wF06Gbdcg4kdCCIQArK11Z1hr5POQ6+fIYHNuY=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/net/internal/iana",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/net",
+        "version": "v0.40.0",
+        "sum": "h1:79Xs7wF06Gbdcg4kdCCIQArK11Z1hr5POQ6+fIYHNuY=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/net/internal/socket",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/net",
+        "version": "v0.40.0",
+        "sum": "h1:79Xs7wF06Gbdcg4kdCCIQArK11Z1hr5POQ6+fIYHNuY=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/net/ipv4",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/net",
+        "version": "v0.40.0",
+        "sum": "h1:79Xs7wF06Gbdcg4kdCCIQArK11Z1hr5POQ6+fIYHNuY=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/net/ipv6",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/net",
+        "version": "v0.40.0",
+        "sum": "h1:79Xs7wF06Gbdcg4kdCCIQArK11Z1hr5POQ6+fIYHNuY=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/sys/cpu",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/sys",
+        "version": "v0.33.0",
+        "sum": "h1:q3i8TbbEz+JRD9ywIRlyRAQbM0qF7hu24q3teo2hbuw=",
+        "main": false
+      },
+      "abis": [
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.org/x/sys/unix",
+      "standard": false,
+      "module": {
+        "path": "golang.org/x/sys",
+        "version": "v0.33.0",
+        "sum": "h1:q3i8TbbEz+JRD9ywIRlyRAQbM0qF7hu24q3teo2hbuw=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/android",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard/android",
+        "main": true
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/conn",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/device",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/ipc",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/ratelimiter",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/replay",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/rwcancel",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/tai64n",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "golang.zx2c4.com/wireguard/tun",
+      "standard": false,
+      "module": {
+        "path": "golang.zx2c4.com/wireguard",
+        "version": "v0.0.0-20250521234502-f333402bd9cb",
+        "sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+        "main": false
+      },
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "hash",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/abi",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/asan",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/bisect",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/bytealg",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/byteorder",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/chacha8rand",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/coverage/rtcov",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/cpu",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/filepathlite",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/fmtsort",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/goarch",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/godebug",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/godebugs",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/goexperiment",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/goos",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/itoa",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/msan",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/nettrace",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/oserror",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/poll",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/profilerecord",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/race",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/reflectlite",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/runtime/atomic",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/runtime/exithook",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/runtime/maps",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/runtime/math",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/runtime/sys",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/runtime/syscall",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/singleflight",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/stringslite",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/sync",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/syscall/execenv",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/syscall/unix",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/testlog",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "internal/unsafeheader",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "io",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "io/fs",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "iter",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "log",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "log/internal",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "math",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "math/big",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "math/bits",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "math/rand",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "math/rand/v2",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "net",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "net/netip",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "os",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "os/signal",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "path",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "reflect",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "runtime",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "runtime/cgo",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "runtime/debug",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "slices",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "sort",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "strconv",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "strings",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "sync",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "sync/atomic",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "syscall",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "time",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "unicode",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "unicode/utf8",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "unique",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "unsafe",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "vendor/golang.org/x/net/dns/dnsmessage",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    },
+    {
+      "import_path": "weak",
+      "standard": true,
+      "module": null,
+      "abis": [
+        "arm64-v8a",
+        "armeabi-v7a",
+        "x86",
+        "x86_64"
+      ]
+    }
+  ],
+  "reachable_modules": [
+    {
+      "module": "golang.org/x/crypto",
+      "version": "v0.38.0",
+      "go_sum": "h1:jt+WWG8IZlBnVbomuhg2Mdq0+BBQaHbtqHEFEigjUV8=",
+      "license_notice_paths": [
+        "third_party/wireguard-go/module-licenses/golang.org_x_crypto_v0.38.0/00-golang.org_x_crypto@v0.38.0_LICENSE",
+        "third_party/wireguard-go/module-licenses/golang.org_x_crypto_v0.38.0/01-golang.org_x_crypto@v0.38.0_PATENTS"
+      ]
+    },
+    {
+      "module": "golang.org/x/net",
+      "version": "v0.40.0",
+      "go_sum": "h1:79Xs7wF06Gbdcg4kdCCIQArK11Z1hr5POQ6+fIYHNuY=",
+      "license_notice_paths": [
+        "third_party/wireguard-go/module-licenses/golang.org_x_net_v0.40.0/00-golang.org_x_net@v0.40.0_LICENSE",
+        "third_party/wireguard-go/module-licenses/golang.org_x_net_v0.40.0/01-golang.org_x_net@v0.40.0_PATENTS"
+      ]
+    },
+    {
+      "module": "golang.org/x/sys",
+      "version": "v0.33.0",
+      "go_sum": "h1:q3i8TbbEz+JRD9ywIRlyRAQbM0qF7hu24q3teo2hbuw=",
+      "license_notice_paths": [
+        "third_party/wireguard-go/module-licenses/golang.org_x_sys_v0.33.0/00-golang.org_x_sys@v0.33.0_LICENSE",
+        "third_party/wireguard-go/module-licenses/golang.org_x_sys_v0.33.0/01-golang.org_x_sys@v0.33.0_PATENTS"
+      ]
+    },
+    {
+      "module": "golang.zx2c4.com/wireguard",
+      "version": "v0.0.0-20250521234502-f333402bd9cb",
+      "go_sum": "h1:whnFRlWMcXI9d+ZbWg+4sHnLp52d5yiIPUxMBSt4X9A=",
+      "license_notice_paths": [
+        "third_party/wireguard-go/module-licenses/golang.zx2c4.com_wireguard_v0.0.0-20250521234502-f333402bd9cb/00-golang.zx2c4.com_wireguard@v0.0.0-20250521234502-f333402bd9cb_LICENSE"
+      ]
+    }
+  ],
+  "unreachable_locked_modules": [
+    "github.com/google/btree",
+    "golang.org/x/time",
+    "golang.zx2c4.com/wintun",
+    "gvisor.dev/gvisor"
+  ],
+  "analysis_status": "PASS: all four Android ABI/tag package graphs were generated with the pinned patched Go toolchain; every reachable external module matches the locked version, h1 sum, and captured notice evidence.",
+  "distribution_status": "BLOCKED: package reachability does not replace reproducible binary, final APK/AAB, signing, or routed-traffic acceptance."
+}

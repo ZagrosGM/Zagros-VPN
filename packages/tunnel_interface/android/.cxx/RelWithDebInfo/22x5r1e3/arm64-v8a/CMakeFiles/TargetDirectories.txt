@@ -1,0 +1,3 @@
+/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/.cxx/RelWithDebInfo/22x5r1e3/arm64-v8a/CMakeFiles/hev-socks5-tunnel.dir
+/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/.cxx/RelWithDebInfo/22x5r1e3/arm64-v8a/CMakeFiles/edit_cache.dir
+/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/.cxx/RelWithDebInfo/22x5r1e3/arm64-v8a/CMakeFiles/rebuild_cache.dir

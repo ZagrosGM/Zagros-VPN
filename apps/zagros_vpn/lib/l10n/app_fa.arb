@@ -1,0 +1,268 @@
+{
+  "@@locale": "fa",
+  "home": "خانه",
+  "configs": "کانفیگ‌ها",
+  "logs": "لاگ‌ها",
+  "overview": "نمای کلی",
+  "library": "کتابخانه",
+  "account": "حساب کاربری",
+  "settings": "تنظیمات",
+  "officialProduct": "نسخه رسمی",
+  "whiteLabelProduct": "نسخه اپلیکیشن",
+  "foundationTitle": "خدمات امن کلاینت",
+  "foundationBody": "سیاست محصول، ذخیره‌سازی محافظت‌شده سیستم‌عامل، بومی‌سازی و هماهنگی تونل بومی از یک درخت کد مشترک ترکیب شده‌اند.",
+  "libraryBody": "اشتراک‌های رسمی و پیکربندی‌های دستی در این بخش و تحت سیاست SDK مدیریت می‌شوند.",
+  "accountBody": "ثبت اپلیکیشن و دسترسی احراز هویت‌شده فقط در حالت White-label در دسترس است.",
+  "settingsBody": "اطلاعات امنیت، قابلیت‌های پلتفرم و متن‌باز را بدون نمایش پیکربندی زمان اجرا بررسی کنید.",
+  "openSourceLicenses": "مجوزهای متن‌باز",
+  "openSourceLicensesBody": "اعلامیه‌ها و مجوزهای Flutter و اجزای تونل بومی را بررسی کنید.",
+  "configurationError": "پیکربندی این بیلد معتبر نیست.",
+  "modeLabel": "حالت محصول",
+  "secureStorageLabel": "ذخیره‌سازی امن",
+  "secureStorageReady": "آداپتور محافظت‌شده سیستم‌عامل پیکربندی شده است",
+  "nativeTunnelLabel": "تونل بومی",
+  "nativeTunnelPending": "دسترسی پروتکل‌ها از آداپتور بومی نصب‌شده روی پلتفرم شناسایی می‌شود.",
+  "libraryUnavailableTitle": "کتابخانه رسمی در دسترس نیست",
+  "libraryUnavailableBody": "سیاست این محصول مخزن پروفایل رسمی را ارائه نمی‌کند.",
+  "libraryLoadFailed": "کتابخانه محافظت‌شده باز نشد",
+  "retry": "تلاش دوباره",
+  "libraryEmptyTitle": "هنوز پروفایلی وجود ندارد",
+  "libraryEmptyBody": "یک اشتراک اضافه کنید یا پیکربندی دستی پشتیبانی‌شده را وارد کنید. اطلاعات محرمانه فقط در ذخیره‌سازی محافظت‌شده سیستم‌عامل نگهداری می‌شوند.",
+  "libraryTitle": "پروفایل‌های VPN",
+  "libraryDescription": "اشتراک‌های رسمی و پیکربندی‌های دستی پردازش‌شده توسط SDK زاگرس را مدیریت کنید.",
+  "tunnelUnavailableTitle": "اتصال در دسترس نیست",
+  "tunnelUnavailableBody": "آداپتور بومی نصب‌شده از این پیکربندی در پلتفرم فعلی پشتیبانی نمی‌کند.",
+  "addSubscription": "افزودن اشتراک",
+  "addManualConfig": "افزودن پیکربندی دستی",
+  "subscriptionRefreshed": "اشتراک به‌روزرسانی شد.",
+  "deleteProfileTitle": "پروفایل حذف شود؟",
+  "deleteProfileBody": "«{name}» و پیکربندی‌های محافظت‌شده آن حذف شوند؟",
+  "cancel": "انصراف",
+  "delete": "حذف",
+  "deleted": "پروفایل حذف شد.",
+  "edit": "ویرایش",
+  "refresh": "به‌روزرسانی",
+  "saved": "پروفایل ذخیره شد.",
+  "subscriptionProfile": "اشتراک",
+  "manualProfile": "پیکربندی دستی",
+  "profileConfigCount": "{count, plural, =0{بدون پیکربندی} =1{۱ پیکربندی} other{{count} پیکربندی}}",
+  "subscriptionHost": "منبع: {host}",
+  "protocolWarningPresent": "هشدار پروتکل",
+  "configFileBadge": "فایل",
+  "subscriptionFilesUnavailable": "{count, plural, =1{۱ فایل دانلودی در دسترس نیست} other{{count} فایل دانلودی در دسترس نیست}}",
+  "profileName": "نام پروفایل",
+  "subscriptionUrl": "نشانی اشتراک",
+  "rawConfiguration": "پیکربندی خام",
+  "subscriptionUrlHelp": "استفاده از HTTPS الزامی است. HTTP فقط برای سرور توسعه loopback پذیرفته می‌شود.",
+  "manualConfigHelp": "فهرست لینک، WireGuard، OpenVPN، Clash یا پیکربندی sing-box را وارد کنید.",
+  "editProfile": "ویرایش پروفایل",
+  "save": "ذخیره",
+  "close": "بستن",
+  "subscriptionUsage": "مصرف‌شده {used} از {total}",
+  "unlimited": "نامحدود",
+  "viewRawConfig": "نمایش خام",
+  "connect": "اتصال",
+  "disconnect": "قطع اتصال",
+  "rawConfigTitle": "پیکربندی خام",
+  "rawConfigSecretWarning": "این پیکربندی شامل اطلاعات ورود است. آن را با افراد غیرقابل‌اعتماد به اشتراک نگذارید.",
+  "copy": "کپی",
+  "export": "خروجی",
+  "copied": "پیکربندی کپی شد.",
+  "rawActionFailed": "عملیات محافظت‌شده پیکربندی خام ناموفق بود.",
+  "exportRawTitle": "پیکربندی به‌صورت متن ساده صادر شود؟",
+  "exportRawWarning": "خروجی گرفتن، اطلاعات ورود را در یک فایل متن ساده در محل قابل‌دسترسی کاربر می‌نویسد. پس از استفاده از فایل محافظت کنید یا آن را حذف کنید.",
+  "exported": "پیکربندی صادر شد.",
+  "legacyProtocolWarning": "PPTP قدیمی و ناامن است و در سامانه‌های جدید iOS و Android در دسترس نیست.",
+  "platformProtocolWarning": "پشتیبانی L2TP به سیستم‌عامل وابسته است و در سامانه‌های جدید iOS و Android محدودیت دارد.",
+  "genericProtocolWarning": "پیش از اتصال، هشدار این پروتکل را بررسی کنید.",
+  "libraryValidationFailed": "نام پروفایل، نشانی یا پیکربندی معتبر نیست.",
+  "libraryAccessDenied": "سرور یا سیاست محصول این عملیات را رد کرد.",
+  "libraryNetworkFailed": "دسترسی به اشتراک ممکن نشد. پروفایل قبلی حفظ شد.",
+  "libraryStorageFailed": "ذخیره‌سازی محافظت‌شده سیستم‌عامل در دسترس نیست. از جایگزین متن ساده استفاده نشد.",
+  "libraryMalformedFailed": "پیکربندی یا فهرست محافظت‌شده نامعتبر است.",
+  "libraryUnknownFailed": "عملیات تکمیل نشد.",
+  "protocolUnavailableTitle": "پروتکل در دسترس نیست",
+  "protocolUnavailableBody": "آداپتور تونل نصب‌شده از {protocol} پشتیبانی نمی‌کند.",
+  "connectionRequestedTitle": "درخواست اتصال ارسال شد",
+  "connectionRequestedBody": "آداپتور بومی درخواست را پذیرفت، اما هنوز وضعیت متصل را تأیید نکرده است.",
+  "connectedTitle": "متصل شد",
+  "connectedBody": "آداپتور بومی اتصال تونل را تأیید کرد.",
+  "connectionFailedTitle": "اتصال ناموفق بود",
+  "connectionFailedBody": "آداپتور تونل بومی درخواست را رد کرد.",
+  "ok": "تأیید",
+  "enrollTitle": "ثبت این دستگاه",
+  "loginTitle": "ورود",
+  "usernameLabel": "نام کاربری",
+  "passwordLabel": "گذرواژه",
+  "activationCodeLabel": "کد فعال‌سازی",
+  "enrollAction": "ثبت دستگاه",
+  "loginAction": "ورود",
+  "logoutAction": "خروج",
+  "reEnrollAction": "استفاده از کد فعال‌سازی دیگر",
+  "configsTitle": "اتصال‌ها",
+  "usageTitle": "مصرف",
+  "available": "در دسترس",
+  "unavailable": "در دسترس نیست",
+  "activeConnectionsCount": "اتصال‌های فعال: {count}",
+  "signedInAs": "واردشده به‌عنوان {username}",
+  "noConfigsTitle": "اتصالی در دسترس نیست",
+  "noConfigsBody": "سرور برای این حساب هیچ پیکربندی قابل اتصالی برنگرداند.",
+  "serviceUnavailableTitle": "حساب در دسترس نیست",
+  "serviceUnavailableBody": "سرویس اپلیکیشن راه‌اندازی نشد. ممکن است حافظه امن سیستم‌عامل در دسترس نباشد.",
+  "alreadyConnectedTitle": "در حال حاضر متصل است",
+  "alreadyConnectedBody": "پیش از شروع اتصال دیگر، اتصال فعال را قطع کنید.",
+  "errorEnrollInput": "نام کاربری، گذرواژه و کد فعال‌سازی را وارد کنید.",
+  "errorLoginInput": "نام کاربری و گذرواژه را وارد کنید.",
+  "errorInvalidCredentials": "نام کاربری یا گذرواژه نادرست است.",
+  "errorTicketInvalid": "کد فعال‌سازی نامعتبر است یا منقضی شده است.",
+  "errorAccessDenied": "این حساب یا دستگاه اجازه اتصال ندارد.",
+  "errorSessionExpired": "نشست منقضی شد. دوباره وارد شوید.",
+  "errorEnrollmentRequired": "این دستگاه دیگر ثبت نشده است. یک کد فعال‌سازی جدید وارد کنید.",
+  "errorNetwork": "سرور در دسترس نیست. اتصال را بررسی کنید و دوباره تلاش کنید.",
+  "errorRateLimited": "تلاش‌ها بیش از حد مجاز است. کمی صبر کنید و دوباره تلاش کنید.",
+  "errorStorage": "حافظه امن سیستم‌عامل در دسترس نیست. از هیچ جایگزین متن ساده استفاده نشد.",
+  "errorUnknown": "عملیات تکمیل نشد.",
+  "speedDownload": "دانلود",
+  "speedUpload": "آپلود",
+  "statusDisconnected": "قطع شده",
+  "statusConnecting": "در حال اتصال...",
+  "statusConnected": "متصل",
+  "statusDisconnecting": "در حال قطع اتصال...",
+  "statusFailed": "خطا در اتصال",
+  "noActiveConfig": "هیچ کانفیگی انتخاب نشده",
+  "selectConfigToConnect": "یک کانفیگ برای اتصال انتخاب کنید",
+  "comingSoon": "به‌زودی",
+  "unsupportedProtocol": "پشتیبانی‌نشده",
+  "protocolNotImplemented": "موتور این پروتکل در این نسخه ارائه نشده و در به‌روزرسانی‌های آینده فعال خواهد شد.",
+  "clearLogs": "پاکسازی لاگ‌ها",
+  "copyLogs": "کپی لاگ‌ها",
+  "logsCopied": "لاگ‌ها در حافظه کپی شدند.",
+  "noLogsYet": "هنوز لاگی ثبت نشده است.",
+  "language": "زبان",
+  "persian": "فارسی",
+  "english": "English",
+  "dnsSettings": "تنظیمات DNS",
+  "dnsSystem": "پیش‌فرض سیستم",
+  "dnsCloudflare": "کلودفلر (1.1.1.1)",
+  "dnsGoogle": "گوگل (8.8.8.8)",
+  "dnsCustom": "DNS سفارشی",
+  "customDnsAddress": "سرور DNS سفارشی",
+  "fakeDnsTitle": "DNS فیک",
+  "fakeDnsSubtitle": "دامنه‌ها از یک استخر آدرس مصنوعی جواب می‌گیرند (اتصال سریع‌تر)؛ آدرس واقعی داخل تونل بازسازی می‌شود.",
+  "perAppTitle": "پروکسی بر اساس برنامه",
+  "perAppSubtitle": "انتخاب کنید کدام برنامه‌ها از تونل VPN عبور کنند.",
+  "perAppAllowMode": "فقط برنامه‌های انتخاب‌شده از VPN عبور کنند",
+  "perAppDenyMode": "برنامه‌های انتخاب‌شده از VPN عبور نکنند",
+  "perAppSelectApps": "انتخاب برنامه‌ها",
+  "perAppSearch": "جست‌وجوی برنامه‌ها",
+  "perAppSelectedCount": "{count} برنامه انتخاب شد",
+  "@perAppSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "perAppNoApps": "برنامه‌ای یافت نشد",
+  "perAppClearAll": "پاک‌کردن",
+  "perAppAppliesNextConnect": "در اتصال بعدی اعمال می‌شود.",
+  "ping": "پینگ",
+  "ms": "میلی‌ثانیه",
+  "accountInfo": "اطلاعات حساب",
+  "tapToConnect": "برای اتصال لمس کنید",
+  "tapToDisconnect": "برای قطع اتصال لمس کنید",
+  "activeConfigLabel": "سرور فعال",
+  "subscriptionsSection": "اشتراک‌ها",
+  "localConfigsSection": "Local (پیکربندی‌های محلی)",
+  "subscriptionRemaining": "{days, plural, =0{انقضا امروز} =1{۱ روز مانده} other{{days} روز مانده}}",
+  "@activeConnectionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@signedInAs": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteProfileBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@profileConfigCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscriptionFilesUnavailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscriptionHost": {
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscriptionUsage": {
+    "placeholders": {
+      "used": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@protocolUnavailableBody": {
+    "placeholders": {
+      "protocol": {
+        "type": "String"
+      }
+    }
+  },
+  "subscriptionExpires": "انقضا: {date}",
+  "subscriptionUpdateInterval": "فاصله پیشنهادی به‌روزرسانی: {hours, plural, =1{۱ ساعت} other{{hours} ساعت}}",
+  "subscriptionLastRefreshed": "آخرین به‌روزرسانی: {date}",
+  "@subscriptionExpires": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscriptionUpdateInterval": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscriptionLastRefreshed": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscriptionRemaining": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

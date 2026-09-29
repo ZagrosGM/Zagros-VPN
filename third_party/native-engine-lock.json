@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-09-08",
+  "distribution_status": "blocked_pending_host_builds_signing_legal_and_routed_traffic_validation",
+  "engines": [
+    {
+      "platform": "android",
+      "protocol": "wireguard",
+      "component": "com.wireguard.android:tunnel",
+      "version": "1.0.20260102",
+      "upstream_tag_object": "3831cab2da844319291459308a6e535d36dde4b3",
+      "upstream_commit": "09b75c2bd37f749e2a8c85876394854113c74be7",
+      "artifact_url": "https://repo1.maven.org/maven2/com/wireguard/android/tunnel/1.0.20260102/tunnel-1.0.20260102.aar",
+      "upstream_artifact_size": 5830762,
+      "upstream_artifact_sha256": "2b9c16db026496123e4db695d26d03d1958a201096c7c4c89b21077dc70f3119",
+      "vendored_coordinate": "ai.zagros.thirdparty:wireguard-tunnel-go-only:1.0.20260102",
+      "vendored_path": "third_party/maven/ai/zagros/thirdparty/wireguard-tunnel-go-only/1.0.20260102/wireguard-tunnel-go-only-1.0.20260102.aar",
+      "vendored_artifact_size": 13421589,
+      "vendored_artifact_sha256": "b8a8c73b701b4f6bd6baf99ae4251f8c90973ccf5b1c6201725f59b39c603931",
+      "vendored_pom_path": "third_party/maven/ai/zagros/thirdparty/wireguard-tunnel-go-only/1.0.20260102/wireguard-tunnel-go-only-1.0.20260102.pom",
+      "vendored_pom_sha256": "b62d9e384476e7a80b59c6582da9806e9bd20c79f8f5df7af8d4e0dd671cd4bc",
+      "derivation_script": "tool/prepare_wireguard_android.py",
+      "module_metadata_sha256": "7d026b7e4dd40665347eb682a7651751cdb0b75d2d6b235644384c7ad377e567",
+      "pom_sha256": "29bd0e7f2ddc1f0cce137fe17b8e5f1a16e4678cdad23acf67152581b3ae965f",
+      "sources_jar_sha256": "914dfe55d9bcb2a251048086555a31d7707ff78b6a2093304b2439f63c0dc012",
+      "embedded_native_manifest": "third_party/wireguard-android/embedded-native-sha256.json",
+      "wireguard_go_revision": "f333402bd9cb",
+      "wireguard_go_license": "MIT",
+      "wireguard_go_license_path": "third_party/wireguard-go/LICENSE-MIT",
+      "wireguard_go_license_sha256": "91276db973f25602d1aa43491f59cbc84cb88e6f151e1d0cc82a755563ce0195",
+      "wireguard_go_module_lock": "third_party/wireguard-go/module-lock.json",
+      "android_declared_runtime_dependencies": [
+        "androidx.annotation:annotation:1.9.1",
+        "androidx.collection:collection:1.5.0",
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2",
+        "com.android.tools:desugar_jdk_libs:2.1.5"
+      ],
+      "declared_license": "Apache-2.0",
+      "embedded_native_review": {
+        "libwg-go.so": "Retained Go userspace backend. All module/source/toolchain notices are locked; four-ABI Android-tagged reachability identified only the four expected external modules; and all four rebuilt/stripped ELFs were byte-identical to the packaged members."
+      },
+      "excluded_upstream_native_review": {
+        "libwg.so": "Built from wireguard-tools submodule e2ecaaa under GPL-2.0; removed from the reproducibly derived AAR and not vendored or packaged by Zagros.",
+        "libwg-quick.so": "Built from wireguard-tools submodule e2ecaaa under GPL-2.0; removed from the reproducibly derived AAR and not vendored or packaged by Zagros."
+      },
+      "distribution_gate": "BLOCKED: the upstream AAR is reproducibly stripped to GoBackend-only; all four retained Go ELFs have been independently rebuilt byte-for-byte; the standalone Android runtime graph has hashes, licenses, and a CycloneDX SBOM; and the standalone Android adapter assembles against the pinned inputs. Final Flutter APK/AAB dependency/package inspection, desugar corresponding-source proof, signing, trademark/legal approval, device tunnel, routed traffic, accounting, teardown, and crash-residue evidence remain required.",
+      "tag_source_archive_url": "https://github.com/WireGuard/wireguard-android/archive/refs/tags/1.0.20260102.tar.gz",
+      "tag_source_archive_path": "third_party/wireguard-android/wireguard-android-1.0.20260102-source.tar.gz",
+      "tag_source_archive_size": 424849,
+      "tag_source_archive_sha256": "0d12c37fabf73fe88983e779c077aaad55ff62ea5749bad89ec1a27c60d7ade3",
+      "github_tag_signature_status": {
+        "verified": true,
+        "reason": "valid",
+        "tag_object": "3831cab2da844319291459308a6e535d36dde4b3",
+        "target_commit": "09b75c2bd37f749e2a8c85876394854113c74be7"
+      },
+      "elf_needed_review": {
+        "all_abis": true,
+        "needed": [
+          "libc.so",
+          "libdl.so",
+          "liblog.so"
+        ],
+        "verifier": "tool/inspect_wireguard_elf.py"
+      },
+      "wireguard_go_source_license_lock": "third_party/wireguard-go/source-license-lock.json",
+      "wireguard_android_build_source_lock": "third_party/wireguard-go/android-build-source/lock.json",
+      "wireguard_go_toolchain_notice_lock": "third_party/wireguard-go/go-toolchain-licenses/lock.json",
+      "wireguard_android_ndk_notice_lock": "third_party/wireguard-go/android-ndk-r27-notices/lock.json",
+      "retained_elf_toolchain_identity": {
+        "all_abis": true,
+        "go_version": "go1.24.3",
+        "android_ndk_version": "27.0.12077973",
+        "android_api": 24,
+        "clang_version": "18.0.1",
+        "clang_build": "12027248",
+        "llvm_revision": "d8003a456d14a3deb8054cdaa529ffbf02d9b262"
+      },
+      "android_runtime_lock": "third_party/android-runtime/lock.json",
+      "android_runtime_sbom": "third_party/android-runtime/android-runtime-sbom.cdx.json",
+      "gradle_dependency_verification": "packages/tunnel_interface/android/gradle/verification-metadata.xml",
+      "wireguard_go_reachable_package_report": "third_party/wireguard-go/android-reachable-packages.json",
+      "wireguard_go_native_reproduction_report": "third_party/wireguard-go/native-reproduction.json",
+      "android_standalone_build_evidence": "third_party/android-standalone-build-evidence.json"
+    },
+    {
+      "platform": "ios_macos",
+      "protocol": "ikev2",
+      "component": "Apple NetworkExtension NEVPNManager",
+      "version": "platform_provided",
+      "artifact_sha256": null,
+      "declared_license": "Apple platform SDK/runtime terms",
+      "distribution_gate": "BLOCKED: Apple Developer Personal VPN entitlement, provisioning, signing, App Store policy review, and physical-device routed-traffic evidence are required. NEVPNManager stores a transient structured profile in system preferences while active; White-label mode now disables it in Dart and native Swift until legal/security approval of this OS-managed persistence is explicit."
+    },
+    {
+      "platform": "windows",
+      "protocol": "ikev2",
+      "component": "Windows Remote Access Service (RAS)",
+      "version": "platform_provided",
+      "artifact_sha256": null,
+      "declared_license": "Microsoft Windows SDK/runtime terms",
+      "distribution_gate": "BLOCKED: Windows-host compile, Authenticode signing, RAS policy review, final phone-book residue inspection, authenticated routed traffic, accounting, and teardown evidence are required. The transient phone-book entry contains structured server metadata while active; White-label mode disables it in Dart and native C++ pending explicit approval."
+    },
+    {
+      "platform": "linux",
+      "protocol": "wireguard",
+      "component": "NetworkManager D-Bus API plus installed wg status tool",
+      "version": "runtime_discovered_not_bundled",
+      "artifact_sha256": null,
+      "declared_license": "System-provided components; no binaries are bundled by this plugin source",
+      "distribution_gate": "BLOCKED: distribution-specific NetworkManager/wireguard-tools versions and licenses, PolicyKit behavior, Flutter Linux plugin build, volatile-profile residue, authenticated routed traffic, accounting, and teardown must be validated on target hosts."
+    }
+  ],
+  "generator": {
+    "component": "Pigeon",
+    "version": "28.0.0",
+    "hardening_script": "tool/harden_pigeon.py",
+    "drift_verifier": "tool/verify_pigeon_generated.sh"
+  },
+  "unresolved_dependency_gate": "The standalone Android adapter runtime/desugaring graph was resolved and checksum locked, and the standalone Android adapter assembled with Gradle 9.3.1/AGP 9.1.0. This is not the final Flutter application graph or build. Apple, Windows, Linux target-runtime inventories and final package inspection remain blocked on capable hosts."
+}

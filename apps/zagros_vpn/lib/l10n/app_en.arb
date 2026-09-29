@@ -1,0 +1,268 @@
+{
+  "@@locale": "en",
+  "home": "Home",
+  "configs": "Configs",
+  "logs": "Logs",
+  "overview": "Overview",
+  "library": "Library",
+  "account": "Account",
+  "settings": "Settings",
+  "officialProduct": "Official client",
+  "whiteLabelProduct": "Application client",
+  "foundationTitle": "Secure client services",
+  "foundationBody": "Product policy, OS-protected storage, localization, and native tunnel orchestration are composed from one shared source tree.",
+  "libraryBody": "Official subscriptions and manual configurations are managed here under SDK policy.",
+  "accountBody": "Application enrollment and authenticated access are available only in White-label mode.",
+  "settingsBody": "Review security, platform capability, and open-source information without exposing runtime configuration.",
+  "openSourceLicenses": "Open-source licenses",
+  "openSourceLicensesBody": "Review notices and licenses for Flutter and native tunnel components.",
+  "configurationError": "This build configuration is invalid.",
+  "modeLabel": "Product mode",
+  "secureStorageLabel": "Secure storage",
+  "secureStorageReady": "OS-protected adapter configured",
+  "nativeTunnelLabel": "Native tunnel",
+  "nativeTunnelPending": "Protocol availability is discovered from the installed native platform adapter.",
+  "libraryUnavailableTitle": "Official library unavailable",
+  "libraryUnavailableBody": "This product policy does not provide the Official profile repository.",
+  "libraryLoadFailed": "Could not open the protected library",
+  "retry": "Retry",
+  "libraryEmptyTitle": "No profiles yet",
+  "libraryEmptyBody": "Add a subscription or paste a supported manual configuration. Secrets are stored only through OS-protected storage.",
+  "libraryTitle": "VPN profiles",
+  "libraryDescription": "Manage Official subscriptions and manual configurations parsed by the Zagros SDK.",
+  "tunnelUnavailableTitle": "Connection unavailable",
+  "tunnelUnavailableBody": "The installed native adapter does not support this configuration on the current platform.",
+  "addSubscription": "Add subscription",
+  "addManualConfig": "Add manual config",
+  "subscriptionRefreshed": "Subscription refreshed.",
+  "deleteProfileTitle": "Delete profile?",
+  "deleteProfileBody": "Delete “{name}” and its protected configurations?",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "deleted": "Profile deleted.",
+  "edit": "Edit",
+  "refresh": "Refresh",
+  "saved": "Profile saved.",
+  "subscriptionProfile": "Subscription",
+  "manualProfile": "Manual configuration",
+  "profileConfigCount": "{count, plural, =0{No configurations} =1{1 configuration} other{{count} configurations}}",
+  "subscriptionHost": "Source: {host}",
+  "protocolWarningPresent": "Protocol warning",
+  "configFileBadge": "File",
+  "subscriptionFilesUnavailable": "{count, plural, =1{1 downloaded file is unavailable} other{{count} downloaded files are unavailable}}",
+  "profileName": "Profile name",
+  "subscriptionUrl": "Subscription URL",
+  "rawConfiguration": "Raw configuration",
+  "subscriptionUrlHelp": "HTTPS is required. HTTP is accepted only for a loopback development server.",
+  "manualConfigHelp": "Paste a share link list, WireGuard, OpenVPN, Clash, or sing-box configuration.",
+  "editProfile": "Edit profile",
+  "save": "Save",
+  "close": "Close",
+  "subscriptionUsage": "Used {used} of {total}",
+  "unlimited": "unlimited",
+  "viewRawConfig": "View raw",
+  "connect": "Connect",
+  "disconnect": "Disconnect",
+  "rawConfigTitle": "Raw configuration",
+  "rawConfigSecretWarning": "This configuration contains credentials. Do not share it with anyone you do not trust.",
+  "copy": "Copy",
+  "export": "Export",
+  "copied": "Configuration copied.",
+  "rawActionFailed": "The protected raw-config action failed.",
+  "exportRawTitle": "Export plaintext configuration?",
+  "exportRawWarning": "Export writes credentials to a plaintext file at a user-accessible location. Protect or delete that file after use.",
+  "exported": "Configuration exported.",
+  "legacyProtocolWarning": "PPTP is legacy and insecure, and is unavailable on modern iOS and Android systems.",
+  "platformProtocolWarning": "L2TP support depends on the operating system and is limited on modern iOS and Android systems.",
+  "genericProtocolWarning": "Review this protocol warning before connecting.",
+  "libraryValidationFailed": "The profile name, URL, or configuration is invalid.",
+  "libraryAccessDenied": "The server or product policy denied this operation.",
+  "libraryNetworkFailed": "The subscription could not be reached. The previous profile was kept.",
+  "libraryStorageFailed": "OS-protected storage is unavailable. No plaintext fallback was used.",
+  "libraryMalformedFailed": "The configuration or protected catalog is malformed.",
+  "libraryUnknownFailed": "The operation could not be completed.",
+  "protocolUnavailableTitle": "Protocol unavailable",
+  "protocolUnavailableBody": "The installed tunnel adapter does not support {protocol}.",
+  "connectionRequestedTitle": "Connection requested",
+  "connectionRequestedBody": "The native adapter accepted the request but has not confirmed a connected state.",
+  "connectedTitle": "Connected",
+  "connectedBody": "The native adapter confirmed the tunnel connection.",
+  "connectionFailedTitle": "Connection failed",
+  "connectionFailedBody": "The native tunnel adapter rejected the request.",
+  "ok": "OK",
+  "enrollTitle": "Enroll this device",
+  "loginTitle": "Sign in",
+  "usernameLabel": "Username",
+  "passwordLabel": "Password",
+  "activationCodeLabel": "Activation code",
+  "enrollAction": "Enroll device",
+  "loginAction": "Sign in",
+  "logoutAction": "Sign out",
+  "reEnrollAction": "Use a different activation code",
+  "configsTitle": "Connections",
+  "usageTitle": "Usage",
+  "available": "Available",
+  "unavailable": "Unavailable",
+  "activeConnectionsCount": "Active connections: {count}",
+  "signedInAs": "Signed in as {username}",
+  "noConfigsTitle": "No connections available",
+  "noConfigsBody": "The server returned no connectable configurations for this account.",
+  "serviceUnavailableTitle": "Account unavailable",
+  "serviceUnavailableBody": "The Application service could not start. OS-protected storage may be unavailable.",
+  "alreadyConnectedTitle": "Already connected",
+  "alreadyConnectedBody": "Disconnect the active connection before starting another.",
+  "errorEnrollInput": "Enter a username, password, and activation code.",
+  "errorLoginInput": "Enter a username and password.",
+  "errorInvalidCredentials": "The username or password is incorrect.",
+  "errorTicketInvalid": "The activation code is invalid or expired.",
+  "errorAccessDenied": "This account or device is not allowed to connect.",
+  "errorSessionExpired": "The session expired. Sign in again.",
+  "errorEnrollmentRequired": "This device is no longer enrolled. Enter a new activation code.",
+  "errorNetwork": "The server could not be reached. Check the connection and retry.",
+  "errorRateLimited": "Too many attempts. Wait a moment and retry.",
+  "errorStorage": "OS-protected storage is unavailable. No plaintext fallback was used.",
+  "errorUnknown": "The operation could not be completed.",
+  "speedDownload": "Download",
+  "speedUpload": "Upload",
+  "statusDisconnected": "Disconnected",
+  "statusConnecting": "Connecting...",
+  "statusConnected": "Connected",
+  "statusDisconnecting": "Disconnecting...",
+  "statusFailed": "Connection Failed",
+  "noActiveConfig": "No configuration selected",
+  "selectConfigToConnect": "Select a configuration to connect",
+  "comingSoon": "Coming Soon",
+  "unsupportedProtocol": "Unsupported",
+  "protocolNotImplemented": "This protocol engine is not packaged in this release and will be available in future updates.",
+  "clearLogs": "Clear logs",
+  "copyLogs": "Copy logs",
+  "logsCopied": "Logs copied to clipboard.",
+  "noLogsYet": "No connection logs recorded yet.",
+  "language": "Language",
+  "persian": "فارسی",
+  "english": "English",
+  "dnsSettings": "DNS Settings",
+  "dnsSystem": "System Default",
+  "dnsCloudflare": "Cloudflare (1.1.1.1)",
+  "dnsGoogle": "Google (8.8.8.8)",
+  "dnsCustom": "Custom DNS",
+  "customDnsAddress": "Custom DNS Server",
+  "fakeDnsTitle": "Fake DNS",
+  "fakeDnsSubtitle": "Domains answer from a synthetic pool for faster connects; real addresses are restored inside the tunnel.",
+  "perAppTitle": "Per-app proxy",
+  "perAppSubtitle": "Choose which apps go through the VPN tunnel.",
+  "perAppAllowMode": "Only selected apps use the VPN",
+  "perAppDenyMode": "Selected apps bypass the VPN",
+  "perAppSelectApps": "Select apps",
+  "perAppSearch": "Search apps",
+  "perAppSelectedCount": "{count} selected",
+  "@perAppSelectedCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "perAppNoApps": "No apps found",
+  "perAppClearAll": "Clear",
+  "perAppAppliesNextConnect": "Applies on the next connection.",
+  "ping": "Ping",
+  "ms": "ms",
+  "accountInfo": "Account Information",
+  "tapToConnect": "Tap to connect",
+  "tapToDisconnect": "Tap to disconnect",
+  "activeConfigLabel": "Active Server",
+  "subscriptionsSection": "Subscriptions",
+  "localConfigsSection": "Local",
+  "subscriptionRemaining": "{days, plural, =0{Expires today} =1{1 day remaining} other{{days} days remaining}}",
+  "@activeConnectionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@signedInAs": {
+    "placeholders": {
+      "username": {
+        "type": "String"
+      }
+    }
+  },
+  "@deleteProfileBody": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "@profileConfigCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscriptionFilesUnavailable": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscriptionHost": {
+    "placeholders": {
+      "host": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscriptionUsage": {
+    "placeholders": {
+      "used": {
+        "type": "String"
+      },
+      "total": {
+        "type": "String"
+      }
+    }
+  },
+  "@protocolUnavailableBody": {
+    "placeholders": {
+      "protocol": {
+        "type": "String"
+      }
+    }
+  },
+  "subscriptionExpires": "Expires {date}",
+  "subscriptionUpdateInterval": "Suggested refresh interval: {hours, plural, =1{1 hour} other{{hours} hours}}",
+  "subscriptionLastRefreshed": "Last refreshed {date}",
+  "@subscriptionExpires": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscriptionUpdateInterval": {
+    "placeholders": {
+      "hours": {
+        "type": "int"
+      }
+    }
+  },
+  "@subscriptionLastRefreshed": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "@subscriptionRemaining": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  }
+}

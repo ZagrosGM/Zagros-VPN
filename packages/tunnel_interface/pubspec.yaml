@@ -1,0 +1,37 @@
+name: tunnel_interface
+description: Typed runtime-only platform tunnel contract for Zagros VPN native adapters.
+version: 0.1.0
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  meta: ^1.12.0
+  zagros_vpn_sdk:
+    path: ../../../Zagros-VPN-SDK
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+  pigeon: ^22.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: ai.zagros.tunnel
+        pluginClass: ZagrosTunnelPlugin
+      ios:
+        pluginClass: ZagrosTunnelPlugin
+      linux:
+        pluginClass: ZagrosTunnelPlugin
+      macos:
+        pluginClass: ZagrosTunnelPlugin
+      windows:
+        pluginClass: ZagrosTunnelPluginCApi

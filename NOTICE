@@ -1,0 +1,13 @@
+Zagros VPN
+Copyright (C) 2026 Zagros contributors
+
+SPDX-License-Identifier: LicenseRef-Zagros-Commercial-Proprietary
+
+The vendored Gradle 9.3.1 wrapper JAR is licensed under Apache-2.0; provenance
+and its license text are in third_party/gradle-wrapper/. Native component
+attribution, source links, artifact digests, third-party licenses, trademark
+notes, and distribution blocks are recorded in THIRD_PARTY_NOTICES.md
+and third_party/native-engine-lock.json. Reviewed native-engine texts are also
+packaged in the app and reachable through its license screen. Other dependencies
+remain under their respective licenses. A complete final-package SBOM/license review is mandatory
+before any binary distribution.

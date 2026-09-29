@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "ndk_version": "27.0.12077973",
+  "source_url": "https://dl.google.com/android/repository/android-ndk-r27-linux.zip",
+  "archive_size": 663957918,
+  "archive_sha1": "5e5cd517bdb98d7e0faf2c494a3041291e71bdcc",
+  "archive_sha256": "2f17eb8bcbfdc40201c0b36e9a70826fcd2524ab7a2a235e2c71186c302da1dc",
+  "license_notice_files": [
+    {
+      "archive_member": "android-ndk-r27/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/00-android-ndk-r27__NOTICE",
+      "size": 522923,
+      "sha256": "4d5224d1c0b54ffa88b0dc0088191638fdbb7227835095dfb98f7f66b416a323"
+    },
+    {
+      "archive_member": "android-ndk-r27/NOTICE.toolchain",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/01-android-ndk-r27__NOTICE.toolchain",
+      "size": 806124,
+      "sha256": "cbe3237be53c0a819f8df6aac5358fdee848eee3b6571b4e2ca20767ebd7465e"
+    },
+    {
+      "archive_member": "android-ndk-r27/python-packages/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/02-android-ndk-r27__python-packages__NOTICE",
+      "size": 577,
+      "sha256": "c870d52f42a8f93023b99a85fe68d02637d6b04e5f35bbcd7f98759adb4e4d49"
+    },
+    {
+      "archive_member": "android-ndk-r27/source.properties",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/03-android-ndk-r27__source.properties",
+      "size": 107,
+      "sha256": "1c4a54b31c5ed242a901b4a472d412819b5e08405df1c58066bd555f9dd52515"
+    },
+    {
+      "archive_member": "android-ndk-r27/sources/android/cpufeatures/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/04-android-ndk-r27__sources__android__cpufeatures__NOTICE",
+      "size": 577,
+      "sha256": "c870d52f42a8f93023b99a85fe68d02637d6b04e5f35bbcd7f98759adb4e4d49"
+    },
+    {
+      "archive_member": "android-ndk-r27/sources/android/native_app_glue/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/05-android-ndk-r27__sources__android__native_app_glue__NOTICE",
+      "size": 577,
+      "sha256": "396e2d75715e8b4d1029ded55ae92832c8ab9c58148969653d34931248739b95"
+    },
+    {
+      "archive_member": "android-ndk-r27/sources/android/ndk_helper/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/06-android-ndk-r27__sources__android__ndk_helper__NOTICE",
+      "size": 577,
+      "sha256": "c870d52f42a8f93023b99a85fe68d02637d6b04e5f35bbcd7f98759adb4e4d49"
+    },
+    {
+      "archive_member": "android-ndk-r27/sources/cxx-stl/system/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/07-android-ndk-r27__sources__cxx-stl__system__NOTICE",
+      "size": 3677,
+      "sha256": "e33f24b134f489859a8d71d0cf28f6561c5c03d4ccb6f92ae0c6fa4c31323712"
+    },
+    {
+      "archive_member": "android-ndk-r27/sources/third_party/googletest/LICENSE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/08-android-ndk-r27__sources__third_party__googletest__LICENSE",
+      "size": 1475,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    },
+    {
+      "archive_member": "android-ndk-r27/sources/third_party/googletest/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/09-android-ndk-r27__sources__third_party__googletest__NOTICE",
+      "size": 1475,
+      "sha256": "9702de7e4117a8e2b20dafab11ffda58c198aede066406496bef670d40a22138"
+    },
+    {
+      "archive_member": "android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/10-android-ndk-r27__toolchains__llvm__prebuilt__linux-x86_64__NOTICE",
+      "size": 130424,
+      "sha256": "f96f763beb66a7ba7a667647fc64c0226ace875e590c831fdd9579ec1c1d91e1"
+    },
+    {
+      "archive_member": "android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/python3/lib/python3.11/LICENSE.txt",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/11-android-ndk-r27__toolchains__llvm__prebuilt__linux-x86_64__python3__lib__python3.11__LICENSE.txt",
+      "size": 15138,
+      "sha256": "2d3de21bb0173e7ee49fc80f8fab52a0c55c690ff740bed77b6b8b4dd7641b81"
+    },
+    {
+      "archive_member": "android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/python3/lib/python3.11/site-packages/pip-23.1.2.dist-info/LICENSE.txt",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/12-android-ndk-r27__toolchains__llvm__prebuilt__linux-x86_64__python3__lib__python3.11__site-packages__pip-23.1.2.dist-info__LICENSE.txt",
+      "size": 1093,
+      "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104"
+    },
+    {
+      "archive_member": "android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/python3/lib/python3.11/site-packages/setuptools-65.5.0.dist-info/LICENSE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/13-android-ndk-r27__toolchains__llvm__prebuilt__linux-x86_64__python3__lib__python3.11__site-packages__setuptools-65.5.0.dist-info__LICENSE",
+      "size": 1050,
+      "sha256": "db3f0246b1f9278f15845b99fec478b8b506eb76487993722f8c6e254285faf8"
+    },
+    {
+      "archive_member": "android-ndk-r27/toolchains/llvm/prebuilt/linux-x86_64/sysroot/NOTICE",
+      "path": "third_party/wireguard-go/android-ndk-r27-notices/14-android-ndk-r27__toolchains__llvm__prebuilt__linux-x86_64__sysroot__NOTICE",
+      "size": 501406,
+      "sha256": "d5f5557f82bc42ce657d0513ba9a7d0c55e64eb99d4998994d92f2b5c2b1fb3c"
+    }
+  ],
+  "acceptance_status": "PARTIAL: exact NDK metadata/notices are captured and retained ELF identity matches r27; a reproducible per-ABI libwg-go build still must run."
+}

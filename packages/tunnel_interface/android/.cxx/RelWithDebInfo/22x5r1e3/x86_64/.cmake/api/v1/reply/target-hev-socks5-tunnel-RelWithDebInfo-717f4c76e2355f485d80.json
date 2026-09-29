@@ -1,0 +1,1397 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "/home/user/zagros-work/Zagros-VPN/apps/zagros_vpn/build/tunnel_interface/intermediates/cxx/RelWithDebInfo/22x5r1e3/obj/x86_64/libhev-socks5-tunnel.so"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"target_link_libraries",
+			"add_definitions",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 184,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 185,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -O2 -g -DNDEBUG -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "ANDROID"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "COMMIT_ID=\"2.17.1\""
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_MEMALLOC_SLICE_ALIGN=16"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_MEMALLOC_SLICE_MAX_COUNT=1000"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_MEMALLOC_SLICE_MAX_SIZE=4096"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_SCHED_CLOCK=0"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_STACK_BACKEND=1"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_STACK_OVERFLOW_DETECTION=1"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_IO_SPLICE_SYSCALL"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_LIBRARY"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_MEMALLOC_SLICE"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_STACK_OVERFLOW_DETECTION"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "FD_SET_DEFINED"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "SOCKLEN_T_DEFINED"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_DECLARE_STATIC"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_MAJOR=0"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_MINOR=2"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_PATCH=5"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_STRING=\"0.2.5\""
+				},
+				{
+					"define" : "hev_socks5_tunnel_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src/misc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src/core/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src/core/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/yaml/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/yaml/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/ports/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/arch/arm"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/arch/x86"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/core"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/task"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/sync"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/time"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/itc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/io"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/aide"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/basic"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/socket"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/pipe"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/poll"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/buffer"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/list"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/rbtree"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/misc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/object"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/dns"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/base"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/api"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/simple"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/slice"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101
+			],
+			"sysroot" : 
+			{
+				"path" : "/var/tmp/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+			}
+		},
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -x assembler-with-cpp -O2 -g -DNDEBUG -fPIC"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 3,
+					"define" : "ANDROID"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "COMMIT_ID=\"2.17.1\""
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_MEMALLOC_SLICE_ALIGN=16"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_MEMALLOC_SLICE_MAX_COUNT=1000"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_MEMALLOC_SLICE_MAX_SIZE=4096"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_SCHED_CLOCK=0"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_STACK_BACKEND=1"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "CONFIG_STACK_OVERFLOW_DETECTION=1"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_IO_SPLICE_SYSCALL"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_LIBRARY"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_MEMALLOC_SLICE"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "ENABLE_STACK_OVERFLOW_DETECTION"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "FD_SET_DEFINED"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "SOCKLEN_T_DEFINED"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_DECLARE_STATIC"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_MAJOR=0"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_MINOR=2"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_PATCH=5"
+				},
+				{
+					"backtrace" : 3,
+					"define" : "YAML_VERSION_STRING=\"0.2.5\""
+				},
+				{
+					"define" : "hev_socks5_tunnel_EXPORTS"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src/misc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src/core/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/src/core/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/yaml/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/yaml/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/ports/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/arch/arm"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/arch/x86"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/core"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/task"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/sync"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/time"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/itc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/io"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/aide"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/basic"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/socket"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/pipe"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/poll"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/buffer"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/list"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/rbtree"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/misc"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/object"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/dns"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/base"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/api"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/simple"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/slice"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "/home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/android/src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/include"
+				}
+			],
+			"language" : "ASM",
+			"sourceIndexes" : 
+			[
+				102
+			],
+			"sysroot" : 
+			{
+				"path" : "/var/tmp/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+			}
+		}
+	],
+	"id" : "hev-socks5-tunnel::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-static-libstdc++ -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--no-undefined-version -Wl,--fatal-warnings -Wl,--no-undefined -Qunused-arguments  -Wl,--gc-sections",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-llog",
+				"role" : "libraries"
+			},
+			{
+				"fragment" : "-latomic -lm",
+				"role" : "libraries"
+			}
+		],
+		"language" : "C",
+		"sysroot" : 
+		{
+			"path" : "/var/tmp/android-sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+		}
+	},
+	"name" : "hev-socks5-tunnel",
+	"nameOnDisk" : "libhev-socks5-tunnel.so",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75,
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101
+			]
+		},
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				102
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-config.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-socks5-tunnel.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-main.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-jni.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-mapped-dns.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-socks5-session.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-socks5-session-tcp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-socks5-session-udp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/hev-tunnel-linux.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/misc/hev-ring-buffer.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/misc/hev-logger.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/misc/hev-exec.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/misc/hev-utils.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-udp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-authenticator.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-misc.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-logger.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-user.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-server.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-client-udp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-tcp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-client-tcp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/src/core/src/hev-socks5-client.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/api.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/dumper.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/emitter.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/loader.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/parser.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/reader.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/scanner.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/yaml/src/writer.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/altcp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/altcp_alloc.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/altcp_tcp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/def.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/dns.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/inet_chksum.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/init.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ip.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/mem.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/memp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/netif.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/pbuf.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/raw.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/stats.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/sys.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/tcp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/tcp_in.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/tcp_out.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/timeouts.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/udp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/autoip.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/dhcp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/etharp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/icmp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/igmp.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/ip4.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/ip4_addr.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv4/ip4_frag.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/dhcp6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/ethip6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/icmp6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/inet6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/ip6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/ip6_addr.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/ip6_frag.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/mld6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/core/ipv6/nd6.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/lwip/src/ports/unix/lib/sys_arch.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/core/hev-task-system.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/core/hev-task-system-schedule.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/task/hev-task.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/task/hev-task-call.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/task/hev-task-executer.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/task/hev-task-stack-heap.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/task/hev-task-stack-mmap.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/sync/hev-task-cond.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/sync/hev-task-mutex.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/time/hev-task-timer.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/itc/hev-task-channel.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/itc/hev-task-channel-select.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/io/hev-task-io-reactor-epoll.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/kern/aide/hev-task-aide.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/dns/hev-task-dns.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/dns/hev-task-dns-proxy.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/basic/hev-task-io.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/buffer/hev-circular-buffer.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/pipe/hev-task-io-pipe.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/poll/hev-task-io-poll.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/io/socket/hev-task-io-socket.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/list/hev-list.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/misc/hev-debugger.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/misc/hev-task-stack-detector.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/object/hev-object.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/object/hev-object-atomic.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/rbtree/hev-rbtree.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/lib/rbtree/hev-rbtree-cached.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/api/hev-memory-allocator-api.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/base/hev-memory-allocator.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/simple/hev-memory-allocator-simple.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/mem/slice/hev-memory-allocator-slice.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 1,
+			"path" : "src/main/cpp/hev-socks5-tunnel/third-part/hev-task-system/src/arch/x86/hev-task-execute-x86_64.s",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "SHARED_LIBRARY"
+}

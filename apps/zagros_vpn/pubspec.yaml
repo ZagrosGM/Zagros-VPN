@@ -1,0 +1,32 @@
+name: zagros_vpn
+description: One-source Zagros VPN client for Official and White-label products.
+publish_to: none
+version: 1.4.40+2076
+resolution: workspace
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+dependencies:
+  file_saver: ^0.2.14
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  flutter_secure_storage: ^9.2.2
+  tunnel_interface:
+    path: ../../packages/tunnel_interface
+  zagros_vpn_sdk:
+    path: ../../../Zagros-VPN-SDK
+
+dev_dependencies:
+  flutter_lints: ^5.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - assets/legal/native_engine_notices.txt

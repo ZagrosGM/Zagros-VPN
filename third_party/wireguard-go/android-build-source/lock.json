@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "tag": "1.0.20260102",
+  "tag_object": "3831cab2da844319291459308a6e535d36dde4b3",
+  "commit": "09b75c2bd37f749e2a8c85876394854113c74be7",
+  "files": [
+    {
+      "name": "Makefile",
+      "url": "https://git.zx2c4.com/wireguard-android/plain/tunnel/tools/libwg-go/Makefile?h=1.0.20260102",
+      "path": "third_party/wireguard-go/android-build-source/Makefile",
+      "size": 2135,
+      "sha256": "4b85a3bc286c00c5a360020d750dde3d0b6c3b21a0824eb50a60cc54b4f1db6d"
+    },
+    {
+      "name": "api-android.go",
+      "url": "https://git.zx2c4.com/wireguard-android/plain/tunnel/tools/libwg-go/api-android.go?h=1.0.20260102",
+      "path": "third_party/wireguard-go/android-build-source/api-android.go",
+      "size": 4647,
+      "sha256": "42cd27f8f4744aaed4d77bb8c1ac6a679501925576050edfec9245a1b6c902c0"
+    },
+    {
+      "name": "jni.c",
+      "url": "https://git.zx2c4.com/wireguard-android/plain/tunnel/tools/libwg-go/jni.c?h=1.0.20260102",
+      "path": "third_party/wireguard-go/android-build-source/jni.c",
+      "size": 2185,
+      "sha256": "f8758d642c1d2cd1dd1abe45f54b95481006c8b797347dd6e0f35703320b246b"
+    },
+    {
+      "name": "go.mod",
+      "url": "https://git.zx2c4.com/wireguard-android/plain/tunnel/tools/libwg-go/go.mod?h=1.0.20260102",
+      "path": "third_party/wireguard-go/android-build-source/go.mod",
+      "size": 319,
+      "sha256": "0967ad9b3b9e28a0457fea1d96cfd8d5028bfa84864d5624bb256ea9c1106971"
+    },
+    {
+      "name": "go.sum",
+      "url": "https://git.zx2c4.com/wireguard-android/plain/tunnel/tools/libwg-go/go.sum?h=1.0.20260102",
+      "path": "third_party/wireguard-go/android-build-source/go.sum",
+      "size": 1440,
+      "sha256": "5ee72cabd556981382ad463873228b6b0d54004664ec4aa3ada9e81efc288204"
+    },
+    {
+      "name": "goruntime-boottime-over-monotonic.diff",
+      "url": "https://git.zx2c4.com/wireguard-android/plain/tunnel/tools/libwg-go/goruntime-boottime-over-monotonic.diff?h=1.0.20260102",
+      "path": "third_party/wireguard-go/android-build-source/goruntime-boottime-over-monotonic.diff",
+      "size": 5069,
+      "sha256": "149ab7d9a1c20dad61fe279a837e0e0c81c6b2f5584614ac4d4cde67008755f0"
+    }
+  ],
+  "acceptance_status": "PARTIAL: exact tagged libwg-go build glue is captured; signed-tag and parent-snapshot verification are separate gates, and native binary reproduction remains required."
+}

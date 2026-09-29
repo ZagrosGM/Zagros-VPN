@@ -1,0 +1,29 @@
+{
+  "version": "1.12.4",
+  "upstream_repo": "https://github.com/SagerNet/sing-box",
+  "tag": "v1.12.4",
+  "license": "GPL-3.0-or-later",
+  "artifacts": {
+    "arm64-v8a": {
+      "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box-1.12.4-android-arm64.tar.gz",
+      "archive_member": "sing-box-1.12.4-android-arm64/sing-box",
+      "sha256": "e33f3b21876a29842cf3c498f48c1b1ece5c9d1a4ea90b5689d4a22d9b8b8a1e"
+    },
+    "armeabi-v7a": {
+      "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box-1.12.4-android-arm.tar.gz",
+      "archive_member": "sing-box-1.12.4-android-arm/sing-box",
+      "sha256": "0956b75ad1a547140af9c56ae04a8b2de1687bbf35fe16a5ebb97b7bb7888f10"
+    },
+    "x86_64": {
+      "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box-1.12.4-android-amd64.tar.gz",
+      "archive_member": "sing-box-1.12.4-android-amd64/sing-box",
+      "sha256": "b7431abf0a8615658e2ff6771195a7d531f69b7f4d806ab81c651c1f4b5bf9f4"
+    },
+    "linux-amd64": {
+      "url": "https://github.com/SagerNet/sing-box/releases/download/v1.12.4/sing-box-1.12.4-linux-amd64.tar.gz",
+      "archive_member": "sing-box-1.12.4-linux-amd64/sing-box",
+      "sha256": "ed83e27ad4fd39de0a7bd2ef0cf12e56cbb490bf01fee977079c0a574367ef81"
+    }
+  },
+  "notes": "2026-09-21: bumped 1.11.15 -> 1.12.4 \u2014 hysteria2 client on some Android devices reported 'timeout: no recent network activity' while a 1.12.x client (v2rayNG/sandbox) passed traffic against the same 1.12.4 server; 1.12.4 matches the server version and was verified end-to-end from an external network (hy2 UDP real traffic)."
+}

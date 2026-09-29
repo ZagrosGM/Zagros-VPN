@@ -1,0 +1,183 @@
+name: Client checks
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: client-checks-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Check out client
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: Zagros-VPN
+          persist-credentials: false
+
+      - name: Check out SDK sibling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: ZagrosGM/Zagros-VPN-SDK
+          path: Zagros-VPN-SDK
+          persist-credentials: false
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          flutter-version: 3.47.2
+          channel: stable
+          cache: true
+
+      - name: Verify source
+        working-directory: Zagros-VPN
+        env:
+          FLUTTER_BIN: flutter
+          DART_BIN: dart
+        run: ./tool/verify.sh
+
+      - name: Reproduce pinned GoBackend-only Android artifact
+        working-directory: Zagros-VPN
+        run: |
+          python3 tool/prepare_wireguard_android.py --output /tmp/wireguard-go-only.aar
+          cmp third_party/maven/ai/zagros/thirdparty/wireguard-tunnel-go-only/1.0.20260102/wireguard-tunnel-go-only-1.0.20260102.aar /tmp/wireguard-go-only.aar
+
+      - name: Reverify signed source and Android dependency evidence
+        working-directory: Zagros-VPN
+        run: |
+          python3 tool/verify_wireguard_android_source.py
+          python3 tool/capture_wireguard_go_modules.py
+          python3 tool/capture_wireguard_android_glue.py
+          python3 tool/capture_go_toolchain_notices.py
+          python3 tool/capture_android_ndk_notices.py
+          python3 tool/capture_android_runtime_dependencies.py
+          git diff --exit-code -- third_party apps/zagros_vpn/assets/legal/native_engine_notices.txt
+
+  android-native-reproduction:
+    name: Reproduce Android WireGuard native bytes
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - name: Check out client
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: Zagros-VPN
+          persist-credentials: false
+
+      - name: Install hash-pinned reproduction tools
+        working-directory: Zagros-VPN
+        run: python3 -m pip install --require-hashes --disable-pip-version-check -r tool/android-native-reproduction-requirements.txt
+
+      - name: Rebuild and compare all retained ABIs
+        working-directory: Zagros-VPN
+        run: |
+          python3 tool/reproduce_wireguard_android_native.py \
+            --work "$RUNNER_TEMP/zagros-native-repro" \
+            --cmake "$(command -v cmake)" \
+            --ninja "$(command -v ninja)"
+          python3 tool/generate_android_go_reachability.py \
+            --go "$RUNNER_TEMP/zagros-native-repro/cmake-arm64-v8a/generated-src/go-1.24.3/bin/go" \
+            --ndk "$RUNNER_TEMP/zagros-native-repro/android-ndk-r27" \
+            --source "$RUNNER_TEMP/zagros-native-repro/wireguard-android-1.0.20260102/tunnel/tools/libwg-go"
+          git diff --exit-code -- third_party/wireguard-go/native-reproduction.json third_party/wireguard-go/android-reachable-packages.json
+
+  native-source-build:
+    name: Native source build (${{ matrix.target }})
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-24.04
+            target: linux
+          - os: ubuntu-24.04
+            target: android
+          - os: windows-2025
+            target: windows
+          - os: macos-15
+            target: macos
+          - os: macos-15
+            target: ios-simulator
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - name: Check out client
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: Zagros-VPN
+          persist-credentials: false
+
+      - name: Check out SDK sibling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: ZagrosGM/Zagros-VPN-SDK
+          path: Zagros-VPN-SDK
+          persist-credentials: false
+
+      - name: Install Java 17
+        if: matrix.target == 'android'
+        uses: actions/setup-java@03ad4de0992f5dab5e18fcb136590ce7c4a0ac95 # v5.6.0
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          flutter-version: 3.47.2
+          channel: stable
+          cache: true
+
+      - name: Install Linux native toolchain
+        if: matrix.target == 'linux'
+        run: sudo apt-get update && sudo apt-get install --yes clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev
+
+      - name: Build Linux adapter
+        if: matrix.target == 'linux'
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter config --enable-linux-desktop && flutter build linux --debug
+
+      - name: Build standalone Android adapter against pinned inputs
+        if: matrix.target == 'android'
+        working-directory: Zagros-VPN
+        run: >-
+          ./apps/zagros_vpn/android/gradlew
+          -p packages/tunnel_interface/android
+          assembleDebug
+          -PzagrosStandaloneCompile=true
+          --no-daemon
+          --max-workers=1
+          --console=plain
+
+      - name: Build Android adapter
+        if: matrix.target == 'android'
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter build apk --debug
+
+      - name: Inspect Android compile artifact
+        if: matrix.target == 'android'
+        working-directory: Zagros-VPN
+        run: python3 tool/inspect_android_artifact.py apps/zagros_vpn/build/app/outputs/flutter-apk/app-debug.apk
+
+      - name: Build Windows adapter
+        if: matrix.target == 'windows'
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter config --enable-windows-desktop; flutter build windows --debug
+
+      - name: Build macOS adapter
+        if: matrix.target == 'macos'
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter config --enable-macos-desktop && flutter build macos --debug
+
+      - name: Build iOS simulator adapter
+        if: matrix.target == 'ios-simulator'
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter build ios --simulator --debug

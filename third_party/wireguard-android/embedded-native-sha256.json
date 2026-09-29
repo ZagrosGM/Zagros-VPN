@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "upstream_aar_sha256": "2b9c16db026496123e4db695d26d03d1958a201096c7c4c89b21077dc70f3119",
+  "aar_sha256": "b8a8c73b701b4f6bd6baf99ae4251f8c90973ccf5b1c6201725f59b39c603931",
+  "excluded_upstream_native_names": [
+    "libwg-quick.so",
+    "libwg.so"
+  ],
+  "files": {
+    "jni/arm64-v8a/libwg-go.so": {
+      "size": 3365264,
+      "sha256": "68730e8c81b613113249574e22838fd6ce9b1c4da2be2f5fe7c71d651e32b005"
+    },
+    "jni/armeabi-v7a/libwg-go.so": {
+      "size": 3174788,
+      "sha256": "2a6570004148c338337d945342326d4c42e71684d36bb2ee999a5d7863408680"
+    },
+    "jni/x86/libwg-go.so": {
+      "size": 3197504,
+      "sha256": "3d9a36280ba19c5f710935c06f563afe377d4e7e19d0d5c931d47d861d2d48df"
+    },
+    "jni/x86_64/libwg-go.so": {
+      "size": 3606928,
+      "sha256": "2793e254ac34ec4df86450866fd924a26b9b9e96cc7ba5f6379badd432da1e76"
+    }
+  }
+}

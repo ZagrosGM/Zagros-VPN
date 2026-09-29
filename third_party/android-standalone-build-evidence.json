@@ -1,0 +1,109 @@
+{
+  "schema": 1,
+  "status": "PASS_STANDALONE_BUILD_ONLY",
+  "scope": "packages/tunnel_interface/android standalone Android library build; not the final Flutter APK/AAB",
+  "generated_at_utc": "2026-09-08T01:36:00Z",
+  "command": [
+    "apps/zagros_vpn/android/gradlew",
+    "-p",
+    "packages/tunnel_interface/android",
+    "assembleDebug",
+    "-PzagrosStandaloneCompile=true",
+    "--no-daemon",
+    "-Dorg.gradle.jvmargs=-Xmx768m -Dfile.encoding=UTF-8",
+    "--max-workers=1",
+    "--console=plain"
+  ],
+  "environment": {
+    "os": "Linux x86_64",
+    "java": "Eclipse Temurin 17.0.20.1+1",
+    "gradle": "9.3.1",
+    "android_gradle_plugin": "9.1.0",
+    "kotlin_android_plugin": "2.2.10",
+    "android_sdk_command_line_tools": "22.0 (archive 15859902; SHA-256 4e4c464f145a7512b57d088ac6c278c03c9eea610886b35a5e0804e74eedf583)",
+    "android_platform": "android-36 revision 2",
+    "android_build_tools": "36.0.0",
+    "flutter_embedding_debug": "1.0.0-a804b261645ef8c13eb3d5c44a5c2fb0340c5539"
+  },
+  "report": {
+    "path": "third_party/android-standalone-build.txt",
+    "size": 1713,
+    "sha256": "45e2f335d3ce33653a6fff78915cf3dbbf1f38dbd8cda696c53a95937ae20dc1"
+  },
+  "compiled_inputs": [
+    {
+      "path": "packages/tunnel_interface/android/build.gradle.kts",
+      "size": 2324,
+      "sha256": "19759b8e349badd952c5aa04fa708ca1e385dacdcc8d7bc8d170d5aa63ffed55"
+    },
+    {
+      "path": "packages/tunnel_interface/android/settings.gradle.kts",
+      "size": 914,
+      "sha256": "0e8f3aef5bd6c7fc301c972e0bcee2675d74cb34f65dd1b982a6f0272cf08a28"
+    },
+    {
+      "path": "packages/tunnel_interface/android/gradle/verification-metadata.xml",
+      "size": 169891,
+      "sha256": "f668a98bed5b68351a03371d0e9b2066307e901aef111fd22ef08115ce377a80"
+    },
+    {
+      "path": "packages/tunnel_interface/android/src/main/AndroidManifest.xml",
+      "size": 226,
+      "sha256": "9adb2753427a73a6dcc92c770eaec5945a70d928dc76cb748cfe726a060f2405"
+    },
+    {
+      "path": "packages/tunnel_interface/android/src/main/kotlin/ai/zagros/tunnel/ZagrosTunnelPlugin.kt",
+      "size": 23079,
+      "sha256": "007cdb686e916c830823d945caaaf02bae526d19290670561deaa9843d5d2eff"
+    },
+    {
+      "path": "packages/tunnel_interface/android/src/main/kotlin/ai/zagros/tunnel/generated/TunnelApi.g.kt",
+      "size": 20347,
+      "sha256": "d03a2244b9ba4a600ad9bd179154b99871acf5b036f36e0390e55e6212be1079"
+    }
+  ],
+  "observed_result": {
+    "task": ":assembleDebug",
+    "result": "BUILD SUCCESSFUL",
+    "duration": "10s",
+    "actions": "23 actionable tasks: 23 up-to-date"
+  },
+  "limitations": [
+    "This does not compile or package the complete Flutter application.",
+    "This does not prove APK/AAB packaging, signing, installation, tunnel establishment, or routed traffic.",
+    "The Android SDK emitted a non-fatal XML-version compatibility warning during this standalone compile."
+  ],
+  "produced_debug_aar": {
+    "ephemeral_path": "packages/tunnel_interface/android/build/outputs/aar/tunnel_interface-debug.aar",
+    "retained": false,
+    "size": 77734,
+    "sha256": "364942bb0cf328a2d7fcd18fdfbe353792f51645daa750d617e23e74f95a175e",
+    "members": [
+      {
+        "name": "R.txt",
+        "size": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "AndroidManifest.xml",
+        "size": 343,
+        "sha256": "7560d4eae039045cea360769a42b02ae67a0084256a628105c7e113d4642fc65"
+      },
+      {
+        "name": "classes.jar",
+        "size": 81259,
+        "sha256": "7e3233017208a86423829466cf6e8a54ac7806c86d65923a3aedd48b226cb4eb"
+      },
+      {
+        "name": "proguard.txt",
+        "size": 229,
+        "sha256": "b6958d431231a975bada3582b5a37b647e6aa92e35888e500cc6b5c57aa2ca9c"
+      },
+      {
+        "name": "META-INF/com/android/build/gradle/aar-metadata.properties",
+        "size": 211,
+        "sha256": "6695f0a553927580cf75dfe204e2bc3c5636d9ae7fecd2238feba3c01c04afa9"
+      }
+    ]
+  }
+}

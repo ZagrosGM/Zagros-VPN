@@ -1,0 +1,78 @@
+Resolving dependencies...
+Downloading packages...
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+Got dependencies!
+2 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Because l10n.yaml exists, the options defined there will be used instead.
+To use the command line arguments, delete the l10n.yaml file in the Flutter project.
+
+
+Generated Pigeon secret hardening applied.
+Pigeon generated outputs and hardening are current.
+Formatted 34 files (0 changed) in 0.16 seconds.
+Packaged native-engine notice asset is current.
+Captured wireguard-go module license evidence is current.
+Android libwg-go build-glue evidence is current.
+Pinned Go toolchain license/notice evidence is current.
+Pinned Android NDK r27 metadata/notice evidence is current.
+Android adapter runtime dependency/license evidence is current.
+Android Go reachability report SHA-256: c20ee6f59a86e558568abe6add58231626a31f81ebc33763a216b1f013d4e8fb
+WireGuard Android signed tag and source snapshot are current.
+All retained libwg-go ELFs match the locked dependency/toolchain identity.
+Source guards passed.
+Resolving dependencies in `/home/user/zagros-work/Zagros-VPN`...
+Downloading packages...
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+Got dependencies in `/home/user/zagros-work/Zagros-VPN`!
+2 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Analyzing tunnel_interface...                                   
+No issues found! (ran in 13.7s)
+Resolving dependencies in `/home/user/zagros-work/Zagros-VPN`...
+Downloading packages...
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+Got dependencies in `/home/user/zagros-work/Zagros-VPN`!
+2 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart
+00:00 +0: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: encoder emits bounded WireGuard input without script directives
+00:00 +1: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: encoder rejects a protocol-engine mismatch
+00:00 +2: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: facade rejects a protocol-engine mismatch before native transfer
+00:00 +3: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: system IKEv2 encoder emits only the bounded allowlisted JSON fields
+00:00 +4: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: system IKEv2 encoder rejects unsupported custom ports
+00:00 +5: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: encoder rejects privileged WireGuard script hooks
+00:00 +6: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: capabilities preserve protocol-specific unavailable reasons
+00:00 +7: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: runtime-only policy removes structured OS-profile capabilities
+00:00 +8: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: connect forwards runtime bytes then erases the mutable payload
+00:00 +9: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: adapter never invents connected state before a native confirmation
+00:00 +10: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: malformed native connected event is dropped fail-closed
+00:00 +11: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: platform exceptions are reduced to fixed safe failures
+00:00 +12: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: native validation rejection does not leave a synthetic active tunnel
+00:00 +13: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: unsupported protocol is rejected before config reaches native code
+00:00 +14: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: stale and decreasing-counter native events are dropped
+00:00 +15: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: replacement connect tears the previous native tunnel down first
+00:00 +16: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: concurrent connects are serialized before replacement state mutates
+00:00 +17: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/native_tunnel_adapter_test.dart: disconnect is delegated and adapter disposal tears active state down
+00:00 +18: loading /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/tunnel_interface_test.dart
+00:00 +18: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/tunnel_interface_test.dart: capabilities are immutable and protocol-specific
+00:00 +19: /home/user/zagros-work/Zagros-VPN/packages/tunnel_interface/test/tunnel_interface_test.dart: snapshots, requests, and failures redact runtime config
+00:00 +20: All tests passed!
+Resolving dependencies in `/home/user/zagros-work/Zagros-VPN`...
+Downloading packages...
+  material_color_utilities 0.13.0 (0.13.1 available)
+  test_api 0.7.12 (0.7.14 available)
+Got dependencies in `/home/user/zagros-work/Zagros-VPN`!
+2 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Analyzing zagros_vpn...                                         
+
+  error • Undefined name 'LicenseRegistry'. Try correcting the name to one that is defined, or defining the name • lib/main.dart:14:3 • undefined_identifier
+  error • The function 'LicenseEntryWithLineBreaks' isn't defined. Try importing the library that defines 'LicenseEntryWithLineBreaks', correcting the name to the name of an existing function, or defining a function named 'LicenseEntryWithLineBreaks' • lib/main.dart:18:11 • undefined_function
+  error • The name 'AppExitResponse' isn't a type, so it can't be used as a type argument. Try correcting the name to an existing type, or defining a type named 'AppExitResponse' • lib/src/app.dart:40:10 • non_type_as_type_argument
+  error • Undefined name 'AppExitResponse'. Try correcting the name to one that is defined, or defining the name • lib/src/app.dart:42:12 • undefined_identifier
+
+4 issues found. (ran in 9.4s)

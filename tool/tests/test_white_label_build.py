@@ -649,3 +649,40 @@ def test_icon_pack_flag_defaults_to_none_and_receipt_carries_sha(tmp_path):
     import json as _json
     parsed = _json.loads(receipt.read_text(encoding="utf-8"))
     assert parsed["icon_pack_sha256"] == "ab" * 32
+
+
+_SEED = "k" * 43  # 32 bytes, base64url unpadded
+
+
+def test_build_command_carries_secret_define_file(tmp_path):
+    seed_file = tmp_path / "seed"
+    seed_file.write_text(_SEED + "\n", encoding="utf-8")
+    command = script.build_command(
+        "flutter", "android", "arm64-v8a", DEFINES,
+        secret_define_file=str(seed_file))
+    assert command[-1] == f"--dart-define-from-file={seed_file}"
+    # the plain --dart-define list stays untouched (public values only)
+    assert "--dart-define=ZAGROS_APP_NAME=Partner VPN" in command
+    assert not any("ZAGROS_APPLICATION_SIGNING_PRIVATE_KEY" in part
+                   for part in command)
+
+
+def test_read_signing_seed_validates_and_strips(tmp_path):
+    seed_file = tmp_path / "seed"
+    seed_file.write_text("  " + _SEED + "\n", encoding="utf-8")
+    assert script.read_signing_seed(str(seed_file)) == _SEED
+    for bad in ("short", "A" * 42, "A" * 44, "A" * 43 + "="):
+        seed_file.write_text(bad, encoding="utf-8")
+        with pytest.raises(script.BuildConfigError, match="43-char"):
+            script.read_signing_seed(str(seed_file))
+    with pytest.raises(script.BuildConfigError, match="cannot read"):
+        script.read_signing_seed(str(tmp_path / "missing"))
+
+
+def test_secret_define_file_never_in_config_defines():
+    # the config-side validator must keep rejecting the secret key (it
+    # trips the secret-fragment guard) so the file channel stays the ONLY
+    # path for the seed
+    with pytest.raises(script.BuildConfigError, match="looks like a secret"):
+        script.validate_build_config(
+            dict(_config(), signing_private_seed=_SEED))

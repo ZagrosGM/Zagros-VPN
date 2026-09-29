@@ -545,9 +545,34 @@ def define_args(defines: dict[str, str]) -> list[str]:
             for name, value in defines.items()]
 
 
+# 32 raw bytes, base64url unpadded (43 chars) — the Ed25519 attestation
+# signing seed the app embeds for ticket-free device enrollment.
+_SEED_RE = re.compile(r"[A-Za-z0-9_-]{43}")
+
+
+def read_signing_seed(path: str) -> str:
+    """Load and validate the staged app signing seed (worker-written file).
+
+    The file is deleted by the caller (worker) and by this tool after the
+    flutter invocation; the seed value itself never appears in argv or in
+    any log line — it reaches the compiler through --dart-define-from-file.
+    """
+    try:
+        raw = Path(path).read_text(encoding="utf-8").strip()
+    except OSError as exc:
+        raise BuildConfigError(
+            f"cannot read --signing-seed-file: {exc}") from exc
+    if not _SEED_RE.fullmatch(raw):
+        raise BuildConfigError(
+            "--signing-seed-file must hold a 43-char base64url "
+            "(32-byte) Ed25519 signing seed")
+    return raw
+
+
 def build_command(flutter_bin: str, platform: str, arch: str,
                   defines: dict[str, str],
-                  *, artifact: str = "apk") -> list[str]:
+                  *, artifact: str = "apk",
+                  secret_define_file: str | None = None) -> list[str]:
     """Pure argv construction (unit-tested); execution stays in main flow."""
     arches = PLATFORM_MATRIX.get(platform)
     if arches is None or arch not in arches:
@@ -579,7 +604,12 @@ def build_command(flutter_bin: str, platform: str, arch: str,
         command += ["windows", "--release"]
     elif platform == "macos":
         command += ["macos", "--release"]
-    return command + define_args(defines)
+    command = command + define_args(defines)
+    if secret_define_file is not None:
+        # Secrets never ride --dart-define (process listings): the seed
+        # reaches the compiler through a transient defines FILE instead.
+        command += [f"--dart-define-from-file={secret_define_file}"]
+    return command
 
 
 def resolve_artifact(platform: str, artifact: str) -> str:
@@ -825,6 +855,10 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--icon-pack", default=None,
                         help="launcher icon pack zip (android only; "
                              "the worker downloads it from the panel)")
+    parser.add_argument("--signing-seed-file", default=None,
+                        help="file holding the app attestation signing "
+                             "seed (43-char base64url, staged by the "
+                             "worker); consumed then deleted")
     return parser.parse_args(argv)
 
 
@@ -880,6 +914,20 @@ def main(argv: list[str] | None = None) -> int:
                  what="flutter gen-l10n")
         command = build_command(flutter_bin, platform, arch, defines,
                                 artifact=artifact)
+        secret_define_file: Path | None = None
+        if args.signing_seed_file:
+            seed = read_signing_seed(args.signing_seed_file)
+            handle, tmp_name = tempfile.mkstemp(
+                prefix="zagros-attest-", suffix=".json")
+            with os.fdopen(handle, "w", encoding="utf-8") as stream:
+                json.dump({"ZAGROS_APPLICATION_SIGNING_PRIVATE_KEY": seed},
+                          stream)
+            secret_define_file = Path(tmp_name)
+            command = build_command(flutter_bin, platform, arch, defines,
+                                    artifact=artifact,
+                                    secret_define_file=tmp_name)
+            print("app attestation seed: staged via --dart-define-from-file "
+                  "(value never printed)", flush=True)
         icon_backup: Path | None = None
         if platform == "android":
             # brand is never None here (required above). A stale file
@@ -898,6 +946,11 @@ def main(argv: list[str] | None = None) -> int:
         try:
             run_step(command, cwd=APP, what=f"flutter build {platform}")
         finally:
+            if secret_define_file is not None:
+                try:
+                    secret_define_file.unlink(missing_ok=True)
+                except OSError:
+                    pass
             if platform == "android":
                 if icon_backup is not None:
                     restore_android_icons(icon_backup)

@@ -11,7 +11,10 @@ void main() {
       tester,
     ) async {
       final config = ProductConfiguration.fromValues(
-        const <String, String>{'product_mode': 'official', 'default_locale': 'en'},
+        const <String, String>{
+          'product_mode': 'official',
+          'default_locale': 'en'
+        },
       );
       final controller = AppSettingsController(initialLocale: 'en');
 

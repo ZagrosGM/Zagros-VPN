@@ -22,7 +22,8 @@ class NoopSubscriptionClient implements OfficialSubscriptionClient {
     required String deviceId,
     String? etag,
     String? lastModified,
-  }) => throw UnimplementedError();
+  }) =>
+      throw UnimplementedError();
 }
 
 class RecordingTunnelAdapter implements TunnelAdapter {
@@ -37,11 +38,11 @@ class RecordingTunnelAdapter implements TunnelAdapter {
 
   @override
   Future<TunnelCapabilities> capabilities() async => TunnelCapabilities(
-    platform: 'widget-test',
-    protocols: <String>{'vless'},
-    canProtectEntireDevice: true,
-    canReportTraffic: false,
-  );
+        platform: 'widget-test',
+        protocols: <String>{'vless'},
+        canProtectEntireDevice: true,
+        canReportTraffic: false,
+      );
 
   @override
   Future<TunnelSnapshot> connect(TunnelConnectRequest request) async {
@@ -86,7 +87,9 @@ void main() {
     },
   );
 
-  test('controller passes the SDK model to TunnelAdapter without claiming early success', () async {
+  test(
+      'controller passes the SDK model to TunnelAdapter without claiming early success',
+      () async {
     final fixture = await _fixture();
     final adapter = RecordingTunnelAdapter();
     final controller = LibraryController(

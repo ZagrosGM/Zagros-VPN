@@ -96,25 +96,27 @@ class LibraryController extends ChangeNotifier {
     required String profileId,
     required String name,
     required String rawSource,
-  }) => _mutate(
-    () => repository.updateManual(
-      profileId: profileId,
-      name: name,
-      rawSource: rawSource,
-    ),
-  );
+  }) =>
+      _mutate(
+        () => repository.updateManual(
+          profileId: profileId,
+          name: name,
+          rawSource: rawSource,
+        ),
+      );
 
   Future<bool> updateSubscription({
     required String profileId,
     required String name,
     required String url,
-  }) => _mutate(
-    () => repository.updateSubscription(
-      profileId: profileId,
-      name: name,
-      url: url,
-    ),
-  );
+  }) =>
+      _mutate(
+        () => repository.updateSubscription(
+          profileId: profileId,
+          name: name,
+          url: url,
+        ),
+      );
 
   Future<bool> refresh(String profileId) =>
       _mutate(() => repository.refreshSubscription(profileId));
@@ -136,7 +138,8 @@ class LibraryController extends ChangeNotifier {
       if (!capabilities.supports(config.normalized.protocol)) {
         protocolUnavailableReason = capabilities
             .unavailableReasons[config.normalized.protocol.toLowerCase()];
-        lastErrorMessage = protocolUnavailableReason ?? 'این پروتکل در دستگاه شما پشتیبانی نمی‌شود.';
+        lastErrorMessage = protocolUnavailableReason ??
+            'این پروتکل در دستگاه شما پشتیبانی نمی‌شود.';
         return OfficialConnectResult.protocolUnavailable;
       }
       final snapshot = await adapter.connect(
@@ -150,7 +153,8 @@ class LibraryController extends ChangeNotifier {
       );
       tunnelSnapshot = snapshot;
       if (snapshot.state == TunnelState.failed) {
-        lastErrorMessage = snapshot.failure?.safeMessage ?? 'راه‌اندازی سرویس اتصال با خطا مواجه شد.';
+        lastErrorMessage = snapshot.failure?.safeMessage ??
+            'راه‌اندازی سرویس اتصال با خطا مواجه شد.';
         return OfficialConnectResult.failed;
       }
       return snapshot.state == TunnelState.connected
@@ -244,11 +248,13 @@ class LibraryController extends ChangeNotifier {
     }
     if (error is ZagrosException) {
       return switch (error.kind) {
-        ZagrosErrorKind.validation || ZagrosErrorKind.secureTransportRequired =>
+        ZagrosErrorKind.validation ||
+        ZagrosErrorKind.secureTransportRequired =>
           LibraryFailureKind.validation,
         ZagrosErrorKind.authentication ||
         ZagrosErrorKind.authorization ||
-        ZagrosErrorKind.rateLimited => LibraryFailureKind.authorization,
+        ZagrosErrorKind.rateLimited =>
+          LibraryFailureKind.authorization,
         ZagrosErrorKind.transport => LibraryFailureKind.transport,
         ZagrosErrorKind.malformedResponse => LibraryFailureKind.malformedData,
         _ => LibraryFailureKind.unknown,

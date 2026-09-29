@@ -3,7 +3,8 @@ import 'package:zagros_vpn/src/logs/diagnostic_logs_service.dart';
 
 void main() {
   group('DiagnosticLogsService Tests', () {
-    test('appends formatted logs with timestamp and respects capacity limit', () {
+    test('appends formatted logs with timestamp and respects capacity limit',
+        () {
       final service = DiagnosticLogsService(maxEntries: 5);
       expect(service.entries, isEmpty);
 

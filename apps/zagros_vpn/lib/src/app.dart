@@ -67,27 +67,27 @@ class _ZagrosAppState extends State<ZagrosApp> with WidgetsBindingObserver {
 
   @override
   Widget build(BuildContext context) => AppScope(
-    configuration: widget.configuration,
-    dependencies: widget.dependencies,
-    child: ListenableBuilder(
-      listenable: _settings,
-      builder: (context, _) => MaterialApp(
-        debugShowCheckedModeBanner: false,
-        onGenerateTitle: (_) => widget.configuration.appName,
-        locale: _settings.locale,
-        supportedLocales: AppLocalizations.supportedLocales,
-        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        theme: buildZagrosTheme(Brightness.light),
-        darkTheme: buildZagrosTheme(Brightness.dark),
-        home: AppShell(configuration: widget.configuration),
-      ),
-    ),
-  );
+        configuration: widget.configuration,
+        dependencies: widget.dependencies,
+        child: ListenableBuilder(
+          listenable: _settings,
+          builder: (context, _) => MaterialApp(
+            debugShowCheckedModeBanner: false,
+            onGenerateTitle: (_) => widget.configuration.appName,
+            locale: _settings.locale,
+            supportedLocales: AppLocalizations.supportedLocales,
+            localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+              AppLocalizations.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            theme: buildZagrosTheme(Brightness.light),
+            darkTheme: buildZagrosTheme(Brightness.dark),
+            home: AppShell(configuration: widget.configuration),
+          ),
+        ),
+      );
 }
 
 class ConfigurationErrorApp extends StatelessWidget {
@@ -97,32 +97,32 @@ class ConfigurationErrorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => MaterialApp(
-    debugShowCheckedModeBanner: false,
-    locale: locale,
-    supportedLocales: AppLocalizations.supportedLocales,
-    localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
-      AppLocalizations.delegate,
-      GlobalMaterialLocalizations.delegate,
-      GlobalWidgetsLocalizations.delegate,
-      GlobalCupertinoLocalizations.delegate,
-    ],
-    theme: buildZagrosTheme(Brightness.light),
-    home: Builder(
-      builder: (context) => Scaffold(
-        body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(32),
-            child: Semantics(
-              liveRegion: true,
-              child: Text(
-                AppLocalizations.of(context).configurationError,
-                textAlign: TextAlign.center,
-                style: Theme.of(context).textTheme.titleLarge,
+        debugShowCheckedModeBanner: false,
+        locale: locale,
+        supportedLocales: AppLocalizations.supportedLocales,
+        localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+          AppLocalizations.delegate,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate,
+          GlobalCupertinoLocalizations.delegate,
+        ],
+        theme: buildZagrosTheme(Brightness.light),
+        home: Builder(
+          builder: (context) => Scaffold(
+            body: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(32),
+                child: Semantics(
+                  liveRegion: true,
+                  child: Text(
+                    AppLocalizations.of(context).configurationError,
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
+                ),
               ),
             ),
           ),
         ),
-      ),
-    ),
-  );
+      );
 }

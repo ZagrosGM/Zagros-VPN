@@ -406,7 +406,8 @@ class WhiteLabelController extends ChangeNotifier {
       if (!capabilities.supports(selector.protocol)) {
         _protocolUnavailableReason =
             capabilities.unavailableReasons[selector.protocol.toLowerCase()];
-        _lastErrorMessage = _protocolUnavailableReason ?? 'این پروتکل در دستگاه شما پشتیبانی نمی‌شود.';
+        _lastErrorMessage = _protocolUnavailableReason ??
+            'این پروتکل در دستگاه شما پشتیبانی نمی‌شود.';
         _connectResult = WhiteLabelConnectResult.protocolUnavailable;
         return WhiteLabelConnectResult.protocolUnavailable;
       }
@@ -428,10 +429,12 @@ class WhiteLabelController extends ChangeNotifier {
             productMode: productMode,
             dnsServers: settings?.effectiveDnsServers ?? const <String>[],
             fakeDns: settings?.fakeDns ?? false,
-            perAppMode:
-                (settings?.perAppEnabled ?? false) ? settings!.perAppMode : 'off',
-            perAppPackages:
-                (settings?.perAppEnabled ?? false) ? settings!.perAppPackages : const <String>[],
+            perAppMode: (settings?.perAppEnabled ?? false)
+                ? settings!.perAppMode
+                : 'off',
+            perAppPackages: (settings?.perAppEnabled ?? false)
+                ? settings!.perAppPackages
+                : const <String>[],
           ),
         );
         if (snapshot.state == TunnelState.failed) {
@@ -558,12 +561,15 @@ class WhiteLabelController extends ChangeNotifier {
     _usage = await service.api.usageSummary(deviceId, token);
 
     try {
-      final savedBytes = await service.auth.identityStorage.read('zagros.selected.config.id.v1');
+      final savedBytes = await service.auth.identityStorage
+          .read('zagros.selected.config.id.v1');
       if (savedBytes != null) {
         final savedKey = utf8.decode(savedBytes, allowMalformed: true);
         for (final s in _selectors) {
           final key = '${s.protocol}:${s.coreId}:${s.displayName}';
-          if ((key == savedKey || (s.configId != null && s.configId == savedKey)) && s.connectable) {
+          if ((key == savedKey ||
+                  (s.configId != null && s.configId == savedKey)) &&
+              s.connectable) {
             _selectedSelector = s;
             _selectedConfigId = key;
             break;
@@ -573,9 +579,20 @@ class WhiteLabelController extends ChangeNotifier {
     } catch (_) {
       // Ignore read error
     }
-    if ((_selectedSelector == null || !_selectedSelector!.connectable) && _selectors.isNotEmpty) {
+    if ((_selectedSelector == null || !_selectedSelector!.connectable) &&
+        _selectors.isNotEmpty) {
       _selectedSelector = _selectors.firstWhere(
-        (s) => s.connectable && const ['vless', 'vmess', 'trojan', 'shadowsocks', 'hysteria2', 'tuic', 'wireguard'].contains(s.protocol),
+        (s) =>
+            s.connectable &&
+            const [
+              'vless',
+              'vmess',
+              'trojan',
+              'shadowsocks',
+              'hysteria2',
+              'tuic',
+              'wireguard'
+            ].contains(s.protocol),
         orElse: () => _selectors.firstWhere(
           (s) => s.connectable,
           orElse: () => _selectors.first,
@@ -602,8 +619,8 @@ class WhiteLabelController extends ChangeNotifier {
       case ZagrosErrorKind.transport:
         _error = WhiteLabelError.networkUnreachable;
       case ZagrosErrorKind.applicationNotFound ||
-          ZagrosErrorKind.applicationGrantNotFound ||
-          ZagrosErrorKind.applicationKeyNotFound:
+            ZagrosErrorKind.applicationGrantNotFound ||
+            ZagrosErrorKind.applicationKeyNotFound:
         _error = WhiteLabelError.accessDenied;
       default:
         _error = _mapError(error);
@@ -616,14 +633,16 @@ class WhiteLabelController extends ChangeNotifier {
   }
 
   WhiteLabelError _mapError(ZagrosException error) => switch (error.kind) {
-    ZagrosErrorKind.authentication => WhiteLabelError.invalidCredentials,
-    ZagrosErrorKind.activationTicketInvalid => WhiteLabelError.ticketInvalid,
-    ZagrosErrorKind.authorization => WhiteLabelError.accessDenied,
-    ZagrosErrorKind.enrollmentRequired => WhiteLabelError.enrollmentRequired,
-    ZagrosErrorKind.rateLimited => WhiteLabelError.rateLimited,
-    ZagrosErrorKind.transport => WhiteLabelError.networkUnreachable,
-    _ => WhiteLabelError.unknown,
-  };
+        ZagrosErrorKind.authentication => WhiteLabelError.invalidCredentials,
+        ZagrosErrorKind.activationTicketInvalid =>
+          WhiteLabelError.ticketInvalid,
+        ZagrosErrorKind.authorization => WhiteLabelError.accessDenied,
+        ZagrosErrorKind.enrollmentRequired =>
+          WhiteLabelError.enrollmentRequired,
+        ZagrosErrorKind.rateLimited => WhiteLabelError.rateLimited,
+        ZagrosErrorKind.transport => WhiteLabelError.networkUnreachable,
+        _ => WhiteLabelError.unknown,
+      };
 
   Future<void> _dropToLogin(WhiteLabelError error) async {
     var mapped = error;
@@ -653,14 +672,16 @@ class WhiteLabelController extends ChangeNotifier {
   }
 
   String _mapTunnelFailure(String? code) => switch (code?.toLowerCase()) {
-    'vpn_permission_denied' => 'مجوز ایجاد تونل VPN توسط کاربر تایید نشد.',
-    'engine_failed' => 'راه‌اندازی هسته اتصال با خطا مواجه شد.',
-    'invalid_config' => 'پیکربندی سرور نامعتبر است.',
-    'endpoint_resolution_failed' => 'آدرس سرور در دسترس نیست.',
-    'backend_unavailable' || 'protocol_unavailable' => 'این پروتکل در دستگاه شما پشتیبانی نمی‌شود.',
-    'operation_in_progress' => 'عملیات دیگری در حال اجرا است.',
-    _ => 'برقراری اتصال با خطا مواجه شد.',
-  };
+        'vpn_permission_denied' => 'مجوز ایجاد تونل VPN توسط کاربر تایید نشد.',
+        'engine_failed' => 'راه‌اندازی هسته اتصال با خطا مواجه شد.',
+        'invalid_config' => 'پیکربندی سرور نامعتبر است.',
+        'endpoint_resolution_failed' => 'آدرس سرور در دسترس نیست.',
+        'backend_unavailable' ||
+        'protocol_unavailable' =>
+          'این پروتکل در دستگاه شما پشتیبانی نمی‌شود.',
+        'operation_in_progress' => 'عملیات دیگری در حال اجرا است.',
+        _ => 'برقراری اتصال با خطا مواجه شد.',
+      };
 
   void _clearData() {
     _profile = null;

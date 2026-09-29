@@ -29,30 +29,29 @@ Future<void> main() async {
     final configuration = ProductConfiguration.fromEnvironment();
     final secureStores = ClientSecureStores(
       backend: FlutterSecureStorageBackend(),
-      namespace: configuration.isWhiteLabel
-          ? 'zagros.whitelabel'
-          : 'zagros.official',
+      namespace:
+          configuration.isWhiteLabel ? 'zagros.whitelabel' : 'zagros.official',
     );
     final officialProfiles =
         configuration.policy.allows(ClientCapability.rawConfigPersistence)
-        ? OfficialProfileRepository(
-            policy: configuration.policy,
-            store: SecureOfficialCatalogStore(
-              policy: configuration.policy,
-              storage: secureStores.values,
-            ),
-            subscriptionClient: HttpOfficialSubscriptionClient(),
-            deviceIdManager: OfficialDeviceIdManager(secureStores.values),
-          )
-        : null;
+            ? OfficialProfileRepository(
+                policy: configuration.policy,
+                store: SecureOfficialCatalogStore(
+                  policy: configuration.policy,
+                  storage: secureStores.values,
+                ),
+                subscriptionClient: HttpOfficialSubscriptionClient(),
+                deviceIdManager: OfficialDeviceIdManager(secureStores.values),
+              )
+            : null;
     final rawConfigActions =
         configuration.policy.allows(ClientCapability.rawConfigDisplay)
-        ? PlatformRawConfigActions(configuration.policy)
-        : null;
+            ? PlatformRawConfigActions(configuration.policy)
+            : null;
     final whiteLabel =
         configuration.policy.allows(ClientCapability.applicationLogin)
-        ? await _buildWhiteLabelService(configuration, secureStores)
-        : null;
+            ? await _buildWhiteLabelService(configuration, secureStores)
+            : null;
     // One shared settings instance for the whole app (f53): the previous code
     // created one controller in the app root and ANOTHER in the shell, so
     // language/DNS changes never reached the MaterialApp and were lost on
@@ -99,7 +98,8 @@ Future<WhiteLabelService?> _buildWhiteLabelService(
       application: application,
       stores: secureStores,
       appSigningSeed: configuration.applicationSigningSeed,
-      allowInsecureHttp: baseUri.scheme == 'http' || configuration.allowInsecureHttp,
+      allowInsecureHttp:
+          baseUri.scheme == 'http' || configuration.allowInsecureHttp,
     );
   } catch (_) {
     return null;
@@ -135,11 +135,12 @@ Future<AppSettingsController> _loadSettings(
     savedLocale =
         _decodeStr(await storage.read('settings.locale')) ?? savedLocale;
     savedDns = _decodeStr(await storage.read('settings.dnsPreset')) ?? savedDns;
-    savedCustomDns =
-        _decodeStr(await storage.read('settings.customDns')) ?? '';
-    savedFakeDns = (_decodeStr(await storage.read('settings.fakeDns')) ?? '0') == '1';
+    savedCustomDns = _decodeStr(await storage.read('settings.customDns')) ?? '';
+    savedFakeDns =
+        (_decodeStr(await storage.read('settings.fakeDns')) ?? '0') == '1';
     savedPerAppEnabled =
-        (_decodeStr(await storage.read('settings.perAppEnabled')) ?? '0') == '1';
+        (_decodeStr(await storage.read('settings.perAppEnabled')) ?? '0') ==
+            '1';
     savedPerAppMode =
         _decodeStr(await storage.read('settings.perAppMode')) ?? 'allow';
     final rawPkgs =

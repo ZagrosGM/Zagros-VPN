@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -39,22 +39,27 @@ class AppLocalizationsEn extends AppLocalizations {
   String get foundationTitle => 'Secure client services';
 
   @override
-  String get foundationBody => 'Product policy, OS-protected storage, localization, and native tunnel orchestration are composed from one shared source tree.';
+  String get foundationBody =>
+      'Product policy, OS-protected storage, localization, and native tunnel orchestration are composed from one shared source tree.';
 
   @override
-  String get libraryBody => 'Official subscriptions and manual configurations are managed here under SDK policy.';
+  String get libraryBody =>
+      'Official subscriptions and manual configurations are managed here under SDK policy.';
 
   @override
-  String get accountBody => 'Application enrollment and authenticated access are available only in White-label mode.';
+  String get accountBody =>
+      'Application enrollment and authenticated access are available only in White-label mode.';
 
   @override
-  String get settingsBody => 'Review security, platform capability, and open-source information without exposing runtime configuration.';
+  String get settingsBody =>
+      'Review security, platform capability, and open-source information without exposing runtime configuration.';
 
   @override
   String get openSourceLicenses => 'Open-source licenses';
 
   @override
-  String get openSourceLicensesBody => 'Review notices and licenses for Flutter and native tunnel components.';
+  String get openSourceLicensesBody =>
+      'Review notices and licenses for Flutter and native tunnel components.';
 
   @override
   String get configurationError => 'This build configuration is invalid.';
@@ -72,13 +77,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nativeTunnelLabel => 'Native tunnel';
 
   @override
-  String get nativeTunnelPending => 'Protocol availability is discovered from the installed native platform adapter.';
+  String get nativeTunnelPending =>
+      'Protocol availability is discovered from the installed native platform adapter.';
 
   @override
   String get libraryUnavailableTitle => 'Official library unavailable';
 
   @override
-  String get libraryUnavailableBody => 'This product policy does not provide the Official profile repository.';
+  String get libraryUnavailableBody =>
+      'This product policy does not provide the Official profile repository.';
 
   @override
   String get libraryLoadFailed => 'Could not open the protected library';
@@ -90,19 +97,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get libraryEmptyTitle => 'No profiles yet';
 
   @override
-  String get libraryEmptyBody => 'Add a subscription or paste a supported manual configuration. Secrets are stored only through OS-protected storage.';
+  String get libraryEmptyBody =>
+      'Add a subscription or paste a supported manual configuration. Secrets are stored only through OS-protected storage.';
 
   @override
   String get libraryTitle => 'VPN profiles';
 
   @override
-  String get libraryDescription => 'Manage Official subscriptions and manual configurations parsed by the Zagros SDK.';
+  String get libraryDescription =>
+      'Manage Official subscriptions and manual configurations parsed by the Zagros SDK.';
 
   @override
   String get tunnelUnavailableTitle => 'Connection unavailable';
 
   @override
-  String get tunnelUnavailableBody => 'The installed native adapter does not support this configuration on the current platform.';
+  String get tunnelUnavailableBody =>
+      'The installed native adapter does not support this configuration on the current platform.';
 
   @override
   String get addSubscription => 'Add subscription';
@@ -189,10 +199,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get rawConfiguration => 'Raw configuration';
 
   @override
-  String get subscriptionUrlHelp => 'HTTPS is required. HTTP is accepted only for a loopback development server.';
+  String get subscriptionUrlHelp =>
+      'HTTPS is required. HTTP is accepted only for a loopback development server.';
 
   @override
-  String get manualConfigHelp => 'Paste a share link list, WireGuard, OpenVPN, Clash, or sing-box configuration.';
+  String get manualConfigHelp =>
+      'Paste a share link list, WireGuard, OpenVPN, Clash, or sing-box configuration.';
 
   @override
   String get editProfile => 'Edit profile';
@@ -224,7 +236,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get rawConfigTitle => 'Raw configuration';
 
   @override
-  String get rawConfigSecretWarning => 'This configuration contains credentials. Do not share it with anyone you do not trust.';
+  String get rawConfigSecretWarning =>
+      'This configuration contains credentials. Do not share it with anyone you do not trust.';
 
   @override
   String get copy => 'Copy';
@@ -242,34 +255,43 @@ class AppLocalizationsEn extends AppLocalizations {
   String get exportRawTitle => 'Export plaintext configuration?';
 
   @override
-  String get exportRawWarning => 'Export writes credentials to a plaintext file at a user-accessible location. Protect or delete that file after use.';
+  String get exportRawWarning =>
+      'Export writes credentials to a plaintext file at a user-accessible location. Protect or delete that file after use.';
 
   @override
   String get exported => 'Configuration exported.';
 
   @override
-  String get legacyProtocolWarning => 'PPTP is legacy and insecure, and is unavailable on modern iOS and Android systems.';
+  String get legacyProtocolWarning =>
+      'PPTP is legacy and insecure, and is unavailable on modern iOS and Android systems.';
 
   @override
-  String get platformProtocolWarning => 'L2TP support depends on the operating system and is limited on modern iOS and Android systems.';
+  String get platformProtocolWarning =>
+      'L2TP support depends on the operating system and is limited on modern iOS and Android systems.';
 
   @override
-  String get genericProtocolWarning => 'Review this protocol warning before connecting.';
+  String get genericProtocolWarning =>
+      'Review this protocol warning before connecting.';
 
   @override
-  String get libraryValidationFailed => 'The profile name, URL, or configuration is invalid.';
+  String get libraryValidationFailed =>
+      'The profile name, URL, or configuration is invalid.';
 
   @override
-  String get libraryAccessDenied => 'The server or product policy denied this operation.';
+  String get libraryAccessDenied =>
+      'The server or product policy denied this operation.';
 
   @override
-  String get libraryNetworkFailed => 'The subscription could not be reached. The previous profile was kept.';
+  String get libraryNetworkFailed =>
+      'The subscription could not be reached. The previous profile was kept.';
 
   @override
-  String get libraryStorageFailed => 'OS-protected storage is unavailable. No plaintext fallback was used.';
+  String get libraryStorageFailed =>
+      'OS-protected storage is unavailable. No plaintext fallback was used.';
 
   @override
-  String get libraryMalformedFailed => 'The configuration or protected catalog is malformed.';
+  String get libraryMalformedFailed =>
+      'The configuration or protected catalog is malformed.';
 
   @override
   String get libraryUnknownFailed => 'The operation could not be completed.';
@@ -286,19 +308,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get connectionRequestedTitle => 'Connection requested';
 
   @override
-  String get connectionRequestedBody => 'The native adapter accepted the request but has not confirmed a connected state.';
+  String get connectionRequestedBody =>
+      'The native adapter accepted the request but has not confirmed a connected state.';
 
   @override
   String get connectedTitle => 'Connected';
 
   @override
-  String get connectedBody => 'The native adapter confirmed the tunnel connection.';
+  String get connectedBody =>
+      'The native adapter confirmed the tunnel connection.';
 
   @override
   String get connectionFailedTitle => 'Connection failed';
 
   @override
-  String get connectionFailedBody => 'The native tunnel adapter rejected the request.';
+  String get connectionFailedBody =>
+      'The native tunnel adapter rejected the request.';
 
   @override
   String get ok => 'OK';
@@ -356,49 +381,58 @@ class AppLocalizationsEn extends AppLocalizations {
   String get noConfigsTitle => 'No connections available';
 
   @override
-  String get noConfigsBody => 'The server returned no connectable configurations for this account.';
+  String get noConfigsBody =>
+      'The server returned no connectable configurations for this account.';
 
   @override
   String get serviceUnavailableTitle => 'Account unavailable';
 
   @override
-  String get serviceUnavailableBody => 'The Application service could not start. OS-protected storage may be unavailable.';
+  String get serviceUnavailableBody =>
+      'The Application service could not start. OS-protected storage may be unavailable.';
 
   @override
   String get alreadyConnectedTitle => 'Already connected';
 
   @override
-  String get alreadyConnectedBody => 'Disconnect the active connection before starting another.';
+  String get alreadyConnectedBody =>
+      'Disconnect the active connection before starting another.';
 
   @override
-  String get errorEnrollInput => 'Enter a username, password, and activation code.';
+  String get errorEnrollInput =>
+      'Enter a username, password, and activation code.';
 
   @override
   String get errorLoginInput => 'Enter a username and password.';
 
   @override
-  String get errorInvalidCredentials => 'The username or password is incorrect.';
+  String get errorInvalidCredentials =>
+      'The username or password is incorrect.';
 
   @override
   String get errorTicketInvalid => 'The activation code is invalid or expired.';
 
   @override
-  String get errorAccessDenied => 'This account or device is not allowed to connect.';
+  String get errorAccessDenied =>
+      'This account or device is not allowed to connect.';
 
   @override
   String get errorSessionExpired => 'The session expired. Sign in again.';
 
   @override
-  String get errorEnrollmentRequired => 'This device is no longer enrolled. Enter a new activation code.';
+  String get errorEnrollmentRequired =>
+      'This device is no longer enrolled. Enter a new activation code.';
 
   @override
-  String get errorNetwork => 'The server could not be reached. Check the connection and retry.';
+  String get errorNetwork =>
+      'The server could not be reached. Check the connection and retry.';
 
   @override
   String get errorRateLimited => 'Too many attempts. Wait a moment and retry.';
 
   @override
-  String get errorStorage => 'OS-protected storage is unavailable. No plaintext fallback was used.';
+  String get errorStorage =>
+      'OS-protected storage is unavailable. No plaintext fallback was used.';
 
   @override
   String get errorUnknown => 'The operation could not be completed.';
@@ -437,7 +471,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get unsupportedProtocol => 'Unsupported';
 
   @override
-  String get protocolNotImplemented => 'This protocol engine is not packaged in this release and will be available in future updates.';
+  String get protocolNotImplemented =>
+      'This protocol engine is not packaged in this release and will be available in future updates.';
 
   @override
   String get clearLogs => 'Clear logs';
@@ -477,6 +512,45 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get customDnsAddress => 'Custom DNS Server';
+
+  @override
+  String get fakeDnsTitle => 'Fake DNS';
+
+  @override
+  String get fakeDnsSubtitle =>
+      'Domains answer from a synthetic pool for faster connects; real addresses are restored inside the tunnel.';
+
+  @override
+  String get perAppTitle => 'Per-app proxy';
+
+  @override
+  String get perAppSubtitle => 'Choose which apps go through the VPN tunnel.';
+
+  @override
+  String get perAppAllowMode => 'Only selected apps use the VPN';
+
+  @override
+  String get perAppDenyMode => 'Selected apps bypass the VPN';
+
+  @override
+  String get perAppSelectApps => 'Select apps';
+
+  @override
+  String get perAppSearch => 'Search apps';
+
+  @override
+  String perAppSelectedCount(int count) {
+    return '$count selected';
+  }
+
+  @override
+  String get perAppNoApps => 'No apps found';
+
+  @override
+  String get perAppClearAll => 'Clear';
+
+  @override
+  String get perAppAppliesNextConnect => 'Applies on the next connection.';
 
   @override
   String get ping => 'Ping';

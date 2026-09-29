@@ -8,8 +8,13 @@ enum DnsPreset {
 }
 
 typedef AppSettingsPersist = void Function(
-    String locale, String dnsPreset, String customDns, bool fakeDns,
-    bool perAppEnabled, String perAppMode, List<String> perAppPackages);
+    String locale,
+    String dnsPreset,
+    String customDns,
+    bool fakeDns,
+    bool perAppEnabled,
+    String perAppMode,
+    List<String> perAppPackages);
 
 class AppSettingsController extends ChangeNotifier {
   AppSettingsController({

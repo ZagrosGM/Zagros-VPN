@@ -94,13 +94,15 @@ class _AppShellState extends State<AppShell> {
       case TunnelState.connecting:
         logs.log('Connecting to VPN tunnel (seq: ${snapshot.sequence})...');
       case TunnelState.connected:
-        logs.log('VPN Established on interface tun0 (Tx: ${snapshot.uplinkBytes} B, Rx: ${snapshot.downlinkBytes} B)');
+        logs.log(
+            'VPN Established on interface tun0 (Tx: ${snapshot.uplinkBytes} B, Rx: ${snapshot.downlinkBytes} B)');
       case TunnelState.disconnecting:
         logs.log('Disconnecting VPN tunnel...');
       case TunnelState.disconnected:
         logs.log('VPN Disconnected safely.');
       case TunnelState.failed:
-        logs.log('VPN connection failed (${snapshot.failure?.code ?? 'unknown'}).');
+        logs.log(
+            'VPN connection failed (${snapshot.failure?.code ?? 'unknown'}).');
     }
   }
 

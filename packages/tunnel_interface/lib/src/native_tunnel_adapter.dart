@@ -19,7 +19,7 @@ abstract interface class NativeTunnelGateway {
 
 final class PigeonNativeTunnelGateway implements NativeTunnelGateway {
   PigeonNativeTunnelGateway({NativeTunnelHostApi? api})
-    : _api = api ?? NativeTunnelHostApi();
+      : _api = api ?? NativeTunnelHostApi();
 
   final NativeTunnelHostApi _api;
 
@@ -172,8 +172,7 @@ final class NativeTunnelAdapter
     if (!available.supports(protocol)) {
       throw TunnelFailure(
         code: 'protocol_unavailable',
-        safeMessage:
-            available.unavailableReasons[protocol] ??
+        safeMessage: available.unavailableReasons[protocol] ??
             'This protocol is unavailable on the current platform.',
       );
     }
@@ -261,22 +260,22 @@ final class NativeTunnelAdapter
 
   @override
   Future<void> dispose() => _serialized(() async {
-    if (_disposed) return;
-    if (_last.isActive || _activeConnectionId != null) {
-      try {
-        await _gateway.disconnect('adapter_disposed');
-      } on Object {
-        // Best effort only during shutdown; the OS owns final tunnel teardown.
-      }
-    }
-    _disposed = true;
-    if (_ownsCallbackRegistration) {
-      NativeTunnelFlutterApi.setUp(null);
-      _traceChannel.setMethodCallHandler(null);
-    }
-    await _snapshots.close();
-    await _traceLogs.close();
-  });
+        if (_disposed) return;
+        if (_last.isActive || _activeConnectionId != null) {
+          try {
+            await _gateway.disconnect('adapter_disposed');
+          } on Object {
+            // Best effort only during shutdown; the OS owns final tunnel teardown.
+          }
+        }
+        _disposed = true;
+        if (_ownsCallbackRegistration) {
+          NativeTunnelFlutterApi.setUp(null);
+          _traceChannel.setMethodCallHandler(null);
+        }
+        await _snapshots.close();
+        await _traceLogs.close();
+      });
 
   Future<T> _serialized<T>(Future<T> Function() operation) async {
     final predecessor = _operationTail;
@@ -312,7 +311,8 @@ final class NativeTunnelAdapter
     if (!_allowStructuredOsProfiles &&
         const <String>{'ios', 'macos', 'windows'}.contains(platform)) {
       protocols.remove('ikev2');
-      reasons['ikev2'] = 'IKEv2 requires an OS-managed profile and is disabled by runtime-only policy.';
+      reasons['ikev2'] =
+          'IKEv2 requires an OS-managed profile and is disabled by runtime-only policy.';
     }
     return TunnelCapabilities(
       platform: platform,
@@ -344,9 +344,8 @@ final class NativeTunnelAdapter
         throw const FormatException('native connection ID mismatch');
       }
     }
-    final protocol = native.protocol == null
-        ? null
-        : _safeProtocol(native.protocol!);
+    final protocol =
+        native.protocol == null ? null : _safeProtocol(native.protocol!);
     final state = switch (native.state) {
       NativeTunnelState.disconnected => TunnelState.disconnected,
       NativeTunnelState.preparing => TunnelState.preparing,
@@ -355,8 +354,7 @@ final class NativeTunnelAdapter
       NativeTunnelState.disconnecting => TunnelState.disconnecting,
       NativeTunnelState.failed => TunnelState.failed,
     };
-    final requiresIdentity =
-        state == TunnelState.preparing ||
+    final requiresIdentity = state == TunnelState.preparing ||
         state == TunnelState.connecting ||
         state == TunnelState.connected ||
         state == TunnelState.disconnecting;
@@ -443,16 +441,16 @@ final class NativeTunnelAdapter
   }
 
   bool _isNonMutatingRejection(String code) => const <String>{
-    'backend_unavailable',
-    'endpoint_resolution_failed',
-    'invalid_config',
-    'invalid_disconnect_reason',
-    'invalid_request',
-    'operation_in_progress',
-    'protocol_unavailable',
-    'runtime_profile_policy',
-    'vpn_permission_denied',
-  }.contains(code);
+        'backend_unavailable',
+        'endpoint_resolution_failed',
+        'invalid_config',
+        'invalid_disconnect_reason',
+        'invalid_request',
+        'operation_in_progress',
+        'protocol_unavailable',
+        'runtime_profile_policy',
+        'vpn_permission_denied',
+      }.contains(code);
 
   String _safeLabel(String value, String name, {required int maximum}) {
     if (value.isEmpty ||
@@ -471,9 +469,9 @@ final class NativeTunnelAdapter
 
   String _safeReason(String value) {
     final normalized = value.toLowerCase().replaceAll(
-      RegExp(r'[^a-z0-9_]+'),
-      '_',
-    );
+          RegExp(r'[^a-z0-9_]+'),
+          '_',
+        );
     if (normalized.isEmpty) return 'user_requested';
     return normalized.substring(0, normalized.length.clamp(0, 64));
   }

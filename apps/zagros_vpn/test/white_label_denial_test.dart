@@ -56,8 +56,9 @@ void main() {
 
   test('secure-storage adapter has no runtime-config persistence path', () {
     final base = _appDir;
-    final storageSource = File('${base.path}/lib/src/storage/secure_storage.dart')
-        .readAsStringSync();
+    final storageSource =
+        File('${base.path}/lib/src/storage/secure_storage.dart')
+            .readAsStringSync();
     for (final prohibitedType in <String>[
       'NormalizedConfig',
       'OpenedConfig',
@@ -94,8 +95,9 @@ void main() {
         );
       }
 
-      final actions = File('${base.path}/lib/src/platform/raw_config_actions.dart')
-          .readAsStringSync();
+      final actions =
+          File('${base.path}/lib/src/platform/raw_config_actions.dart')
+              .readAsStringSync();
       expect(
         actions,
         contains('policy.require(ClientCapability.rawConfigClipboard)'),

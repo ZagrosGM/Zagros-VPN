@@ -62,7 +62,8 @@ import 'app_localizations_fa.dart';
 /// be consistent with the languages listed in the AppLocalizations.supportedLocales
 /// property.
 abstract class AppLocalizations {
-  AppLocalizations(String locale) : localeName = intl.Intl.canonicalizedLocale(locale.toString());
+  AppLocalizations(String locale)
+      : localeName = intl.Intl.canonicalizedLocale(locale.toString());
 
   final String localeName;
 
@@ -70,7 +71,8 @@ abstract class AppLocalizations {
     return Localizations.of<AppLocalizations>(context, AppLocalizations)!;
   }
 
-  static const LocalizationsDelegate<AppLocalizations> delegate = _AppLocalizationsDelegate();
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 
   /// A list of this localizations delegate along with the default localizations
   /// delegates.
@@ -82,7 +84,8 @@ abstract class AppLocalizations {
   /// Additional delegates can be added by appending to this list in
   /// MaterialApp. This list does not have to be used at all if a custom list
   /// of delegates is preferred or required.
-  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates = <LocalizationsDelegate<dynamic>>[
+  static const List<LocalizationsDelegate<dynamic>> localizationsDelegates =
+      <LocalizationsDelegate<dynamic>>[
     delegate,
     GlobalMaterialLocalizations.delegate,
     GlobalCupertinoLocalizations.delegate,
@@ -977,6 +980,78 @@ abstract class AppLocalizations {
   /// **'Custom DNS Server'**
   String get customDnsAddress;
 
+  /// No description provided for @fakeDnsTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Fake DNS'**
+  String get fakeDnsTitle;
+
+  /// No description provided for @fakeDnsSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Domains answer from a synthetic pool for faster connects; real addresses are restored inside the tunnel.'**
+  String get fakeDnsSubtitle;
+
+  /// No description provided for @perAppTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Per-app proxy'**
+  String get perAppTitle;
+
+  /// No description provided for @perAppSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Choose which apps go through the VPN tunnel.'**
+  String get perAppSubtitle;
+
+  /// No description provided for @perAppAllowMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Only selected apps use the VPN'**
+  String get perAppAllowMode;
+
+  /// No description provided for @perAppDenyMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Selected apps bypass the VPN'**
+  String get perAppDenyMode;
+
+  /// No description provided for @perAppSelectApps.
+  ///
+  /// In en, this message translates to:
+  /// **'Select apps'**
+  String get perAppSelectApps;
+
+  /// No description provided for @perAppSearch.
+  ///
+  /// In en, this message translates to:
+  /// **'Search apps'**
+  String get perAppSearch;
+
+  /// No description provided for @perAppSelectedCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} selected'**
+  String perAppSelectedCount(int count);
+
+  /// No description provided for @perAppNoApps.
+  ///
+  /// In en, this message translates to:
+  /// **'No apps found'**
+  String get perAppNoApps;
+
+  /// No description provided for @perAppClearAll.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear'**
+  String get perAppClearAll;
+
+  /// No description provided for @perAppAppliesNextConnect.
+  ///
+  /// In en, this message translates to:
+  /// **'Applies on the next connection.'**
+  String get perAppAppliesNextConnect;
+
   /// No description provided for @ping.
   ///
   /// In en, this message translates to:
@@ -1050,7 +1125,8 @@ abstract class AppLocalizations {
   String subscriptionLastRefreshed(String date);
 }
 
-class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
+class _AppLocalizationsDelegate
+    extends LocalizationsDelegate<AppLocalizations> {
   const _AppLocalizationsDelegate();
 
   @override
@@ -1059,25 +1135,25 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'fa'].contains(locale.languageCode);
+  bool isSupported(Locale locale) =>
+      <String>['en', 'fa'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
 }
 
 AppLocalizations lookupAppLocalizations(Locale locale) {
-
-
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'en': return AppLocalizationsEn();
-    case 'fa': return AppLocalizationsFa();
+    case 'en':
+      return AppLocalizationsEn();
+    case 'fa':
+      return AppLocalizationsFa();
   }
 
   throw FlutterError(
-    'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
-    'an issue with the localizations generation tool. Please file an issue '
-    'on GitHub with a reproducible sample app and the gen-l10n configuration '
-    'that was used.'
-  );
+      'AppLocalizations.delegate failed to load unsupported locale "$locale". This is likely '
+      'an issue with the localizations generation tool. Please file an issue '
+      'on GitHub with a reproducible sample app and the gen-l10n configuration '
+      'that was used.');
 }

@@ -41,11 +41,12 @@ class _ControllerFixture {
 
   AcquireWhiteLabelConfig stubAcquire(
     void Function(AcquiredConfig acquired) onAcquire,
-  ) => (session, selector) async {
-    final acquired = _acquired(stack, session);
-    onAcquire(acquired);
-    return acquired;
-  };
+  ) =>
+      (session, selector) async {
+        final acquired = _acquired(stack, session);
+        onAcquire(acquired);
+        return acquired;
+      };
 
   AcquiredConfig _acquired(
     WhiteLabelTestStack stack,
@@ -101,10 +102,10 @@ class _ControllerFixture {
   }
 
   bool get sawStop => stack.transport.requests.any(
-    (request) =>
-        request.method == 'POST' &&
-        request.path == '/api/application/v1/connections/conn-1/stop',
-  );
+        (request) =>
+            request.method == 'POST' &&
+            request.path == '/api/application/v1/connections/conn-1/stop',
+      );
 }
 
 Future<void> _waitFor(bool Function() condition) async {

@@ -15,7 +15,8 @@ final class AppCatalog {
 
   Future<List<AppCatalogEntry>> listLaunchableApps() async {
     try {
-      final raw = await _channel.invokeListMethod<Object?>('listLaunchableApps');
+      final raw =
+          await _channel.invokeListMethod<Object?>('listLaunchableApps');
       if (raw == null) return const <AppCatalogEntry>[];
       return raw
           .whereType<Map<Object?, Object?>>()

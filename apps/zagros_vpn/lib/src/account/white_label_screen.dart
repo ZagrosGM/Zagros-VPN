@@ -88,40 +88,40 @@ class _WhiteLabelAccountScreenState extends State<WhiteLabelAccountScreen> {
         _maybeShowConnectResult(context, controller);
         return switch (controller.phase) {
           WhiteLabelPhase.initializing => const Center(
-            child: CircularProgressIndicator(),
-          ),
+              child: CircularProgressIndicator(),
+            ),
           // Enrollment and login are the same two-field form: the device is
           // proven by the build-embedded signing key, so the user never
           // enters an activation code. Only the submit action differs.
           WhiteLabelPhase.needsEnrollment => _LoginForm(
-            username: _username,
-            password: _password,
-            busy: controller.authenticating || controller.enrolling,
-            error: _errorText(localizations, controller),
-            onSubmit: () => _submitEnroll(controller),
-            submitKey: 'wl-enroll-submit',
-            title: localizations.enrollTitle,
-          ),
+              username: _username,
+              password: _password,
+              busy: controller.authenticating || controller.enrolling,
+              error: _errorText(localizations, controller),
+              onSubmit: () => _submitEnroll(controller),
+              submitKey: 'wl-enroll-submit',
+              title: localizations.enrollTitle,
+            ),
           WhiteLabelPhase.needsLogin => _LoginForm(
-            username: _username,
-            password: _password,
-            busy: controller.authenticating || controller.enrolling,
-            error: _errorText(localizations, controller),
-            onSubmit: () => _submitLogin(controller),
-          ),
+              username: _username,
+              password: _password,
+              busy: controller.authenticating || controller.enrolling,
+              error: _errorText(localizations, controller),
+              onSubmit: () => _submitLogin(controller),
+            ),
           WhiteLabelPhase.ready => _AccountReady(
-            controller: controller,
-            onRefresh: controller.working
-                ? null
-                : () => unawaited(controller.refreshData()),
-            onLogout: () => unawaited(controller.logout()),
-            onConnect: controller.connecting
-                ? null
-                : (selector) => unawaited(_connect(controller, selector)),
-            onDisconnect: controller.disconnecting
-                ? null
-                : () => unawaited(controller.disconnect()),
-          ),
+              controller: controller,
+              onRefresh: controller.working
+                  ? null
+                  : () => unawaited(controller.refreshData()),
+              onLogout: () => unawaited(controller.logout()),
+              onConnect: controller.connecting
+                  ? null
+                  : (selector) => unawaited(_connect(controller, selector)),
+              onDisconnect: controller.disconnecting
+                  ? null
+                  : () => unawaited(controller.disconnect()),
+            ),
         };
       },
     );
@@ -139,32 +139,32 @@ class _WhiteLabelAccountScreenState extends State<WhiteLabelAccountScreen> {
       final localizations = AppLocalizations.of(context);
       final (title, body) = switch (result) {
         WhiteLabelConnectResult.adapterUnavailable => (
-          localizations.tunnelUnavailableTitle,
-          localizations.tunnelUnavailableBody,
-        ),
+            localizations.tunnelUnavailableTitle,
+            localizations.tunnelUnavailableBody,
+          ),
         WhiteLabelConnectResult.protocolUnavailable => (
-          localizations.protocolUnavailableTitle,
-          controller.protocolUnavailableReason ??
-              localizations.protocolUnavailableBody(
-                controller.attemptedProtocol ?? '',
-              ),
-        ),
+            localizations.protocolUnavailableTitle,
+            controller.protocolUnavailableReason ??
+                localizations.protocolUnavailableBody(
+                  controller.attemptedProtocol ?? '',
+                ),
+          ),
         WhiteLabelConnectResult.alreadyConnected => (
-          localizations.alreadyConnectedTitle,
-          localizations.alreadyConnectedBody,
-        ),
+            localizations.alreadyConnectedTitle,
+            localizations.alreadyConnectedBody,
+          ),
         WhiteLabelConnectResult.requestAccepted => (
-          localizations.connectionRequestedTitle,
-          localizations.connectionRequestedBody,
-        ),
+            localizations.connectionRequestedTitle,
+            localizations.connectionRequestedBody,
+          ),
         WhiteLabelConnectResult.connected => (
-          localizations.connectedTitle,
-          localizations.connectedBody,
-        ),
+            localizations.connectedTitle,
+            localizations.connectedBody,
+          ),
         WhiteLabelConnectResult.failed => (
-          localizations.connectionFailedTitle,
-          localizations.connectionFailedBody,
-        ),
+            localizations.connectionFailedTitle,
+            localizations.connectionFailedBody,
+          ),
       };
       unawaited(
         showDialog<void>(
@@ -205,28 +205,32 @@ class _WhiteLabelAccountScreenState extends State<WhiteLabelAccountScreen> {
   Future<void> _connect(
     WhiteLabelController controller,
     ConfigSelector selector,
-  ) => controller.connect(selector);
+  ) =>
+      controller.connect(selector);
 }
 
 String _errorText(
   AppLocalizations localizations,
   WhiteLabelController controller,
-) => switch (controller.error) {
-  WhiteLabelError.none => '',
-  WhiteLabelError.invalidInput =>
-    controller.phase == WhiteLabelPhase.needsEnrollment
-        ? localizations.errorEnrollInput
-        : localizations.errorLoginInput,
-  WhiteLabelError.invalidCredentials => localizations.errorInvalidCredentials,
-  WhiteLabelError.ticketInvalid => localizations.errorTicketInvalid,
-  WhiteLabelError.accessDenied => localizations.errorAccessDenied,
-  WhiteLabelError.sessionExpired => localizations.errorSessionExpired,
-  WhiteLabelError.enrollmentRequired => localizations.errorEnrollmentRequired,
-  WhiteLabelError.networkUnreachable => localizations.errorNetwork,
-  WhiteLabelError.rateLimited => localizations.errorRateLimited,
-  WhiteLabelError.storageUnavailable => localizations.errorStorage,
-  WhiteLabelError.unknown => localizations.errorUnknown,
-};
+) =>
+    switch (controller.error) {
+      WhiteLabelError.none => '',
+      WhiteLabelError.invalidInput =>
+        controller.phase == WhiteLabelPhase.needsEnrollment
+            ? localizations.errorEnrollInput
+            : localizations.errorLoginInput,
+      WhiteLabelError.invalidCredentials =>
+        localizations.errorInvalidCredentials,
+      WhiteLabelError.ticketInvalid => localizations.errorTicketInvalid,
+      WhiteLabelError.accessDenied => localizations.errorAccessDenied,
+      WhiteLabelError.sessionExpired => localizations.errorSessionExpired,
+      WhiteLabelError.enrollmentRequired =>
+        localizations.errorEnrollmentRequired,
+      WhiteLabelError.networkUnreachable => localizations.errorNetwork,
+      WhiteLabelError.rateLimited => localizations.errorRateLimited,
+      WhiteLabelError.storageUnavailable => localizations.errorStorage,
+      WhiteLabelError.unknown => localizations.errorUnknown,
+    };
 
 class _ErrorBanner extends StatelessWidget {
   const _ErrorBanner({required this.message});
@@ -254,7 +258,6 @@ class _ErrorBanner extends StatelessWidget {
     );
   }
 }
-
 
 class _LoginForm extends StatelessWidget {
   const _LoginForm({
@@ -327,19 +330,19 @@ class _FormScaffold extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Center(
-    child: ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 520),
-      child: ListView(
-        padding: const EdgeInsets.all(24),
-        shrinkWrap: true,
-        children: <Widget>[
-          Text(title, style: Theme.of(context).textTheme.headlineSmall),
-          const SizedBox(height: 16),
-          AutofillGroup(child: Column(children: children)),
-        ],
-      ),
-    ),
-  );
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 520),
+          child: ListView(
+            padding: const EdgeInsets.all(24),
+            shrinkWrap: true,
+            children: <Widget>[
+              Text(title, style: Theme.of(context).textTheme.headlineSmall),
+              const SizedBox(height: 16),
+              AutofillGroup(child: Column(children: children)),
+            ],
+          ),
+        ),
+      );
 }
 
 class _AccountReady extends StatelessWidget {
@@ -423,8 +426,7 @@ class _AccountReady extends StatelessWidget {
             _ConfigRow(
               index: index,
               selector: controller.selectors[index],
-              isActive:
-                  controller.activeSelector?.configId ==
+              isActive: controller.activeSelector?.configId ==
                       controller.selectors[index].configId &&
                   controller.selectors[index].configId != null,
               onConnect: onConnect,
@@ -533,9 +535,8 @@ class _ConfigRow extends StatelessWidget {
   Widget build(BuildContext context) {
     final localizations = AppLocalizations.of(context);
     final engine = selector.engine.trim();
-    final protocolLine = engine.isEmpty
-        ? selector.protocol
-        : '${selector.protocol} • $engine';
+    final protocolLine =
+        engine.isEmpty ? selector.protocol : '${selector.protocol} • $engine';
     return Card(
       key: ValueKey('wl-config-$index'),
       child: ListTile(
@@ -576,21 +577,21 @@ class _CenteredMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Center(
-    child: ConstrainedBox(
-      constraints: const BoxConstraints(maxWidth: 520),
-      child: Padding(
-        padding: const EdgeInsets.all(32),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Icon(icon, size: 52),
-            const SizedBox(height: 20),
-            Text(title, style: Theme.of(context).textTheme.headlineSmall),
-            const SizedBox(height: 12),
-            Text(body, textAlign: TextAlign.center),
-          ],
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(maxWidth: 520),
+          child: Padding(
+            padding: const EdgeInsets.all(32),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(icon, size: 52),
+                const SizedBox(height: 20),
+                Text(title, style: Theme.of(context).textTheme.headlineSmall),
+                const SizedBox(height: 12),
+                Text(body, textAlign: TextAlign.center),
+              ],
+            ),
+          ),
         ),
-      ),
-    ),
-  );
+      );
 }

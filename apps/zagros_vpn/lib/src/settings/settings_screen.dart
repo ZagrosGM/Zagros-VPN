@@ -68,11 +68,13 @@ class SettingsScreen extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Icon(Icons.language_rounded, color: theme.colorScheme.primary, size: 22),
+                Icon(Icons.language_rounded,
+                    color: theme.colorScheme.primary, size: 22),
                 const SizedBox(width: 10),
                 Text(
                   localizations.language,
-                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -125,11 +127,13 @@ class SettingsScreen extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Icon(Icons.alt_route_rounded, color: theme.colorScheme.primary, size: 22),
+                Icon(Icons.alt_route_rounded,
+                    color: theme.colorScheme.primary, size: 22),
                 const SizedBox(width: 10),
                 Text(
                   localizations.dnsSettings,
-                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -218,7 +222,8 @@ class SettingsScreen extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    Icon(Icons.apps_rounded, color: theme.colorScheme.primary, size: 22),
+                    Icon(Icons.apps_rounded,
+                        color: theme.colorScheme.primary, size: 22),
                     const SizedBox(width: 10),
                     Expanded(
                       child: Text(
@@ -294,7 +299,8 @@ class SettingsScreen extends StatelessWidget {
         side: BorderSide(color: theme.colorScheme.outlineVariant.withAlpha(50)),
       ),
       child: ListTile(
-        leading: Icon(Icons.description_outlined, color: theme.colorScheme.primary),
+        leading:
+            Icon(Icons.description_outlined, color: theme.colorScheme.primary),
         title: Text(localizations.openSourceLicenses),
         subtitle: Text(localizations.openSourceLicensesBody),
         trailing: const Icon(Icons.chevron_right),
@@ -328,11 +334,13 @@ class SettingsScreen extends StatelessWidget {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Icon(Icons.person_outline, color: theme.colorScheme.primary, size: 22),
+                Icon(Icons.person_outline,
+                    color: theme.colorScheme.primary, size: 22),
                 const SizedBox(width: 10),
                 Text(
                   localizations.accountInfo,
-                  style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                  style: theme.textTheme.titleMedium
+                      ?.copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),

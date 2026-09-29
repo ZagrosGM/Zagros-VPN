@@ -168,11 +168,13 @@ void main() {
     expect(tls['enabled'], isTrue);
     final reality = tls['reality']! as Map<String, Object?>;
     expect(reality['enabled'], isTrue);
-    expect(reality['public_key'], 'AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE');
+    expect(
+        reality['public_key'], 'AQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQE');
     encoded.fillRange(0, encoded.length, 0);
   });
 
-  test('encoder accepts application-mode sing-box outbound extension directly', () {
+  test('encoder accepts application-mode sing-box outbound extension directly',
+      () {
     final config = NormalizedConfig(
       protocol: 'vless',
       engine: 'sing-box',
@@ -259,7 +261,8 @@ void main() {
     );
     final wsEncoded = const NativeRuntimeConfigEncoder().encode(wsConfig);
     final wsJson = jsonDecode(utf8.decode(wsEncoded)) as Map<String, Object?>;
-    final wsOutbound = (wsJson['outbounds']! as List<Object?>).first! as Map<String, Object?>;
+    final wsOutbound =
+        (wsJson['outbounds']! as List<Object?>).first! as Map<String, Object?>;
     final wsTransport = wsOutbound['transport']! as Map<String, Object?>;
     expect(wsTransport['type'], 'ws');
     expect(wsTransport['path'], '/ws-path');
@@ -284,8 +287,10 @@ void main() {
       warnings: const <String>[],
     );
     final grpcEncoded = const NativeRuntimeConfigEncoder().encode(grpcConfig);
-    final grpcJson = jsonDecode(utf8.decode(grpcEncoded)) as Map<String, Object?>;
-    final grpcOutbound = (grpcJson['outbounds']! as List<Object?>).first! as Map<String, Object?>;
+    final grpcJson =
+        jsonDecode(utf8.decode(grpcEncoded)) as Map<String, Object?>;
+    final grpcOutbound = (grpcJson['outbounds']! as List<Object?>).first!
+        as Map<String, Object?>;
     final grpcTransport = grpcOutbound['transport']! as Map<String, Object?>;
     expect(grpcTransport['type'], 'grpc');
     expect(grpcTransport['service_name'], 'grpc-service');
@@ -314,7 +319,8 @@ void main() {
     );
     final encoded = const NativeRuntimeConfigEncoder().encode(config);
     final json = jsonDecode(utf8.decode(encoded)) as Map<String, Object?>;
-    final outbound = (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
+    final outbound =
+        (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
     expect(outbound['type'], 'vmess');
     expect(outbound['server'], 'vmess.example.com');
     expect(outbound['server_port'], 443);
@@ -346,7 +352,8 @@ void main() {
     );
     final encoded = const NativeRuntimeConfigEncoder().encode(config);
     final json = jsonDecode(utf8.decode(encoded)) as Map<String, Object?>;
-    final outbound = (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
+    final outbound =
+        (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
     expect(outbound['type'], 'trojan');
     expect(outbound['server'], 'trojan.example.com');
     expect(outbound['password'], 'trojan-secret-password');
@@ -373,7 +380,8 @@ void main() {
     );
     final encoded = const NativeRuntimeConfigEncoder().encode(config);
     final json = jsonDecode(utf8.decode(encoded)) as Map<String, Object?>;
-    final outbound = (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
+    final outbound =
+        (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
     expect(outbound['type'], 'shadowsocks');
     expect(outbound['server'], 'ss.example.com');
     expect(outbound['server_port'], 8388);
@@ -404,7 +412,8 @@ void main() {
     );
     final encoded = const NativeRuntimeConfigEncoder().encode(config);
     final json = jsonDecode(utf8.decode(encoded)) as Map<String, Object?>;
-    final outbound = (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
+    final outbound =
+        (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
     expect(outbound['type'], 'hysteria2');
     expect(outbound['password'], 'hy2-secret-auth');
     expect(outbound['up_mbps'], 50);
@@ -437,7 +446,8 @@ void main() {
     );
     final encoded = const NativeRuntimeConfigEncoder().encode(config);
     final json = jsonDecode(utf8.decode(encoded)) as Map<String, Object?>;
-    final outbound = (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
+    final outbound =
+        (json['outbounds']! as List<Object?>).first! as Map<String, Object?>;
     expect(outbound['type'], 'tuic');
     expect(outbound['uuid'], 'c0000000-0000-0000-0000-000000000003');
     expect(outbound['password'], 'tuic-password');

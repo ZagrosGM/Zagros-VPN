@@ -46,7 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
       if (!mounted) return;
       final snapshot = _currentSnapshot();
       final now = DateTime.now();
-      final elapsedSec = now.difference(_lastSampleTime).inMilliseconds / 1000.0;
+      final elapsedSec =
+          now.difference(_lastSampleTime).inMilliseconds / 1000.0;
       if (elapsedSec <= 0) return;
 
       if (snapshot.state == TunnelState.connected) {
@@ -160,7 +161,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 ctrl?.protocolUnavailableReason ??
                 switch (res) {
                   WhiteLabelConnectResult.protocolUnavailable =>
-                    ctrl?.protocolUnavailableReason ?? localizations.tunnelUnavailableBody,
+                    ctrl?.protocolUnavailableReason ??
+                        localizations.tunnelUnavailableBody,
                   WhiteLabelConnectResult.adapterUnavailable =>
                     localizations.tunnelUnavailableBody,
                   _ => localizations.tunnelUnavailableBody,
@@ -233,7 +235,8 @@ class _HomeScreenState extends State<HomeScreen> {
           children: <Widget>[
             _buildSubscriptionCard(context, localizations),
             const SizedBox(height: 32),
-            _buildConnectButton(context, snapshot, busy, isConnected, isConnecting, isFailed),
+            _buildConnectButton(
+                context, snapshot, busy, isConnected, isConnecting, isFailed),
             const SizedBox(height: 24),
             _buildStatusText(context, localizations, snapshot),
             const SizedBox(height: 12),
@@ -261,7 +264,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               _buildSubscriptionCard(context, localizations),
               const SizedBox(height: 32),
-              _buildConnectButton(context, snapshot, busy, isConnected, isConnecting, isFailed),
+              _buildConnectButton(
+                  context, snapshot, busy, isConnected, isConnecting, isFailed),
               const SizedBox(height: 24),
               _buildStatusText(context, localizations, snapshot),
               const SizedBox(height: 12),
@@ -313,11 +317,13 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: BoxDecoration(
           color: theme.colorScheme.surfaceContainerHighest.withAlpha(128),
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: theme.colorScheme.outlineVariant.withAlpha(64)),
+          border:
+              Border.all(color: theme.colorScheme.outlineVariant.withAlpha(64)),
         ),
         child: Row(
           children: <Widget>[
-            Icon(Icons.shield_outlined, color: theme.colorScheme.primary, size: 28),
+            Icon(Icons.shield_outlined,
+                color: theme.colorScheme.primary, size: 28),
             const SizedBox(width: 14),
             Expanded(
               child: Column(
@@ -327,11 +333,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Text(
                         widget.configuration.appName,
-                        style: theme.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+                        style: theme.textTheme.titleMedium
+                            ?.copyWith(fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(width: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 6, vertical: 2),
                         decoration: BoxDecoration(
                           color: theme.colorScheme.primary.withAlpha(40),
                           borderRadius: BorderRadius.circular(6),
@@ -350,7 +358,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   const SizedBox(height: 2),
                   Text(
                     localizations.foundationTitle,
-                    style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                    style: theme.textTheme.bodySmall
+                        ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
                   ),
                 ],
               ),
@@ -360,13 +369,12 @@ class _HomeScreenState extends State<HomeScreen> {
       );
     }
 
-    final fraction = totalBytes > 0 ? (usedBytes / totalBytes).clamp(0.0, 1.0) : 0.0;
+    final fraction =
+        totalBytes > 0 ? (usedBytes / totalBytes).clamp(0.0, 1.0) : 0.0;
     final percentage = (fraction * 100).toStringAsFixed(0);
 
-    final daysRemaining = expiresAt
-        ?.difference(DateTime.now())
-        .inDays
-        .clamp(0, 9999);
+    final daysRemaining =
+        expiresAt?.difference(DateTime.now()).inDays.clamp(0, 9999);
 
     return Container(
       width: double.infinity,
@@ -384,15 +392,18 @@ class _HomeScreenState extends State<HomeScreen> {
             children: <Widget>[
               Row(
                 children: <Widget>[
-                  Icon(Icons.pie_chart_outline, size: 20, color: theme.colorScheme.primary),
+                  Icon(Icons.pie_chart_outline,
+                      size: 20, color: theme.colorScheme.primary),
                   const SizedBox(width: 8),
                   Text(
                     localizations.usageTitle,
-                    style: theme.textTheme.titleSmall?.copyWith(fontWeight: FontWeight.bold),
+                    style: theme.textTheme.titleSmall
+                        ?.copyWith(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(width: 8),
                   Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
                     decoration: BoxDecoration(
                       color: theme.colorScheme.primary.withAlpha(40),
                       borderRadius: BorderRadius.circular(6),
@@ -410,7 +421,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               if (daysRemaining != null)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
                     color: theme.colorScheme.primaryContainer,
                     borderRadius: BorderRadius.circular(12),
@@ -433,7 +445,9 @@ class _HomeScreenState extends State<HomeScreen> {
               minHeight: 8,
               backgroundColor: theme.colorScheme.surfaceContainerHighest,
               valueColor: AlwaysStoppedAnimation<Color>(
-                fraction > 0.9 ? theme.colorScheme.error : theme.colorScheme.primary,
+                fraction > 0.9
+                    ? theme.colorScheme.error
+                    : theme.colorScheme.primary,
               ),
             ),
           ),
@@ -444,14 +458,18 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 localizations.subscriptionUsage(
                   formatBytes(usedBytes),
-                  totalBytes > 0 ? formatBytes(totalBytes) : localizations.unlimited,
+                  totalBytes > 0
+                      ? formatBytes(totalBytes)
+                      : localizations.unlimited,
                 ),
-                style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(fontWeight: FontWeight.w500),
               ),
               if (totalBytes > 0)
                 Text(
                   '$percentage%',
-                  style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.onSurfaceVariant),
+                  style: theme.textTheme.bodySmall
+                      ?.copyWith(color: theme.colorScheme.onSurfaceVariant),
                 ),
             ],
           ),
@@ -543,11 +561,26 @@ class _HomeScreenState extends State<HomeScreen> {
   ) {
     final theme = Theme.of(context);
     final (statusLabel, statusColor) = switch (snapshot.state) {
-      TunnelState.connected => (localizations.statusConnected, const Color(0xFF00C853)),
-      TunnelState.preparing || TunnelState.connecting => (localizations.statusConnecting, theme.colorScheme.primary),
-      TunnelState.disconnecting => (localizations.statusDisconnecting, theme.colorScheme.secondary),
-      TunnelState.failed => (localizations.statusFailed, theme.colorScheme.error),
-      TunnelState.disconnected => (localizations.statusDisconnected, theme.colorScheme.onSurfaceVariant),
+      TunnelState.connected => (
+          localizations.statusConnected,
+          const Color(0xFF00C853)
+        ),
+      TunnelState.preparing || TunnelState.connecting => (
+          localizations.statusConnecting,
+          theme.colorScheme.primary
+        ),
+      TunnelState.disconnecting => (
+          localizations.statusDisconnecting,
+          theme.colorScheme.secondary
+        ),
+      TunnelState.failed => (
+          localizations.statusFailed,
+          theme.colorScheme.error
+        ),
+      TunnelState.disconnected => (
+          localizations.statusDisconnected,
+          theme.colorScheme.onSurfaceVariant
+        ),
     };
 
     return Column(
@@ -579,23 +612,27 @@ class _HomeScreenState extends State<HomeScreen> {
         decoration: BoxDecoration(
           color: theme.colorScheme.surfaceContainerHighest.withAlpha(120),
           borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: theme.colorScheme.outlineVariant.withAlpha(60)),
+          border:
+              Border.all(color: theme.colorScheme.outlineVariant.withAlpha(60)),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Icon(Icons.dns_outlined, size: 18, color: theme.colorScheme.primary),
+            Icon(Icons.dns_outlined,
+                size: 18, color: theme.colorScheme.primary),
             const SizedBox(width: 8),
             Flexible(
               child: Text(
                 configName,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
+                style: theme.textTheme.bodyMedium
+                    ?.copyWith(fontWeight: FontWeight.w500),
               ),
             ),
             const SizedBox(width: 6),
-            Icon(Icons.chevron_right, size: 18, color: theme.colorScheme.onSurfaceVariant),
+            Icon(Icons.chevron_right,
+                size: 18, color: theme.colorScheme.onSurfaceVariant),
           ],
         ),
       ),

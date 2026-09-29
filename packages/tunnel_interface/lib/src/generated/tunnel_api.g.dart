@@ -345,8 +345,8 @@ class NativeTunnelCapabilities {
       protocols: (result[1]! as List<Object?>).cast<String>(),
       canProtectEntireDevice: result[2]! as bool,
       canReportTraffic: result[3]! as bool,
-      unavailableReasons: (result[4]! as Map<Object?, Object?>)
-          .cast<String, String>(),
+      unavailableReasons:
+          (result[4]! as Map<Object?, Object?>).cast<String, String>(),
     );
   }
 
@@ -426,10 +426,9 @@ class NativeTunnelHostApi {
   NativeTunnelHostApi({
     BinaryMessenger? binaryMessenger,
     String messageChannelSuffix = '',
-  }) : pigeonVar_binaryMessenger = binaryMessenger,
-       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
-           ? '.$messageChannelSuffix'
-           : '';
+  })  : pigeonVar_binaryMessenger = binaryMessenger,
+        pigeonVar_messageChannelSuffix =
+            messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
   final BinaryMessenger? pigeonVar_binaryMessenger;
 
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
@@ -527,9 +526,8 @@ abstract class NativeTunnelFlutterApi {
     BinaryMessenger? binaryMessenger,
     String messageChannelSuffix = '',
   }) {
-    messageChannelSuffix = messageChannelSuffix.isNotEmpty
-        ? '.$messageChannelSuffix'
-        : '';
+    messageChannelSuffix =
+        messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
     {
       final pigeonVar_channel = BasicMessageChannel<Object?>(
         'dev.flutter.pigeon.tunnel_interface.NativeTunnelFlutterApi.onStatusChanged$messageChannelSuffix',

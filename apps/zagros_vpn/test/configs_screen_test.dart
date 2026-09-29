@@ -15,7 +15,10 @@ void main() {
       tester,
     ) async {
       final config = ProductConfiguration.fromValues(
-        const <String, String>{'product_mode': 'official', 'default_locale': 'en'},
+        const <String, String>{
+          'product_mode': 'official',
+          'default_locale': 'en'
+        },
       );
       final stores = ClientSecureStores(
         backend: MemorySecureBackend(),
@@ -56,7 +59,9 @@ void main() {
       expect(find.text('Add manual config'), findsOneWidget);
     });
 
-    test('isProtocolSupported correctly recognizes native vs unsupported protocols', () {
+    test(
+        'isProtocolSupported correctly recognizes native vs unsupported protocols',
+        () {
       expect(isProtocolSupported('vless'), isTrue);
       expect(isProtocolSupported('VLESS'), isTrue);
       expect(isProtocolSupported('vmess'), isTrue);

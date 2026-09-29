@@ -43,7 +43,8 @@ class _LogsScreenState extends State<LogsScreen> {
         title: Text(localizations.logs),
         centerTitle: false,
         actions: <Widget>[
-          if (logsService != null && logsService.entries.isNotEmpty) ...<Widget>[
+          if (logsService != null &&
+              logsService.entries.isNotEmpty) ...<Widget>[
             IconButton(
               icon: const Icon(Icons.copy_rounded, size: 20),
               tooltip: localizations.copyLogs,
@@ -72,7 +73,8 @@ class _LogsScreenState extends State<LogsScreen> {
                         Icon(
                           Icons.article_outlined,
                           size: 48,
-                          color: theme.colorScheme.onSurfaceVariant.withAlpha(120),
+                          color:
+                              theme.colorScheme.onSurfaceVariant.withAlpha(120),
                         ),
                         const SizedBox(height: 12),
                         Text(
@@ -86,13 +88,15 @@ class _LogsScreenState extends State<LogsScreen> {
                   );
                 }
 
-                WidgetsBinding.instance.addPostFrameCallback((_) => _scrollToBottom());
+                WidgetsBinding.instance
+                    .addPostFrameCallback((_) => _scrollToBottom());
 
                 return Container(
                   margin: const EdgeInsets.all(12),
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
-                    color: theme.colorScheme.surfaceContainerHighest.withAlpha(120),
+                    color: theme.colorScheme.surfaceContainerHighest
+                        .withAlpha(120),
                     borderRadius: BorderRadius.circular(16),
                     border: Border.all(
                       color: theme.colorScheme.outlineVariant.withAlpha(50),

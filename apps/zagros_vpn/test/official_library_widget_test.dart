@@ -87,14 +87,14 @@ class OfficialFixture {
   int id = 0;
 
   ZagrosApp app() => ZagrosApp(
-    configuration: configuration,
-    dependencies: AppDependencies(
-      secureStores: stores,
-      officialProfiles: repository,
-      rawConfigActions: rawActions,
-      tunnelAdapter: null,
-    ),
-  );
+        configuration: configuration,
+        dependencies: AppDependencies(
+          secureStores: stores,
+          officialProfiles: repository,
+          rawConfigActions: rawActions,
+          tunnelAdapter: null,
+        ),
+      );
 }
 
 void main() {

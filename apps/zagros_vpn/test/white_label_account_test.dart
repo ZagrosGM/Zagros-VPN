@@ -106,7 +106,8 @@ void main() {
     final transport = FakeApiTransport();
     transport.handlers['POST /api/application/v1/devices/enroll'] = (
       request,
-    ) async => FakeApiTransport.failure(401, 'invalid_credentials', 'nope');
+    ) async =>
+        FakeApiTransport.failure(401, 'invalid_credentials', 'nope');
     assert(() {
       // sanity: this test exercises a rejected *enroll*, matching the
       // ticketed activation flow the UI now enforces on fresh installs.
@@ -303,14 +304,13 @@ void main() {
   });
 }
 
-Future<void> serviceEnrollDirectly(WhiteLabelTestStack stack) => stack
-    .service
-    .auth
-    .enroll(
-      credentials: const ApplicationCredentials(
-        username: 'partner-user',
-        password: 'secret-password',
-      ),
-      activationTicket: '',
-    )
-    .then((_) {});
+Future<void> serviceEnrollDirectly(WhiteLabelTestStack stack) =>
+    stack.service.auth
+        .enroll(
+          credentials: const ApplicationCredentials(
+            username: 'partner-user',
+            password: 'secret-password',
+          ),
+          activationTicket: '',
+        )
+        .then((_) {});

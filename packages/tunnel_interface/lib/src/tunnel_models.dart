@@ -16,10 +16,10 @@ class TunnelCapabilities {
     required this.canProtectEntireDevice,
     required this.canReportTraffic,
     Map<String, String> unavailableReasons = const <String, String>{},
-  }) : protocols = Set<String>.unmodifiable(protocols),
-       unavailableReasons = Map<String, String>.unmodifiable(
-         unavailableReasons,
-       );
+  })  : protocols = Set<String>.unmodifiable(protocols),
+        unavailableReasons = Map<String, String>.unmodifiable(
+          unavailableReasons,
+        );
 
   final String platform;
   final Set<String> protocols;
@@ -58,7 +58,7 @@ class TunnelSnapshot {
   });
 
   const TunnelSnapshot.disconnected()
-    : this(state: TunnelState.disconnected, sequence: 0);
+      : this(state: TunnelState.disconnected, sequence: 0);
 
   final TunnelState state;
   final int sequence;
@@ -70,12 +70,13 @@ class TunnelSnapshot {
   final TunnelFailure? failure;
 
   bool get isActive => switch (state) {
-    TunnelState.preparing ||
-    TunnelState.connecting ||
-    TunnelState.connected ||
-    TunnelState.disconnecting => true,
-    TunnelState.disconnected || TunnelState.failed => false,
-  };
+        TunnelState.preparing ||
+        TunnelState.connecting ||
+        TunnelState.connected ||
+        TunnelState.disconnecting =>
+          true,
+        TunnelState.disconnected || TunnelState.failed => false,
+      };
 
   @override
   String toString() =>

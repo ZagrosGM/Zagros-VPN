@@ -20,25 +20,25 @@ abstract interface class SecureStorageBackend {
 
 class FlutterSecureStorageBackend implements SecureStorageBackend {
   FlutterSecureStorageBackend({FlutterSecureStorage? storage})
-    : _storage =
-          storage ??
-          const FlutterSecureStorage(
-            aOptions: AndroidOptions(
-              resetOnError: true,
-            ),
-            iOptions: IOSOptions(
-              accountName: 'ai.zagros.vpn',
-              accessibility: KeychainAccessibility.unlocked_this_device,
-              synchronizable: false,
-            ),
-            mOptions: MacOsOptions(
-              accountName: 'ai.zagros.vpn',
-              accessibility: KeychainAccessibility.unlocked_this_device,
-              synchronizable: false,
-            ),
-            wOptions: WindowsOptions(useBackwardCompatibility: false),
-            lOptions: LinuxOptions(),
-          );
+      : _storage = storage ??
+            const FlutterSecureStorage(
+              aOptions: AndroidOptions(
+                resetOnError: false,
+                migrateWithBackup: true,
+              ),
+              iOptions: IOSOptions(
+                accountName: 'ai.zagros.vpn',
+                accessibility: KeychainAccessibility.unlocked_this_device,
+                synchronizable: false,
+              ),
+              mOptions: MacOsOptions(
+                accountName: 'ai.zagros.vpn',
+                accessibility: KeychainAccessibility.unlocked_this_device,
+                synchronizable: false,
+              ),
+              wOptions: WindowsOptions(useBackwardCompatibility: false),
+              lOptions: LinuxOptions(),
+            );
 
   final FlutterSecureStorage _storage;
   final Map<String, String> _memoryFallback = <String, String>{};
@@ -82,7 +82,8 @@ class SdkSecureValueStore implements SecureValueStore {
   factory SdkSecureValueStore({
     required SecureStorageBackend backend,
     required String namespace,
-  }) => SdkSecureValueStore._(backend, namespace);
+  }) =>
+      SdkSecureValueStore._(backend, namespace);
 
   const SdkSecureValueStore._(this._backend, this._namespace);
 
@@ -149,7 +150,8 @@ class SdkSecureTokenStore implements SecureTokenStore {
   factory SdkSecureTokenStore({
     required SecureStorageBackend backend,
     required String namespace,
-  }) => SdkSecureTokenStore._(backend, _tokenKey(namespace));
+  }) =>
+      SdkSecureTokenStore._(backend, _tokenKey(namespace));
 
   const SdkSecureTokenStore._(this._backend, this._key);
 
@@ -207,8 +209,8 @@ class ClientSecureStores {
   ClientSecureStores({
     required SecureStorageBackend backend,
     required String namespace,
-  }) : values = SdkSecureValueStore(backend: backend, namespace: namespace),
-       tokens = SdkSecureTokenStore(backend: backend, namespace: namespace);
+  })  : values = SdkSecureValueStore(backend: backend, namespace: namespace),
+        tokens = SdkSecureTokenStore(backend: backend, namespace: namespace);
 
   final SdkSecureValueStore values;
   final SdkSecureTokenStore tokens;

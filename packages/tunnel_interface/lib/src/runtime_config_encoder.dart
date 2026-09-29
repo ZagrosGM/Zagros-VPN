@@ -53,8 +53,10 @@ final class NativeRuntimeConfigEncoder {
   ) {
     return switch (protocol) {
       'wireguard' when config.extensions['outbound'] is Map<String, Object?> =>
-        _wrapSingBoxOutbound(config.extensions['outbound'] as Map<String, Object?>),
-      'wireguard' when engine == 'wireguard' || isSingBoxEngine => _encodeWireGuard(config),
+        _wrapSingBoxOutbound(
+            config.extensions['outbound'] as Map<String, Object?>),
+      'wireguard' when engine == 'wireguard' || isSingBoxEngine =>
+        _encodeWireGuard(config),
       'vless' => _encodeVless(config),
       'vmess' => _encodeVmess(config),
       'trojan' => _encodeTrojan(config),
@@ -92,9 +94,9 @@ final class NativeRuntimeConfigEncoder {
     // device: "Network is unreachable" from the ssh server). With the
     // new-style server, sing-box 1.12.4 restores the domain for mixed
     // inbounds (verified live over ssh outbound).
-    final dnsUpstream = _dnsOverride.isNotEmpty ? _dnsOverride.first : '1.1.1.1';
-    final outboundTag =
-        (outbound['tag'] as String?) ?? 'proxy';
+    final dnsUpstream =
+        _dnsOverride.isNotEmpty ? _dnsOverride.first : '1.1.1.1';
+    final outboundTag = (outbound['tag'] as String?) ?? 'proxy';
     final routeRules = <Object?>[
       <String, Object?>{
         'protocol': 'dns',
@@ -336,7 +338,8 @@ final class NativeRuntimeConfigEncoder {
       final parsed = int.tryParse(upMbps.toString());
       if (parsed != null && parsed > 0) outbound['up_mbps'] = parsed;
     }
-    final downMbps = options['downmbps'] ?? options['down_mbps'] ?? options['down'];
+    final downMbps =
+        options['downmbps'] ?? options['down_mbps'] ?? options['down'];
     if (downMbps != null) {
       final parsed = int.tryParse(downMbps.toString());
       if (parsed != null && parsed > 0) outbound['down_mbps'] = parsed;
@@ -510,7 +513,8 @@ final class NativeRuntimeConfigEncoder {
   }
 
   Uint8List _encodeSoftEther(NormalizedConfig config) {
-    final endpoint = config.endpoints.isNotEmpty ? config.endpoints.first : null;
+    final endpoint =
+        config.endpoints.isNotEmpty ? config.endpoints.first : null;
     final username = _optionalCredential(config.credentials, 'username') ?? '';
     final password = _optionalCredential(config.credentials, 'password') ?? '';
     final payload = <String, Object?>{
@@ -530,13 +534,12 @@ final class NativeRuntimeConfigEncoder {
     VpnEndpoint endpoint,
   ) {
     final options = config.options;
-    final transportType =
-        (_safeOption(options, 'type') ??
-                _safeOption(options, 'net') ??
-                _safeOption(options, 'transport') ??
-                endpoint.transport ??
-                'tcp')
-            .toLowerCase();
+    final transportType = (_safeOption(options, 'type') ??
+            _safeOption(options, 'net') ??
+            _safeOption(options, 'transport') ??
+            endpoint.transport ??
+            'tcp')
+        .toLowerCase();
 
     if (transportType == 'ws' || transportType == 'websocket') {
       final wsPath = _safeOption(options, 'path') ?? '/';
@@ -586,16 +589,16 @@ final class NativeRuntimeConfigEncoder {
           _safeOption(options, 'server_name') ??
           endpoint.host;
       final fp = _safeOption(options, 'fp') ?? 'chrome';
-      final rawPbk = _safeOption(options, 'pbk') ??
-          _safeOption(options, 'public_key');
-      final sid = _safeOption(options, 'sid') ??
-          _safeOption(options, 'short_id') ??
-          '';
+      final rawPbk =
+          _safeOption(options, 'pbk') ?? _safeOption(options, 'public_key');
+      final sid =
+          _safeOption(options, 'sid') ?? _safeOption(options, 'short_id') ?? '';
       if (rawPbk == null || rawPbk.isEmpty) {
         throw const FormatException('Reality public key is missing');
       }
       // Sing-box reality requires unpadded base64url format (RawURLEncoding)
-      final pbk = rawPbk.replaceAll('+', '-').replaceAll('/', '_').replaceAll('=', '');
+      final pbk =
+          rawPbk.replaceAll('+', '-').replaceAll('/', '_').replaceAll('=', '');
       outbound['tls'] = <String, Object?>{
         'enabled': true,
         'server_name': sni,
@@ -646,7 +649,8 @@ final class NativeRuntimeConfigEncoder {
   }
 
   bool _safeUuid(String value) =>
-      RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$').hasMatch(value) ||
+      RegExp(r'^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$')
+          .hasMatch(value) ||
       RegExp(r'^[0-9a-zA-Z_-]{16,64}$').hasMatch(value);
 
   Uint8List _encodeWireGuard(NormalizedConfig config) {
@@ -657,13 +661,16 @@ final class NativeRuntimeConfigEncoder {
         peerValues.length > 64) {
       throw const FormatException('WireGuard peers are invalid');
     }
-    _rejectUnknown(interface, const <String>{
-      'privatekey',
-      'address',
-      'dns',
-      'listenport',
-      'mtu',
-    }, 'WireGuard Interface');
+    _rejectUnknown(
+        interface,
+        const <String>{
+          'privatekey',
+          'address',
+          'dns',
+          'listenport',
+          'mtu',
+        },
+        'WireGuard Interface');
     final privateKey = _single(interface, 'privatekey', required: true)!;
     _requireKey(privateKey, 'WireGuard private key');
 
@@ -683,13 +690,16 @@ final class NativeRuntimeConfigEncoder {
 
     for (final peerValue in peerValues) {
       final peer = _stringMap(peerValue, 'peer');
-      _rejectUnknown(peer, const <String>{
-        'publickey',
-        'presharedkey',
-        'allowedips',
-        'endpoint',
-        'persistentkeepalive',
-      }, 'WireGuard Peer');
+      _rejectUnknown(
+          peer,
+          const <String>{
+            'publickey',
+            'presharedkey',
+            'allowedips',
+            'endpoint',
+            'persistentkeepalive',
+          },
+          'WireGuard Peer');
       final publicKey = _single(peer, 'publickey', required: true)!;
       _requireKey(publicKey, 'WireGuard peer public key');
       final allowedIps = _values(peer['allowedips']);
@@ -734,12 +744,10 @@ final class NativeRuntimeConfigEncoder {
       );
     }
     final credentials = config.credentials;
-    final username =
-        _optionalCredential(credentials, 'username') ??
+    final username = _optionalCredential(credentials, 'username') ??
         _optionalCredential(credentials, 'account');
     final password = _optionalCredential(credentials, 'password');
-    final sharedSecret =
-        _optionalCredential(credentials, 'preshared_key') ??
+    final sharedSecret = _optionalCredential(credentials, 'preshared_key') ??
         _optionalCredential(credentials, 'shared_secret');
     if ((username == null) != (password == null)) {
       throw const FormatException(

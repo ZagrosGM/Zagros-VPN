@@ -39,15 +39,18 @@ class ProductConfiguration {
   static ProductConfiguration fromEnvironment() {
     const rawMode = String.fromEnvironment(
       'ZAGROS_PRODUCT_MODE',
-      defaultValue: String.fromEnvironment('product_mode', defaultValue: 'official'),
+      defaultValue:
+          String.fromEnvironment('product_mode', defaultValue: 'official'),
     );
     const rawAppName = String.fromEnvironment(
       'ZAGROS_APP_NAME',
-      defaultValue: String.fromEnvironment('app_name', defaultValue: 'Zagros VPN'),
+      defaultValue:
+          String.fromEnvironment('app_name', defaultValue: 'Zagros VPN'),
     );
     const rawLocale = String.fromEnvironment(
       'ZAGROS_DEFAULT_LOCALE',
-      defaultValue: String.fromEnvironment('default_locale', defaultValue: 'fa'),
+      defaultValue:
+          String.fromEnvironment('default_locale', defaultValue: 'fa'),
     );
     const rawApiUrl = String.fromEnvironment(
       'ZAGROS_APPLICATION_API_BASE_URL',
@@ -61,19 +64,23 @@ class ProductConfiguration {
     );
     const rawAppId = String.fromEnvironment(
       'ZAGROS_APPLICATION_ID',
-      defaultValue: String.fromEnvironment('application_id', defaultValue: '1c662b2b-7476-478b-8a29-9383546dbbe9'),
+      defaultValue: String.fromEnvironment('application_id',
+          defaultValue: '1c662b2b-7476-478b-8a29-9383546dbbe9'),
     );
     const rawAppNameVal = String.fromEnvironment(
       'ZAGROS_APPLICATION_NAME',
-      defaultValue: String.fromEnvironment('application_name', defaultValue: 'Azbarfilm WL Test'),
+      defaultValue: String.fromEnvironment('application_name',
+          defaultValue: 'Azbarfilm WL Test'),
     );
     const rawAppStatus = String.fromEnvironment(
       'ZAGROS_APPLICATION_STATUS',
-      defaultValue: String.fromEnvironment('application_status', defaultValue: 'active'),
+      defaultValue:
+          String.fromEnvironment('application_status', defaultValue: 'active'),
     );
     const rawConfigKeyId = String.fromEnvironment(
       'ZAGROS_CONFIG_KEY_ID',
-      defaultValue: String.fromEnvironment('config_key_id', defaultValue: 'cfg-0c0f4cccbeee7e1e'),
+      defaultValue: String.fromEnvironment('config_key_id',
+          defaultValue: 'cfg-0c0f4cccbeee7e1e'),
     );
     const rawConfigPubKey = String.fromEnvironment(
       'ZAGROS_CONFIG_PUBLIC_KEY',
@@ -87,7 +94,8 @@ class ProductConfiguration {
     );
     const rawSigningKeyId = String.fromEnvironment(
       'ZAGROS_SIGNING_KEY_ID',
-      defaultValue: String.fromEnvironment('signing_key_id', defaultValue: 'sig-384254b5ee751179'),
+      defaultValue: String.fromEnvironment('signing_key_id',
+          defaultValue: 'sig-384254b5ee751179'),
     );
     const rawSigningPubKey = String.fromEnvironment(
       'ZAGROS_SIGNING_PUBLIC_KEY',
@@ -98,7 +106,8 @@ class ProductConfiguration {
     );
     const rawAllowHttp = String.fromEnvironment(
       'ZAGROS_ALLOW_INSECURE_HTTP',
-      defaultValue: String.fromEnvironment('allow_insecure_http', defaultValue: 'true'),
+      defaultValue:
+          String.fromEnvironment('allow_insecure_http', defaultValue: 'true'),
     );
     const rawSigningSeed = String.fromEnvironment(
       'ZAGROS_APPLICATION_SIGNING_PRIVATE_KEY',
@@ -127,10 +136,11 @@ class ProductConfiguration {
       'official' => ClientProductMode.official,
       'white-label' ||
       'whitelabel' ||
-      'white_label' => ClientProductMode.whiteLabel,
+      'white_label' =>
+        ClientProductMode.whiteLabel,
       _ => throw const ProductConfigurationException(
-        'Unsupported product mode.',
-      ),
+          'Unsupported product mode.',
+        ),
     };
     final appName = _boundedText(
       values['app_name'] ?? 'Zagros VPN',
@@ -152,12 +162,15 @@ class ProductConfiguration {
       );
     }
 
-    final allowHttp = (values['allow_insecure_http'] ?? 'false').trim().toLowerCase() == 'true';
+    final allowHttp =
+        (values['allow_insecure_http'] ?? 'false').trim().toLowerCase() ==
+            'true';
     final apiBaseUri = Uri.tryParse(
       _required(values, 'application_api_base_url'),
     );
     final validScheme = apiBaseUri != null &&
-        (apiBaseUri.scheme == 'https' || (allowHttp && apiBaseUri.scheme == 'http'));
+        (apiBaseUri.scheme == 'https' ||
+            (allowHttp && apiBaseUri.scheme == 'http'));
     if (!validScheme ||
         apiBaseUri.host.isEmpty ||
         apiBaseUri.userInfo.isNotEmpty ||
@@ -169,21 +182,23 @@ class ProductConfiguration {
     }
     try {
       final configKeyId = _identifier(values, 'config_key_id');
-      final rawConfigKey = _required(values, 'config_public_key').replaceAll('=', '').trim();
+      final rawConfigKey =
+          _required(values, 'config_public_key').replaceAll('=', '').trim();
       final configPublicKey = decodeBase64Url(
         rawConfigKey,
         expectedLength: 32,
       );
       final signingKeyId = _identifier(values, 'signing_key_id');
-      final rawSigningKey = _required(values, 'signing_public_key').replaceAll('=', '').trim();
+      final rawSigningKey =
+          _required(values, 'signing_public_key').replaceAll('=', '').trim();
       final signingPublicKey = decodeBase64Url(
         rawSigningKey,
         expectedLength: 32,
       );
-      final rawSeed = (values['signing_private_seed'] ?? '').replaceAll('=', '').trim();
-      final signingSeed = rawSeed.isEmpty
-          ? null
-          : decodeBase64Url(rawSeed, expectedLength: 32);
+      final rawSeed =
+          (values['signing_private_seed'] ?? '').replaceAll('=', '').trim();
+      final signingSeed =
+          rawSeed.isEmpty ? null : decodeBase64Url(rawSeed, expectedLength: 32);
 
       final identity = ApplicationIdentity(
         applicationId: _identifier(values, 'application_id'),

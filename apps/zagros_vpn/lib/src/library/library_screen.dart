@@ -70,8 +70,7 @@ class _LibraryScreenState extends State<LibraryScreen> {
           _LibraryHeader(
             adapterAvailable: controller.adapterAvailable,
             tunnelSnapshot: controller.tunnelSnapshot,
-            onDisconnect:
-                controller.tunnelMutating ||
+            onDisconnect: controller.tunnelMutating ||
                     controller.tunnelSnapshot.state == TunnelState.disconnecting
                 ? null
                 : _disconnect,
@@ -98,19 +97,19 @@ class _LibraryScreenState extends State<LibraryScreen> {
     final localizations = AppLocalizations.of(context);
     return switch (controller.loadState) {
       LibraryLoadState.loading => const Center(
-        child: CircularProgressIndicator(key: ValueKey('library-loading')),
-      ),
-      LibraryLoadState.error => _CenteredMessage(
-        icon: Icons.error_outline,
-        title: localizations.libraryLoadFailed,
-        body: _failureText(localizations, controller.failure),
-        action: FilledButton.icon(
-          key: const ValueKey('library-retry'),
-          onPressed: controller.load,
-          icon: const Icon(Icons.refresh),
-          label: Text(localizations.retry),
+          child: CircularProgressIndicator(key: ValueKey('library-loading')),
         ),
-      ),
+      LibraryLoadState.error => _CenteredMessage(
+          icon: Icons.error_outline,
+          title: localizations.libraryLoadFailed,
+          body: _failureText(localizations, controller.failure),
+          action: FilledButton.icon(
+            key: const ValueKey('library-retry'),
+            onPressed: controller.load,
+            icon: const Icon(Icons.refresh),
+            label: Text(localizations.retry),
+          ),
+        ),
       LibraryLoadState.ready when controller.catalog.profiles.isEmpty =>
         _CenteredMessage(
           icon: Icons.inventory_2_outlined,
@@ -118,21 +117,22 @@ class _LibraryScreenState extends State<LibraryScreen> {
           body: localizations.libraryEmptyBody,
         ),
       LibraryLoadState.ready => ListView.builder(
-        key: const ValueKey('library-profile-list'),
-        padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
-        itemCount: controller.catalog.profiles.length,
-        itemBuilder: (context, index) {
-          final profile = controller.catalog.profiles[index];
-          return _ProfileCard(
-            profile: profile,
-            enabled: !controller.mutating,
-            onOpen: () => _openProfile(profile),
-            onRefresh: profile.isSubscription ? () => _refresh(profile) : null,
-            onEdit: () => _openEditor(profile.kind, profile: profile),
-            onDelete: () => _confirmDelete(profile),
-          );
-        },
-      ),
+          key: const ValueKey('library-profile-list'),
+          padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
+          itemCount: controller.catalog.profiles.length,
+          itemBuilder: (context, index) {
+            final profile = controller.catalog.profiles[index];
+            return _ProfileCard(
+              profile: profile,
+              enabled: !controller.mutating,
+              onOpen: () => _openProfile(profile),
+              onRefresh:
+                  profile.isSubscription ? () => _refresh(profile) : null,
+              onEdit: () => _openEditor(profile.kind, profile: profile),
+              onDelete: () => _confirmDelete(profile),
+            );
+          },
+        ),
     };
   }
 
@@ -215,26 +215,26 @@ class _LibraryScreenState extends State<LibraryScreen> {
     final localizations = AppLocalizations.of(context);
     final (title, body) = switch (result) {
       OfficialConnectResult.adapterUnavailable => (
-        localizations.tunnelUnavailableTitle,
-        localizations.tunnelUnavailableBody,
-      ),
+          localizations.tunnelUnavailableTitle,
+          localizations.tunnelUnavailableBody,
+        ),
       OfficialConnectResult.protocolUnavailable => (
-        localizations.protocolUnavailableTitle,
-        _controller!.protocolUnavailableReason ??
-            localizations.protocolUnavailableBody(config.normalized.protocol),
-      ),
+          localizations.protocolUnavailableTitle,
+          _controller!.protocolUnavailableReason ??
+              localizations.protocolUnavailableBody(config.normalized.protocol),
+        ),
       OfficialConnectResult.requestAccepted => (
-        localizations.connectionRequestedTitle,
-        localizations.connectionRequestedBody,
-      ),
+          localizations.connectionRequestedTitle,
+          localizations.connectionRequestedBody,
+        ),
       OfficialConnectResult.connected => (
-        localizations.connectedTitle,
-        localizations.connectedBody,
-      ),
+          localizations.connectedTitle,
+          localizations.connectedBody,
+        ),
       OfficialConnectResult.failed => (
-        localizations.connectionFailedTitle,
-        localizations.connectionFailedBody,
-      ),
+          localizations.connectionFailedTitle,
+          localizations.connectionFailedBody,
+        ),
     };
     await showDialog<void>(
       context: dialogContext,
@@ -317,25 +317,24 @@ class _LibraryHeader extends StatelessWidget {
                   tunnelSnapshot.state == TunnelState.connected
                       ? Icons.shield_outlined
                       : tunnelSnapshot.state == TunnelState.failed
-                      ? Icons.error_outline
-                      : Icons.sync,
+                          ? Icons.error_outline
+                          : Icons.sync,
                 ),
                 title: Text(
                   tunnelSnapshot.state == TunnelState.connected
                       ? localizations.connectedTitle
                       : tunnelSnapshot.state == TunnelState.failed
-                      ? localizations.connectionFailedTitle
-                      : localizations.connectionRequestedTitle,
+                          ? localizations.connectionFailedTitle
+                          : localizations.connectionRequestedTitle,
                 ),
                 subtitle: Text(
                   tunnelSnapshot.state == TunnelState.connected
                       ? localizations.connectedBody
                       : tunnelSnapshot.state == TunnelState.failed
-                      ? localizations.connectionFailedBody
-                      : localizations.connectionRequestedBody,
+                          ? localizations.connectionFailedBody
+                          : localizations.connectionRequestedBody,
                 ),
-                trailing:
-                    tunnelSnapshot.isActive ||
+                trailing: tunnelSnapshot.isActive ||
                         tunnelSnapshot.connectionId != null
                     ? TextButton(
                         key: const ValueKey('disconnect-tunnel'),
@@ -505,8 +504,8 @@ class _ProfileEditorDialogState extends State<_ProfileEditorDialog> {
         editing
             ? localizations.editProfile
             : _subscription
-            ? localizations.addSubscription
-            : localizations.addManualConfig,
+                ? localizations.addSubscription
+                : localizations.addManualConfig,
       ),
       content: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 600),
@@ -531,9 +530,8 @@ class _ProfileEditorDialogState extends State<_ProfileEditorDialog> {
                 ),
                 controller: _source,
                 enabled: !_saving,
-                keyboardType: _subscription
-                    ? TextInputType.url
-                    : TextInputType.multiline,
+                keyboardType:
+                    _subscription ? TextInputType.url : TextInputType.multiline,
                 autocorrect: false,
                 enableSuggestions: false,
                 minLines: _subscription ? 1 : 6,
@@ -587,9 +585,9 @@ class _ProfileEditorDialogState extends State<_ProfileEditorDialog> {
           url: _source.text,
         ),
       (OfficialProfileKind.manual, null) => await widget.controller.addManual(
-        name: _name.text,
-        rawSource: _source.text,
-      ),
+          name: _name.text,
+          rawSource: _source.text,
+        ),
       (OfficialProfileKind.subscription, final existing?) =>
         await widget.controller.updateSubscription(
           profileId: existing.id,
@@ -728,8 +726,7 @@ class _ProfileDetailDialog extends StatelessWidget {
                                 Expanded(
                                   child: Text(config.normalized.displayName),
                                 ),
-                                if (config.source ==
-                                    OfficialConfigSource.file)
+                                if (config.source == OfficialConfigSource.file)
                                   Chip(
                                     key: ValueKey(
                                       'config-filebadge-${config.id}',
@@ -836,10 +833,9 @@ class _RawConfigDialog extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 color: Theme.of(context).colorScheme.surfaceContainerHighest,
                 child: SingleChildScrollView(
-                  child:
-                      configuration.policy.allows(
-                        ClientCapability.rawConfigClipboard,
-                      )
+                  child: configuration.policy.allows(
+                    ClientCapability.rawConfigClipboard,
+                  )
                       ? SelectionArea(child: _rawText())
                       : _rawText(),
                 ),
@@ -874,10 +870,10 @@ class _RawConfigDialog extends StatelessWidget {
   }
 
   Widget _rawText() => Text(
-    config.rawText,
-    key: const ValueKey('raw-config-text'),
-    style: const TextStyle(fontFamily: 'monospace'),
-  );
+        config.rawText,
+        key: const ValueKey('raw-config-text'),
+        style: const TextStyle(fontFamily: 'monospace'),
+      );
 
   Future<void> _copy(BuildContext context) async {
     try {
@@ -968,20 +964,20 @@ class _FailureBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 16),
-    child: Card(
-      color: Theme.of(context).colorScheme.errorContainer,
-      child: ListTile(
-        leading: const Icon(Icons.error_outline),
-        title: Text(_failureText(AppLocalizations.of(context), failure)),
-        trailing: IconButton(
-          tooltip: AppLocalizations.of(context).close,
-          onPressed: onDismiss,
-          icon: const Icon(Icons.close),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Card(
+          color: Theme.of(context).colorScheme.errorContainer,
+          child: ListTile(
+            leading: const Icon(Icons.error_outline),
+            title: Text(_failureText(AppLocalizations.of(context), failure)),
+            trailing: IconButton(
+              tooltip: AppLocalizations.of(context).close,
+              onPressed: onDismiss,
+              icon: const Icon(Icons.close),
+            ),
+          ),
         ),
-      ),
-    ),
-  );
+      );
 }
 
 class _CenteredMessage extends StatelessWidget {
@@ -999,41 +995,42 @@ class _CenteredMessage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SingleChildScrollView(
-    padding: const EdgeInsets.all(20),
-    child: Center(
-      child: ConstrainedBox(
-        constraints: const BoxConstraints(maxWidth: 520),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Icon(icon, size: 44),
-            const SizedBox(height: 12),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headlineSmall,
+        padding: const EdgeInsets.all(20),
+        child: Center(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 520),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                Icon(icon, size: 44),
+                const SizedBox(height: 12),
+                Text(
+                  title,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headlineSmall,
+                ),
+                const SizedBox(height: 8),
+                Text(body, textAlign: TextAlign.center),
+                if (action != null) ...<Widget>[
+                  const SizedBox(height: 16),
+                  action!,
+                ],
+              ],
             ),
-            const SizedBox(height: 8),
-            Text(body, textAlign: TextAlign.center),
-            if (action != null) ...<Widget>[
-              const SizedBox(height: 16),
-              action!,
-            ],
-          ],
+          ),
         ),
-      ),
-    ),
-  );
+      );
 }
 
 String _failureText(
   AppLocalizations localizations,
   LibraryFailureKind? failure,
-) => switch (failure) {
-  LibraryFailureKind.validation => localizations.libraryValidationFailed,
-  LibraryFailureKind.authorization => localizations.libraryAccessDenied,
-  LibraryFailureKind.transport => localizations.libraryNetworkFailed,
-  LibraryFailureKind.protectedStorage => localizations.libraryStorageFailed,
-  LibraryFailureKind.malformedData => localizations.libraryMalformedFailed,
-  LibraryFailureKind.unknown || null => localizations.libraryUnknownFailed,
-};
+) =>
+    switch (failure) {
+      LibraryFailureKind.validation => localizations.libraryValidationFailed,
+      LibraryFailureKind.authorization => localizations.libraryAccessDenied,
+      LibraryFailureKind.transport => localizations.libraryNetworkFailed,
+      LibraryFailureKind.protectedStorage => localizations.libraryStorageFailed,
+      LibraryFailureKind.malformedData => localizations.libraryMalformedFailed,
+      LibraryFailureKind.unknown || null => localizations.libraryUnknownFailed,
+    };

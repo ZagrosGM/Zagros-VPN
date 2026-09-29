@@ -34,8 +34,8 @@ class WhiteLabelService {
       allowInsecureHttp: allowInsecureHttp || baseUri.scheme == 'http',
     );
     try {
-      final deviceIdentity = await DeviceIdentityManager(stores.values)
-          .loadOrCreate();
+      final deviceIdentity =
+          await DeviceIdentityManager(stores.values).loadOrCreate();
       final api = ApplicationApi(
         executor: SignedRequestExecutor(
           transport: transport,
@@ -88,30 +88,32 @@ class WhiteLabelService {
   Future<AcquiredConfig> defaultAcquire(
     ApplicationSession session,
     ConfigSelector selector,
-  ) => createAcquisition(session).acquire((list) {
-    return list.firstWhere(
-      (s) =>
-          (selector.configId != null && s.configId == selector.configId) ||
-          (s.coreId == selector.coreId &&
-              s.protocol == selector.protocol &&
-              s.displayName == selector.displayName),
-      orElse: () => list.firstWhere(
-        (s) => s.displayName == selector.displayName,
-        orElse: () => list.first,
-      ),
-    );
-  });
+  ) =>
+      createAcquisition(session).acquire((list) {
+        return list.firstWhere(
+          (s) =>
+              (selector.configId != null && s.configId == selector.configId) ||
+              (s.coreId == selector.coreId &&
+                  s.protocol == selector.protocol &&
+                  s.displayName == selector.displayName),
+          orElse: () => list.firstWhere(
+            (s) => s.displayName == selector.displayName,
+            orElse: () => list.first,
+          ),
+        );
+      });
 
   ConfigAcquisition createAcquisition(
     ApplicationSession session, {
     ActionScheduler? scheduler,
-  }) => ConfigAcquisition(
-    api: api,
-    session: session,
-    application: application,
-    deviceKeyPair: _deviceIdentity.keyPair,
-    scheduler: scheduler ?? const TimerActionScheduler(),
-  );
+  }) =>
+      ConfigAcquisition(
+        api: api,
+        session: session,
+        application: application,
+        deviceKeyPair: _deviceIdentity.keyPair,
+        scheduler: scheduler ?? const TimerActionScheduler(),
+      );
 
   Future<void> close() => _closeTransport();
 }

@@ -1,5 +1,5 @@
+// ignore: unused_import
 import 'package:intl/intl.dart' as intl;
-
 import 'app_localizations.dart';
 
 // ignore_for_file: type=lint
@@ -39,22 +39,27 @@ class AppLocalizationsFa extends AppLocalizations {
   String get foundationTitle => 'خدمات امن کلاینت';
 
   @override
-  String get foundationBody => 'سیاست محصول، ذخیره‌سازی محافظت‌شده سیستم‌عامل، بومی‌سازی و هماهنگی تونل بومی از یک درخت کد مشترک ترکیب شده‌اند.';
+  String get foundationBody =>
+      'سیاست محصول، ذخیره‌سازی محافظت‌شده سیستم‌عامل، بومی‌سازی و هماهنگی تونل بومی از یک درخت کد مشترک ترکیب شده‌اند.';
 
   @override
-  String get libraryBody => 'اشتراک‌های رسمی و پیکربندی‌های دستی در این بخش و تحت سیاست SDK مدیریت می‌شوند.';
+  String get libraryBody =>
+      'اشتراک‌های رسمی و پیکربندی‌های دستی در این بخش و تحت سیاست SDK مدیریت می‌شوند.';
 
   @override
-  String get accountBody => 'ثبت اپلیکیشن و دسترسی احراز هویت‌شده فقط در حالت White-label در دسترس است.';
+  String get accountBody =>
+      'ثبت اپلیکیشن و دسترسی احراز هویت‌شده فقط در حالت White-label در دسترس است.';
 
   @override
-  String get settingsBody => 'اطلاعات امنیت، قابلیت‌های پلتفرم و متن‌باز را بدون نمایش پیکربندی زمان اجرا بررسی کنید.';
+  String get settingsBody =>
+      'اطلاعات امنیت، قابلیت‌های پلتفرم و متن‌باز را بدون نمایش پیکربندی زمان اجرا بررسی کنید.';
 
   @override
   String get openSourceLicenses => 'مجوزهای متن‌باز';
 
   @override
-  String get openSourceLicensesBody => 'اعلامیه‌ها و مجوزهای Flutter و اجزای تونل بومی را بررسی کنید.';
+  String get openSourceLicensesBody =>
+      'اعلامیه‌ها و مجوزهای Flutter و اجزای تونل بومی را بررسی کنید.';
 
   @override
   String get configurationError => 'پیکربندی این بیلد معتبر نیست.';
@@ -66,19 +71,22 @@ class AppLocalizationsFa extends AppLocalizations {
   String get secureStorageLabel => 'ذخیره‌سازی امن';
 
   @override
-  String get secureStorageReady => 'آداپتور محافظت‌شده سیستم‌عامل پیکربندی شده است';
+  String get secureStorageReady =>
+      'آداپتور محافظت‌شده سیستم‌عامل پیکربندی شده است';
 
   @override
   String get nativeTunnelLabel => 'تونل بومی';
 
   @override
-  String get nativeTunnelPending => 'دسترسی پروتکل‌ها از آداپتور بومی نصب‌شده روی پلتفرم شناسایی می‌شود.';
+  String get nativeTunnelPending =>
+      'دسترسی پروتکل‌ها از آداپتور بومی نصب‌شده روی پلتفرم شناسایی می‌شود.';
 
   @override
   String get libraryUnavailableTitle => 'کتابخانه رسمی در دسترس نیست';
 
   @override
-  String get libraryUnavailableBody => 'سیاست این محصول مخزن پروفایل رسمی را ارائه نمی‌کند.';
+  String get libraryUnavailableBody =>
+      'سیاست این محصول مخزن پروفایل رسمی را ارائه نمی‌کند.';
 
   @override
   String get libraryLoadFailed => 'کتابخانه محافظت‌شده باز نشد';
@@ -90,19 +98,22 @@ class AppLocalizationsFa extends AppLocalizations {
   String get libraryEmptyTitle => 'هنوز پروفایلی وجود ندارد';
 
   @override
-  String get libraryEmptyBody => 'یک اشتراک اضافه کنید یا پیکربندی دستی پشتیبانی‌شده را وارد کنید. اطلاعات محرمانه فقط در ذخیره‌سازی محافظت‌شده سیستم‌عامل نگهداری می‌شوند.';
+  String get libraryEmptyBody =>
+      'یک اشتراک اضافه کنید یا پیکربندی دستی پشتیبانی‌شده را وارد کنید. اطلاعات محرمانه فقط در ذخیره‌سازی محافظت‌شده سیستم‌عامل نگهداری می‌شوند.';
 
   @override
   String get libraryTitle => 'پروفایل‌های VPN';
 
   @override
-  String get libraryDescription => 'اشتراک‌های رسمی و پیکربندی‌های دستی پردازش‌شده توسط SDK زاگرس را مدیریت کنید.';
+  String get libraryDescription =>
+      'اشتراک‌های رسمی و پیکربندی‌های دستی پردازش‌شده توسط SDK زاگرس را مدیریت کنید.';
 
   @override
   String get tunnelUnavailableTitle => 'اتصال در دسترس نیست';
 
   @override
-  String get tunnelUnavailableBody => 'آداپتور بومی نصب‌شده از این پیکربندی در پلتفرم فعلی پشتیبانی نمی‌کند.';
+  String get tunnelUnavailableBody =>
+      'آداپتور بومی نصب‌شده از این پیکربندی در پلتفرم فعلی پشتیبانی نمی‌کند.';
 
   @override
   String get addSubscription => 'افزودن اشتراک';
@@ -189,10 +200,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get rawConfiguration => 'پیکربندی خام';
 
   @override
-  String get subscriptionUrlHelp => 'استفاده از HTTPS الزامی است. HTTP فقط برای سرور توسعه loopback پذیرفته می‌شود.';
+  String get subscriptionUrlHelp =>
+      'استفاده از HTTPS الزامی است. HTTP فقط برای سرور توسعه loopback پذیرفته می‌شود.';
 
   @override
-  String get manualConfigHelp => 'فهرست لینک، WireGuard، OpenVPN، Clash یا پیکربندی sing-box را وارد کنید.';
+  String get manualConfigHelp =>
+      'فهرست لینک، WireGuard، OpenVPN، Clash یا پیکربندی sing-box را وارد کنید.';
 
   @override
   String get editProfile => 'ویرایش پروفایل';
@@ -224,7 +237,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get rawConfigTitle => 'پیکربندی خام';
 
   @override
-  String get rawConfigSecretWarning => 'این پیکربندی شامل اطلاعات ورود است. آن را با افراد غیرقابل‌اعتماد به اشتراک نگذارید.';
+  String get rawConfigSecretWarning =>
+      'این پیکربندی شامل اطلاعات ورود است. آن را با افراد غیرقابل‌اعتماد به اشتراک نگذارید.';
 
   @override
   String get copy => 'کپی';
@@ -242,34 +256,42 @@ class AppLocalizationsFa extends AppLocalizations {
   String get exportRawTitle => 'پیکربندی به‌صورت متن ساده صادر شود؟';
 
   @override
-  String get exportRawWarning => 'خروجی گرفتن، اطلاعات ورود را در یک فایل متن ساده در محل قابل‌دسترسی کاربر می‌نویسد. پس از استفاده از فایل محافظت کنید یا آن را حذف کنید.';
+  String get exportRawWarning =>
+      'خروجی گرفتن، اطلاعات ورود را در یک فایل متن ساده در محل قابل‌دسترسی کاربر می‌نویسد. پس از استفاده از فایل محافظت کنید یا آن را حذف کنید.';
 
   @override
   String get exported => 'پیکربندی صادر شد.';
 
   @override
-  String get legacyProtocolWarning => 'PPTP قدیمی و ناامن است و در سامانه‌های جدید iOS و Android در دسترس نیست.';
+  String get legacyProtocolWarning =>
+      'PPTP قدیمی و ناامن است و در سامانه‌های جدید iOS و Android در دسترس نیست.';
 
   @override
-  String get platformProtocolWarning => 'پشتیبانی L2TP به سیستم‌عامل وابسته است و در سامانه‌های جدید iOS و Android محدودیت دارد.';
+  String get platformProtocolWarning =>
+      'پشتیبانی L2TP به سیستم‌عامل وابسته است و در سامانه‌های جدید iOS و Android محدودیت دارد.';
 
   @override
-  String get genericProtocolWarning => 'پیش از اتصال، هشدار این پروتکل را بررسی کنید.';
+  String get genericProtocolWarning =>
+      'پیش از اتصال، هشدار این پروتکل را بررسی کنید.';
 
   @override
-  String get libraryValidationFailed => 'نام پروفایل، نشانی یا پیکربندی معتبر نیست.';
+  String get libraryValidationFailed =>
+      'نام پروفایل، نشانی یا پیکربندی معتبر نیست.';
 
   @override
   String get libraryAccessDenied => 'سرور یا سیاست محصول این عملیات را رد کرد.';
 
   @override
-  String get libraryNetworkFailed => 'دسترسی به اشتراک ممکن نشد. پروفایل قبلی حفظ شد.';
+  String get libraryNetworkFailed =>
+      'دسترسی به اشتراک ممکن نشد. پروفایل قبلی حفظ شد.';
 
   @override
-  String get libraryStorageFailed => 'ذخیره‌سازی محافظت‌شده سیستم‌عامل در دسترس نیست. از جایگزین متن ساده استفاده نشد.';
+  String get libraryStorageFailed =>
+      'ذخیره‌سازی محافظت‌شده سیستم‌عامل در دسترس نیست. از جایگزین متن ساده استفاده نشد.';
 
   @override
-  String get libraryMalformedFailed => 'پیکربندی یا فهرست محافظت‌شده نامعتبر است.';
+  String get libraryMalformedFailed =>
+      'پیکربندی یا فهرست محافظت‌شده نامعتبر است.';
 
   @override
   String get libraryUnknownFailed => 'عملیات تکمیل نشد.';
@@ -286,7 +308,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get connectionRequestedTitle => 'درخواست اتصال ارسال شد';
 
   @override
-  String get connectionRequestedBody => 'آداپتور بومی درخواست را پذیرفت، اما هنوز وضعیت متصل را تأیید نکرده است.';
+  String get connectionRequestedBody =>
+      'آداپتور بومی درخواست را پذیرفت، اما هنوز وضعیت متصل را تأیید نکرده است.';
 
   @override
   String get connectedTitle => 'متصل شد';
@@ -356,22 +379,26 @@ class AppLocalizationsFa extends AppLocalizations {
   String get noConfigsTitle => 'اتصالی در دسترس نیست';
 
   @override
-  String get noConfigsBody => 'سرور برای این حساب هیچ پیکربندی قابل اتصالی برنگرداند.';
+  String get noConfigsBody =>
+      'سرور برای این حساب هیچ پیکربندی قابل اتصالی برنگرداند.';
 
   @override
   String get serviceUnavailableTitle => 'حساب در دسترس نیست';
 
   @override
-  String get serviceUnavailableBody => 'سرویس اپلیکیشن راه‌اندازی نشد. ممکن است حافظه امن سیستم‌عامل در دسترس نباشد.';
+  String get serviceUnavailableBody =>
+      'سرویس اپلیکیشن راه‌اندازی نشد. ممکن است حافظه امن سیستم‌عامل در دسترس نباشد.';
 
   @override
   String get alreadyConnectedTitle => 'در حال حاضر متصل است';
 
   @override
-  String get alreadyConnectedBody => 'پیش از شروع اتصال دیگر، اتصال فعال را قطع کنید.';
+  String get alreadyConnectedBody =>
+      'پیش از شروع اتصال دیگر، اتصال فعال را قطع کنید.';
 
   @override
-  String get errorEnrollInput => 'نام کاربری، گذرواژه و کد فعال‌سازی را وارد کنید.';
+  String get errorEnrollInput =>
+      'نام کاربری، گذرواژه و کد فعال‌سازی را وارد کنید.';
 
   @override
   String get errorLoginInput => 'نام کاربری و گذرواژه را وارد کنید.';
@@ -389,16 +416,20 @@ class AppLocalizationsFa extends AppLocalizations {
   String get errorSessionExpired => 'نشست منقضی شد. دوباره وارد شوید.';
 
   @override
-  String get errorEnrollmentRequired => 'این دستگاه دیگر ثبت نشده است. یک کد فعال‌سازی جدید وارد کنید.';
+  String get errorEnrollmentRequired =>
+      'این دستگاه دیگر ثبت نشده است. یک کد فعال‌سازی جدید وارد کنید.';
 
   @override
-  String get errorNetwork => 'سرور در دسترس نیست. اتصال را بررسی کنید و دوباره تلاش کنید.';
+  String get errorNetwork =>
+      'سرور در دسترس نیست. اتصال را بررسی کنید و دوباره تلاش کنید.';
 
   @override
-  String get errorRateLimited => 'تلاش‌ها بیش از حد مجاز است. کمی صبر کنید و دوباره تلاش کنید.';
+  String get errorRateLimited =>
+      'تلاش‌ها بیش از حد مجاز است. کمی صبر کنید و دوباره تلاش کنید.';
 
   @override
-  String get errorStorage => 'حافظه امن سیستم‌عامل در دسترس نیست. از هیچ جایگزین متن ساده استفاده نشد.';
+  String get errorStorage =>
+      'حافظه امن سیستم‌عامل در دسترس نیست. از هیچ جایگزین متن ساده استفاده نشد.';
 
   @override
   String get errorUnknown => 'عملیات تکمیل نشد.';
@@ -437,7 +468,8 @@ class AppLocalizationsFa extends AppLocalizations {
   String get unsupportedProtocol => 'پشتیبانی‌نشده';
 
   @override
-  String get protocolNotImplemented => 'موتور این پروتکل در این نسخه ارائه نشده و در به‌روزرسانی‌های آینده فعال خواهد شد.';
+  String get protocolNotImplemented =>
+      'موتور این پروتکل در این نسخه ارائه نشده و در به‌روزرسانی‌های آینده فعال خواهد شد.';
 
   @override
   String get clearLogs => 'پاکسازی لاگ‌ها';
@@ -477,6 +509,46 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get customDnsAddress => 'سرور DNS سفارشی';
+
+  @override
+  String get fakeDnsTitle => 'DNS فیک';
+
+  @override
+  String get fakeDnsSubtitle =>
+      'دامنه‌ها از یک استخر آدرس مصنوعی جواب می‌گیرند (اتصال سریع‌تر)؛ آدرس واقعی داخل تونل بازسازی می‌شود.';
+
+  @override
+  String get perAppTitle => 'پروکسی بر اساس برنامه';
+
+  @override
+  String get perAppSubtitle =>
+      'انتخاب کنید کدام برنامه‌ها از تونل VPN عبور کنند.';
+
+  @override
+  String get perAppAllowMode => 'فقط برنامه‌های انتخاب‌شده از VPN عبور کنند';
+
+  @override
+  String get perAppDenyMode => 'برنامه‌های انتخاب‌شده از VPN عبور نکنند';
+
+  @override
+  String get perAppSelectApps => 'انتخاب برنامه‌ها';
+
+  @override
+  String get perAppSearch => 'جست‌وجوی برنامه‌ها';
+
+  @override
+  String perAppSelectedCount(int count) {
+    return '$count برنامه انتخاب شد';
+  }
+
+  @override
+  String get perAppNoApps => 'برنامه‌ای یافت نشد';
+
+  @override
+  String get perAppClearAll => 'پاک‌کردن';
+
+  @override
+  String get perAppAppliesNextConnect => 'در اتصال بعدی اعمال می‌شود.';
 
   @override
   String get ping => 'پینگ';

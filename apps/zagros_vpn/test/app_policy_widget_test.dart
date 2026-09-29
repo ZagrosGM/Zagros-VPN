@@ -8,7 +8,8 @@ import 'package:zagros_vpn_sdk/zagros_vpn_sdk.dart';
 import 'support/fixtures.dart';
 
 void main() {
-  testWidgets('Official shell exposes 4 tabs and no Application account enrollment', (
+  testWidgets(
+      'Official shell exposes 4 tabs and no Application account enrollment', (
     tester,
   ) async {
     final configuration = ProductConfiguration.fromValues(
@@ -26,7 +27,8 @@ void main() {
     expect(find.text('Open-source licenses'), findsOneWidget);
   });
 
-  testWidgets('White-label shell requires enrollment and hides raw config library', (
+  testWidgets(
+      'White-label shell requires enrollment and hides raw config library', (
     tester,
   ) async {
     final configuration = ProductConfiguration.fromValues(

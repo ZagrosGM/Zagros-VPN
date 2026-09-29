@@ -154,13 +154,15 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                     children: <Widget>[
                       FilledButton.icon(
                         key: const ValueKey('library-add-subscription'),
-                        onPressed: () => _openEditor(context, ctrl, OfficialProfileKind.subscription),
+                        onPressed: () => _openEditor(
+                            context, ctrl, OfficialProfileKind.subscription),
                         icon: const Icon(Icons.add_link),
                         label: Text(localizations.addSubscription),
                       ),
                       OutlinedButton.icon(
                         key: const ValueKey('library-add-manual'),
-                        onPressed: () => _openEditor(context, ctrl, OfficialProfileKind.manual),
+                        onPressed: () => _openEditor(
+                            context, ctrl, OfficialProfileKind.manual),
                         icon: const Icon(Icons.note_add_outlined),
                         label: Text(localizations.addManualConfig),
                       ),
@@ -172,8 +174,10 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
           );
         }
 
-        final subscriptions = ctrl.catalog.profiles.where((p) => p.isSubscription).toList();
-        final manualProfiles = ctrl.catalog.profiles.where((p) => !p.isSubscription).toList();
+        final subscriptions =
+            ctrl.catalog.profiles.where((p) => p.isSubscription).toList();
+        final manualProfiles =
+            ctrl.catalog.profiles.where((p) => !p.isSubscription).toList();
 
         return ListView(
           padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
@@ -190,21 +194,23 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                     child: Text(
                       localizations.configsTitle,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                   IconButton.filledTonal(
                     key: const ValueKey('library-add-subscription'),
                     tooltip: localizations.addSubscription,
-                    onPressed: () => _openEditor(context, ctrl, OfficialProfileKind.subscription),
+                    onPressed: () => _openEditor(
+                        context, ctrl, OfficialProfileKind.subscription),
                     icon: const Icon(Icons.add_link, size: 20),
                   ),
                   const SizedBox(width: 8),
                   IconButton.filledTonal(
                     key: const ValueKey('library-add-manual'),
                     tooltip: localizations.addManualConfig,
-                    onPressed: () => _openEditor(context, ctrl, OfficialProfileKind.manual),
+                    onPressed: () =>
+                        _openEditor(context, ctrl, OfficialProfileKind.manual),
                     icon: const Icon(Icons.note_add_outlined, size: 20),
                   ),
                 ],
@@ -216,9 +222,9 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                 child: Text(
                   localizations.subscriptionsSection,
                   style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.bold,
-                  ),
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
               for (final profile in subscriptions)
@@ -230,9 +236,9 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                 child: Text(
                   localizations.localConfigsSection,
                   style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    color: Theme.of(context).colorScheme.primary,
-                    fontWeight: FontWeight.bold,
-                  ),
+                        color: Theme.of(context).colorScheme.primary,
+                        fontWeight: FontWeight.bold,
+                      ),
                 ),
               ),
               for (final profile in manualProfiles)
@@ -257,12 +263,14 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
         padding: const EdgeInsets.all(12),
         child: Row(
           children: <Widget>[
-            Icon(Icons.warning_amber_rounded, color: Theme.of(context).colorScheme.onErrorContainer),
+            Icon(Icons.warning_amber_rounded,
+                color: Theme.of(context).colorScheme.onErrorContainer),
             const SizedBox(width: 8),
             Expanded(
               child: Text(
                 localizations.tunnelUnavailableTitle,
-                style: TextStyle(color: Theme.of(context).colorScheme.onErrorContainer),
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.onErrorContainer),
               ),
             ),
           ],
@@ -313,7 +321,9 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
               child: Row(
                 children: <Widget>[
                   Icon(
-                    profile.isSubscription ? Icons.link_rounded : Icons.description_outlined,
+                    profile.isSubscription
+                        ? Icons.link_rounded
+                        : Icons.description_outlined,
                     color: theme.colorScheme.primary,
                     size: 24,
                   ),
@@ -330,11 +340,13 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                         ),
                         if (profile.subscriptionUri?.host != null)
                           Text(
-                            localizations.subscriptionHost(profile.subscriptionUri!.host),
+                            localizations.subscriptionHost(
+                                profile.subscriptionUri!.host),
                             style: theme.textTheme.bodySmall,
                           ),
                         Text(
-                          localizations.profileConfigCount(profile.configs.length),
+                          localizations
+                              .profileConfigCount(profile.configs.length),
                           style: theme.textTheme.bodySmall?.copyWith(
                             color: theme.colorScheme.onSurfaceVariant,
                           ),
@@ -364,7 +376,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                     key: ValueKey('profile-edit-${profile.id}'),
                     icon: const Icon(Icons.edit_outlined, size: 20),
                     tooltip: localizations.edit,
-                    onPressed: () => _openEditor(context, ctrl, profile.kind, existing: profile),
+                    onPressed: () => _openEditor(context, ctrl, profile.kind,
+                        existing: profile),
                   ),
                   IconButton(
                     key: ValueKey('profile-delete-${profile.id}'),
@@ -373,9 +386,13 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                     onPressed: () => _confirmDelete(context, ctrl, profile),
                   ),
                   IconButton(
-                    tooltip: isExpanded ? localizations.close : localizations.viewRawConfig,
+                    tooltip: isExpanded
+                        ? localizations.close
+                        : localizations.viewRawConfig,
                     icon: Icon(
-                      isExpanded ? Icons.keyboard_arrow_up_rounded : Icons.keyboard_arrow_down_rounded,
+                      isExpanded
+                          ? Icons.keyboard_arrow_up_rounded
+                          : Icons.keyboard_arrow_down_rounded,
                       color: theme.colorScheme.onSurfaceVariant,
                     ),
                     onPressed: () {
@@ -404,7 +421,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                         ? localizations.unlimited
                         : formatBytes(profile.usage!.totalBytes),
                   ),
-                  style: theme.textTheme.bodySmall?.copyWith(fontWeight: FontWeight.w600),
+                  style: theme.textTheme.bodySmall
+                      ?.copyWith(fontWeight: FontWeight.w600),
                 ),
               ),
             if (profile.usage?.expiresAt != null)
@@ -444,7 +462,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                   localizations.subscriptionFilesUnavailable(
                     profile.fileErrors.length,
                   ),
-                  style: theme.textTheme.bodySmall?.copyWith(color: theme.colorScheme.error),
+                  style: theme.textTheme.bodySmall
+                      ?.copyWith(color: theme.colorScheme.error),
                 ),
               ),
             const SizedBox(height: 6),
@@ -505,7 +524,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               duration: const Duration(milliseconds: 1200),
-              content: Text('${config.normalized.displayName} (${proto.toUpperCase()}) انتخاب شد'),
+              content: Text(
+                  '${config.normalized.displayName} (${proto.toUpperCase()}) انتخاب شد'),
             ),
           );
         },
@@ -517,10 +537,14 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
               Row(
                 children: <Widget>[
                   Icon(
-                    isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
+                    isSelected
+                        ? Icons.radio_button_checked
+                        : Icons.radio_button_off,
                     size: 20,
                     color: isSelected
-                        ? (isConnected ? const Color(0xFF00C853) : theme.colorScheme.primary)
+                        ? (isConnected
+                            ? const Color(0xFF00C853)
+                            : theme.colorScheme.primary)
                         : theme.colorScheme.outline,
                   ),
                   const SizedBox(width: 10),
@@ -533,7 +557,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
-                            fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
+                            fontWeight:
+                                isSelected ? FontWeight.bold : FontWeight.w600,
                             fontSize: 14,
                           ),
                         ),
@@ -578,7 +603,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                   if (!supported)
                     Container(
                       margin: const EdgeInsets.symmetric(vertical: 4),
-                      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 8, vertical: 4),
                       decoration: BoxDecoration(
                         color: theme.colorScheme.errorContainer.withAlpha(160),
                         borderRadius: BorderRadius.circular(8),
@@ -594,7 +620,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                   else if (isConnected)
                     IconButton(
                       key: ValueKey('config-connect-${config.id}'),
-                      icon: const Icon(Icons.stop_circle_outlined, color: Color(0xFF00C853)),
+                      icon: const Icon(Icons.stop_circle_outlined,
+                          color: Color(0xFF00C853)),
                       tooltip: localizations.disconnect,
                       onPressed: ctrl.disconnect,
                     )
@@ -615,7 +642,8 @@ class _OfficialConfigsViewState extends State<_OfficialConfigsView> {
                                   localizations.tunnelUnavailableBody,
                                 OfficialConnectResult.protocolUnavailable =>
                                   ctrl.protocolUnavailableReason ??
-                                      localizations.protocolUnavailableBody(config.normalized.protocol),
+                                      localizations.protocolUnavailableBody(
+                                          config.normalized.protocol),
                                 _ => localizations.tunnelUnavailableBody,
                               };
                           showDialog<void>(
@@ -755,8 +783,8 @@ class _ProfileEditorDialogState extends State<_ProfileEditorDialog> {
         editing
             ? localizations.editProfile
             : _subscription
-            ? localizations.addSubscription
-            : localizations.addManualConfig,
+                ? localizations.addSubscription
+                : localizations.addManualConfig,
       ),
       content: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 600),
@@ -781,9 +809,8 @@ class _ProfileEditorDialogState extends State<_ProfileEditorDialog> {
                 ),
                 controller: _source,
                 enabled: !_saving,
-                keyboardType: _subscription
-                    ? TextInputType.url
-                    : TextInputType.multiline,
+                keyboardType:
+                    _subscription ? TextInputType.url : TextInputType.multiline,
                 autocorrect: false,
                 enableSuggestions: false,
                 minLines: _subscription ? 1 : 6,
@@ -837,9 +864,9 @@ class _ProfileEditorDialogState extends State<_ProfileEditorDialog> {
           url: _source.text,
         ),
       (OfficialProfileKind.manual, null) => await widget.controller.addManual(
-        name: _name.text,
-        rawSource: _source.text,
-      ),
+          name: _name.text,
+          rawSource: _source.text,
+        ),
       (OfficialProfileKind.subscription, final existing?) =>
         await widget.controller.updateSubscription(
           profileId: existing.id,
@@ -899,7 +926,8 @@ class _RawConfigDialog extends StatelessWidget {
                 padding: const EdgeInsets.all(12),
                 color: Theme.of(context).colorScheme.surfaceContainerHighest,
                 child: SingleChildScrollView(
-                  child: configuration.policy.allows(ClientCapability.rawConfigDisplay)
+                  child: configuration.policy
+                          .allows(ClientCapability.rawConfigDisplay)
                       ? _rawText()
                       : const SizedBox.shrink(),
                 ),
@@ -985,7 +1013,8 @@ class _RawConfigDialog extends StatelessWidget {
   }
 
   void _snack(BuildContext context, String message) =>
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text(message)));
 }
 
 class _ProtocolWarning extends StatelessWidget {
@@ -1084,8 +1113,8 @@ class _WhiteLabelConfigsView extends StatelessWidget {
                     child: Text(
                       localizations.configsTitle,
                       style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
+                            fontWeight: FontWeight.bold,
+                          ),
                     ),
                   ),
                   IconButton(
@@ -1097,7 +1126,8 @@ class _WhiteLabelConfigsView extends StatelessWidget {
               ),
             ),
             for (var i = 0; i < ctrl.selectors.length; i++)
-              _buildSelectorCard(context, ctrl, ctrl.selectors[i], i, localizations),
+              _buildSelectorCard(
+                  context, ctrl, ctrl.selectors[i], i, localizations),
           ],
         );
       },
@@ -1169,7 +1199,8 @@ class _WhiteLabelConfigsView extends StatelessWidget {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               duration: const Duration(milliseconds: 1000),
-              content: Text('${selector.displayName} (${selector.protocol.toUpperCase()}) انتخاب شد'),
+              content: Text(
+                  '${selector.displayName} (${selector.protocol.toUpperCase()}) انتخاب شد'),
             ),
           );
         },
@@ -1178,10 +1209,14 @@ class _WhiteLabelConfigsView extends StatelessWidget {
           child: Row(
             children: <Widget>[
               Icon(
-                isSelected ? Icons.radio_button_checked : Icons.radio_button_off,
+                isSelected
+                    ? Icons.radio_button_checked
+                    : Icons.radio_button_off,
                 size: 22,
                 color: isSelected
-                    ? (isConnected ? const Color(0xFF00C853) : theme.colorScheme.primary)
+                    ? (isConnected
+                        ? const Color(0xFF00C853)
+                        : theme.colorScheme.primary)
                     : theme.colorScheme.outline,
               ),
               const SizedBox(width: 12),
@@ -1195,7 +1230,8 @@ class _WhiteLabelConfigsView extends StatelessWidget {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: theme.textTheme.titleSmall?.copyWith(
-                        fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
+                        fontWeight:
+                            isSelected ? FontWeight.bold : FontWeight.w600,
                       ),
                     ),
                     const SizedBox(height: 3),
@@ -1214,7 +1250,8 @@ class _WhiteLabelConfigsView extends StatelessWidget {
               const SizedBox(width: 8),
               if (!supported)
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                   decoration: BoxDecoration(
                     color: isProtoSupported
                         ? theme.colorScheme.surfaceContainerHighest
@@ -1222,7 +1259,9 @@ class _WhiteLabelConfigsView extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   child: Text(
-                    isProtoSupported ? localizations.unavailable : localizations.comingSoon,
+                    isProtoSupported
+                        ? localizations.unavailable
+                        : localizations.comingSoon,
                     style: theme.textTheme.labelSmall?.copyWith(
                       color: isProtoSupported
                           ? theme.colorScheme.onSurfaceVariant
@@ -1234,7 +1273,8 @@ class _WhiteLabelConfigsView extends StatelessWidget {
               else if (isConnected)
                 IconButton(
                   key: ValueKey('wl-disconnect-$index'),
-                  icon: const Icon(Icons.stop_circle_outlined, color: Color(0xFF00C853)),
+                  icon: const Icon(Icons.stop_circle_outlined,
+                      color: Color(0xFF00C853)),
                   tooltip: localizations.disconnect,
                   onPressed: ctrl.disconnect,
                 )
@@ -1255,7 +1295,8 @@ class _WhiteLabelConfigsView extends StatelessWidget {
                             WhiteLabelConnectResult.adapterUnavailable =>
                               localizations.tunnelUnavailableBody,
                             WhiteLabelConnectResult.protocolUnavailable =>
-                              ctrl.protocolUnavailableReason ?? localizations.tunnelUnavailableBody,
+                              ctrl.protocolUnavailableReason ??
+                                  localizations.tunnelUnavailableBody,
                             _ => localizations.tunnelUnavailableBody,
                           };
                       ScaffoldMessenger.of(context).showSnackBar(
@@ -1278,11 +1319,12 @@ class _WhiteLabelConfigsView extends StatelessWidget {
 String _failureText(
   AppLocalizations localizations,
   LibraryFailureKind? failure,
-) => switch (failure) {
-  LibraryFailureKind.validation => localizations.libraryValidationFailed,
-  LibraryFailureKind.authorization => localizations.libraryAccessDenied,
-  LibraryFailureKind.transport => localizations.libraryNetworkFailed,
-  LibraryFailureKind.protectedStorage => localizations.libraryStorageFailed,
-  LibraryFailureKind.malformedData => localizations.libraryMalformedFailed,
-  LibraryFailureKind.unknown || null => localizations.libraryUnknownFailed,
-};
+) =>
+    switch (failure) {
+      LibraryFailureKind.validation => localizations.libraryValidationFailed,
+      LibraryFailureKind.authorization => localizations.libraryAccessDenied,
+      LibraryFailureKind.transport => localizations.libraryNetworkFailed,
+      LibraryFailureKind.protectedStorage => localizations.libraryStorageFailed,
+      LibraryFailureKind.malformedData => localizations.libraryMalformedFailed,
+      LibraryFailureKind.unknown || null => localizations.libraryUnknownFailed,
+    };

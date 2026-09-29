@@ -71,8 +71,8 @@ class _PerAppScreenState extends State<PerAppScreen> {
                 ListenableBuilder(
                   listenable: widget.controller,
                   builder: (context, _) => Text(
-                    localizations
-                        .perAppSelectedCount(widget.controller.perAppPackages.length),
+                    localizations.perAppSelectedCount(
+                        widget.controller.perAppPackages.length),
                     style: theme.textTheme.bodySmall,
                   ),
                 ),
@@ -80,7 +80,8 @@ class _PerAppScreenState extends State<PerAppScreen> {
                 TextButton(
                   onPressed: () {
                     for (final app in apps ?? const <AppCatalogEntry>[]) {
-                      widget.controller.setPerAppPackageSelected(app.packageName, false);
+                      widget.controller
+                          .setPerAppPackageSelected(app.packageName, false);
                     }
                   },
                   child: Text(localizations.perAppClearAll),
@@ -109,14 +110,17 @@ class _PerAppScreenState extends State<PerAppScreen> {
                             return ListenableBuilder(
                               listenable: widget.controller,
                               builder: (context, _) {
-                                final selected = widget.controller.perAppPackages
+                                final selected = widget
+                                    .controller.perAppPackages
                                     .contains(app.packageName);
                                 return CheckboxListTile(
                                   value: selected,
                                   title: Text(app.label,
-                                      maxLines: 1, overflow: TextOverflow.ellipsis),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis),
                                   subtitle: Text(app.packageName,
-                                      maxLines: 1, overflow: TextOverflow.ellipsis),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis),
                                   onChanged: (value) => widget.controller
                                       .setPerAppPackageSelected(
                                           app.packageName, value ?? false),

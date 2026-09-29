@@ -23,7 +23,8 @@ void main() {
       service.dispose();
     });
 
-    testWidgets('renders log entries and action buttons when logs exist', (tester) async {
+    testWidgets('renders log entries and action buttons when logs exist',
+        (tester) async {
       final service = DiagnosticLogsService();
       service.log('Tunnel started on interface tun0');
 
@@ -36,7 +37,8 @@ void main() {
       );
       await tester.pumpAndSettle();
 
-      expect(find.textContaining('Tunnel started on interface tun0'), findsOneWidget);
+      expect(find.textContaining('Tunnel started on interface tun0'),
+          findsOneWidget);
       expect(find.byIcon(Icons.copy_rounded), findsOneWidget);
       expect(find.byIcon(Icons.delete_sweep_outlined), findsOneWidget);
 

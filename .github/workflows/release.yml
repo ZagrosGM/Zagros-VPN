@@ -1,0 +1,207 @@
+name: Release (all platforms)
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "existing release tag to attach artifacts to (empty = newest pubspec version, create v<version> if missing)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  FLUTTER_VERSION: '3.47.2'
+
+jobs:
+  android:
+    name: Android (apk + aab)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: Zagros-VPN
+          persist-credentials: false
+
+      - name: Check out SDK sibling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: ZagrosGM/Zagros-VPN-SDK
+          path: Zagros-VPN-SDK
+          persist-credentials: false
+
+      - name: Install Java 17
+        uses: actions/setup-java@8df1039502a15bceb9433410b1a100fbe190c53b # v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Build release APK
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter build apk --release
+
+      - name: Build release AAB
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter build appbundle --release
+
+      - name: Stage artifacts
+        working-directory: Zagros-VPN
+        run: |
+          VERSION="$(sed -n 's/^version: \([0-9][0-9.]*\).*/\1/p' apps/zagros_vpn/pubspec.yaml)"
+          mkdir -p staging
+          cp apps/zagros_vpn/build/app/outputs/flutter-apk/app-release.apk \
+             "staging/zagros-vpn-${VERSION}-android.apk"
+          cp apps/zagros_vpn/build/app/outputs/bundle/release/app-release.aab \
+             "staging/zagros-vpn-${VERSION}-android.aab"
+          ls -la staging
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: android-artifacts
+          path: Zagros-VPN/staging/*
+
+  linux:
+    name: Linux (x64 tar.gz)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: Zagros-VPN
+          persist-credentials: false
+
+      - name: Check out SDK sibling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: ZagrosGM/Zagros-VPN-SDK
+          path: Zagros-VPN-SDK
+          persist-credentials: false
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Install Linux native toolchain
+        run: sudo apt-get update && sudo apt-get install --yes clang cmake ninja-build pkg-config libgtk-3-dev liblzma-dev libsecret-1-dev
+
+      - name: Build release bundle
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: |
+          flutter config --enable-linux-desktop
+          flutter build linux --release
+
+      - name: Stage artifacts
+        working-directory: Zagros-VPN
+        run: |
+          VERSION="$(sed -n 's/^version: \([0-9][0-9.]*\).*/\1/p' apps/zagros_vpn/pubspec.yaml)"
+          mkdir -p staging
+          mv apps/zagros_vpn/build/linux/x64/release/bundle "zagros-vpn-${VERSION}-linux-x64"
+          tar czf "staging/zagros-vpn-${VERSION}-linux-x64.tar.gz" "zagros-vpn-${VERSION}-linux-x64"
+          ls -la staging
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: linux-artifacts
+          path: Zagros-VPN/staging/*
+
+  windows:
+    name: Windows (x64 zip)
+    runs-on: windows-2022
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          path: Zagros-VPN
+          persist-credentials: false
+
+      - name: Check out SDK sibling
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: ZagrosGM/Zagros-VPN-SDK
+          path: Zagros-VPN-SDK
+          persist-credentials: false
+
+      - name: Install Flutter
+        uses: subosito/flutter-action@1a449444c387b1966244ae4d4f8c696479add0b2 # v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      - name: Build release bundle
+        working-directory: Zagros-VPN/apps/zagros_vpn
+        run: flutter build windows --release
+
+      - name: Stage artifacts
+        shell: bash
+        working-directory: Zagros-VPN
+        run: |
+          VERSION="$(sed -n 's/^version: \([0-9][0-9.]*\).*/\1/p' apps/zagros_vpn/pubspec.yaml)"
+          mkdir -p staging
+          mv apps/zagros_vpn/build/windows/x64/runner/Release "zagros-vpn-${VERSION}-windows-x64"
+          7z a -tzip "staging/zagros-vpn-${VERSION}-windows-x64.zip" "zagros-vpn-${VERSION}-windows-x64"
+          ls -la staging
+
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: windows-artifacts
+          path: Zagros-VPN/staging/*
+
+  release:
+    name: Publish release
+    needs: [android, linux, windows]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/download-artifact@9586c81ee796e18db11d4b26d9b4ce8ac6eeaa37 # v4
+        with:
+          path: artifacts
+
+      - name: Resolve release tag
+        id: tag
+        run: |
+          if [[ -n "${{ github.event.inputs.release_tag }}" ]]; then
+            echo "tag=${{ github.event.inputs.release_tag }}" >> "$GITHUB_OUTPUT"
+          elif [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            echo "tag=${GITHUB_REF#refs/tags/}" >> "$GITHUB_OUTPUT"
+          else
+            VERSION="$(sed -n 's/^version: \([0-9][0-9.]*\).*/\1/p' Zagros-VPN/apps/zagros_vpn/pubspec.yaml 2>/dev/null || true)"
+            if [[ -z "$VERSION" ]]; then
+              curl -fsSL -o pubspec.yaml https://raw.githubusercontent.com/${{ github.repository }}/${{ github.ref_name }}/apps/zagros_vpn/pubspec.yaml
+              VERSION="$(sed -n 's/^version: \([0-9][0-9.]*\).*/\1/p' pubspec.yaml)"
+            fi
+            echo "tag=v${VERSION}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Publish artifacts to the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG="${{ steps.tag.outputs.tag }}"
+          find artifacts -type f | sort
+          if gh release view "$TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release upload "$TAG" --repo "$GITHUB_REPOSITORY" --clobber artifacts/*/*
+          else
+            gh release create "$TAG" --repo "$GITHUB_REPOSITORY" \
+              --title "$TAG — client builds (all platforms)" \
+              --notes "Official multi-platform builds of the Zagros VPN client (see pubspec for the exact version)." \
+              artifacts/*/*
+          fi
